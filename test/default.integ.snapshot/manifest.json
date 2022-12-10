@@ -1,0 +1,1012 @@
+{
+  "version": "22.0.0",
+  "artifacts": {
+    "Turbo-Layer-Test.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "Turbo-Layer-Test.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "Turbo-Layer-Test": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Turbo-Layer-Test.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9a795f1c6ecd7ec43a7ae8ecade50bc6f2dc9344f3de1acc943226b597e01316.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "Turbo-Layer-Test.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "Turbo-Layer-Test.assets"
+      ],
+      "metadata": {
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerBucketCA23805D"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerBucketPolicy085FFF5B"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceAA71CB1D"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Logs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerLogsEFD8DB41"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Packager/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerRole273A7C9A"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Packager/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerRoleDefaultPolicy9A656F97"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackager2F58010A"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Package Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerPackageHandlerServiceRoleF8F622D6"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicyB6DB807A"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Package Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerPackageHandler643335C7"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/Package Handler/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerPackageHandlerLogRetention9EF0CE38"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/inline/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerinlineLayerPackagerF6148542"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/inline/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerinlineLayerCEF5CD06"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/req.txt/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerreqtxtLayerPackager274E3060"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/req.txt/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerreqtxtLayerC89CB813"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/pipenv/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerpipenvLayerPackagerBE01C1EF"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/pipenv/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerpipenvLayer8C05F535"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/poetry/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerpoetryLayerPackagerF63E96A5"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Packager/poetry/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPackagerpoetryLayerF64FFBF2"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Inline/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildInlineServiceRole346CF566"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Inline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildInlineC6F53564"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Inline/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildInlineLogRetention0AFC0650"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Inline/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildInlineTrigger227E4B0D"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Inline/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildInlineCurrentVersionB518F844f9ca3a554d053674e6bbcd179d274ecb"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Requirements.txt/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildRequirementstxtServiceRoleE8610870"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Requirements.txt/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildRequirementstxt691BF0BB"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Requirements.txt/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildRequirementstxtLogRetentionB3E219A5"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Requirements.txt/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildRequirementstxtTriggerF6F2B226"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Requirements.txt/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildRequirementstxtCurrentVersion58C0F239862ddc317fd9c70651ea14c8fb5d84b8"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Pipenv/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPipenvServiceRole53C54AA3"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Pipenv/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPipenv179CA3C9"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Pipenv/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPipenvLogRetention61F4C412"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Pipenv/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPipenvTrigger8C2E35A9"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Pipenv/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPipenvCurrentVersion1BE5D4064013e4d0ea9163f02dbba2a6e377aaeb"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Poetry/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPoetryServiceRole954742B7"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Poetry/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPoetryF2E61E3B"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Poetry/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPoetryLogRetention69F3E008"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Poetry/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPoetryTriggerF7CF851B"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 CodeBuild/Poetry/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39CodeBuildPoetryCurrentVersionDBDF4A622869bd63c305354e1941860be5e7fd2c"
+          }
+        ],
+        "/Turbo-Layer-Test/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/Turbo-Layer-Test/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/Turbo-Layer-Test/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+          }
+        ],
+        "/Turbo-Layer-Test/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
+          }
+        ],
+        "/Turbo-Layer-Test/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A"
+          }
+        ],
+        "/Turbo-Layer-Test/AWSCDK.TriggerCustomResourceProviderCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWSCDKTriggerCustomResourceProviderCustomResourceProviderRoleE18FAF0A"
+          }
+        ],
+        "/Turbo-Layer-Test/AWSCDK.TriggerCustomResourceProviderCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerBucket90BBB28E"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerBucketPolicy90048C3C"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerBucketAutoDeleteObjectsCustomResource6A9DCC4E"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/Packager/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerServiceRole3D8E0B7D"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/Packager/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerServiceRoleDefaultPolicy9FABC535"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerB59652DD"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/Packager/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerLogRetention94FABB34"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/inline/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerinlineLayerPackagerDDAE5C8C"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/inline/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerinlineLayerF770B5A5"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/req.txt/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerreqtxtLayerPackager023AF122"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/req.txt/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerreqtxtLayer8972DF80"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/pipenv/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerpipenvLayerPackager01E5E7E0"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/pipenv/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerpipenvLayerF37595F3"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/poetry/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerpoetryLayerPackagerB2064629"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Packager/poetry/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPackagerpoetryLayer68353E29"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Inline/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaInlineServiceRole14E4F90F"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Inline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaInline48447CF0"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Inline/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaInlineLogRetentionF255E55B"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Inline/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaInlineTrigger44A2B771"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Inline/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaInlineCurrentVersionB087E9AD305b649ab12edbbb3dc776ac5c548743"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Requirements.txt/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaRequirementstxtServiceRoleEF15509B"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Requirements.txt/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaRequirementstxtEC700332"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Requirements.txt/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaRequirementstxtLogRetentionF44B6361"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Requirements.txt/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaRequirementstxtTriggerDE7BE552"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Requirements.txt/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaRequirementstxtCurrentVersionAA10683F17c1afc8bd71e0513357b2c7538e1a02"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Pipenv/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPipenvServiceRoleF04B91C7"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Pipenv/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPipenv9517632C"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Pipenv/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPipenvLogRetention8A13F305"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Pipenv/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPipenvTrigger9CB8C195"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Pipenv/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPipenvCurrentVersionF5E7751637348a8dd5e8f85d53a2a6955b803fad"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Poetry/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPoetryServiceRole1375F9FA"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Poetry/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPoetry0A38FBC8"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Poetry/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPoetryLogRetention4707578D"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Poetry/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPoetryTrigger16B6225B"
+          }
+        ],
+        "/Turbo-Layer-Test/Python 3.9 Lambda/Poetry/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Python39LambdaPoetryCurrentVersionF952E83Abff2685d3c8c66bb1d99abe4a909b5a7"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerBucketB1D39C73"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerBucketPolicy0A0D06D9"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerBucketAutoDeleteObjectsCustomResource17EFB133"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Logs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerLogs22D6A5AA"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Packager/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerRoleB782C59C"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Packager/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerRoleDefaultPolicy9B6FE89F"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerD4BDB76B"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Package Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerPackageHandlerServiceRoleEF00FDB1"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicyEC12B6EB"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Package Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerPackageHandler83469A20"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/Package Handler/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagerPackageHandlerLogRetentionFC000254"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/npm/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagernpmLayerPackager09DE3582"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/npm/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagernpmLayer9CE6CA36"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/yarn/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackageryarnLayerPackager1C0E5756"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/yarn/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackageryarnLayer966A85CF"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMTestServiceRoleE3A83EBA"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMTest45D7FE69"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMTestLogRetentionAEAF6AF2"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMTestTrigger378DC7DE"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMTestCurrentVersionF9452363706cb4d9d286225955f08d7edad02971"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Yarn Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildYarnTestServiceRole9762D3B8"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Yarn Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildYarnTest7D1D727E"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Yarn Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildYarnTestLogRetention919BE67D"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Yarn Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildYarnTestTrigger1AA6F7FC"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Yarn Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildYarnTestCurrentVersionAFCB7D83bf8f54849a9629dd24820d66458bf8c1"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagerBucket49666ADA"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagerBucketPolicy6FB22C6F"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagerBucketAutoDeleteObjectsCustomResource920018CA"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/Packager/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagerServiceRoleA2EB81E8"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/Packager/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagerServiceRoleDefaultPolicy5E69D380"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackager637B1B68"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/Packager/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagerLogRetentionAD22FB43"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/npm/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagernpmLayerPackagerBDD2B050"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/npm/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagernpmLayerD4B7F951"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/yarn/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackageryarnLayerPackagerBEF5753E"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/yarn/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackageryarnLayer53940168"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMTestServiceRole722A5DDA"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMTest081393A6"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMTestLogRetentionB43D4A8A"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMTestTrigger75DB2C38"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMTestCurrentVersion90E373BAb316dafea01f29d56be2dcc43d7e16a4"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Yarn Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaYarnTestServiceRole236BCC33"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Yarn Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaYarnTest8F96551D"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Yarn Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaYarnTestLogRetentionFB89C7C2"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Yarn Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaYarnTestTrigger10B06482"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Yarn Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaYarnTestCurrentVersion7E1F1E0E6d39308cade20d220e469820af8aba2b"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerBucketD708F0AD"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerBucketPolicy336D6357"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceDCCC1575"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Logs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerLogsF7DC61AF"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Packager/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerRoleA38F9233"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Packager/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerRoleDefaultPolicy8FA138BC"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerD263016B"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Package Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerPackageHandlerServiceRole17E6EAAF"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy9D0C9B7C"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Package Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerPackageHandler64DEC47E"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Package Handler/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerPackageHandlerLogRetentionCC1A0B23"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/bundler/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerbundlerLayerPackagerDB3E64BF"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/bundler/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildPackagerbundlerLayerD6CCE1EE"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Bundler Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildBundlerTestServiceRole93ECAD65"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Bundler Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildBundlerTestE35A0D6F"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Bundler Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildBundlerTestLogRetentionD979283F"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Bundler Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildBundlerTestTriggerFF976464"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Bundler Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27CodeBuildBundlerTestCurrentVersionE9E016CF49af6c67c689d088ea25868cbe6146f1"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerBucket8E60AB86"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerBucketPolicy68DD676F"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerBucketAutoDeleteObjectsCustomResourceD189F2EA"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/Packager/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerServiceRoleD6F268F7"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/Packager/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerServiceRoleDefaultPolicy267D306A"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerCD077812"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/Packager/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerLogRetention36C6CFDA"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/bundler/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerbundlerLayerPackagerCDE793B5"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Packager/bundler/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaPackagerbundlerLayer1F90EBB8"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Bundler Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaBundlerTestServiceRole0DA91DBA"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Bundler Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaBundlerTest315307B1"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Bundler Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaBundlerTestLogRetention798FB23B"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Bundler Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaBundlerTestTriggerE2F0ED06"
+          }
+        ],
+        "/Turbo-Layer-Test/Ruby 2.7 Lambda/Bundler Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Ruby27LambdaBundlerTestCurrentVersion082ABB9A5eef389d43e193ab53500e72948b2978"
+          }
+        ],
+        "/Turbo-Layer-Test/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Turbo-Layer-Test/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Turbo-Layer-Test"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
