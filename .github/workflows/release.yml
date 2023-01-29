@@ -23,6 +23,8 @@ jobs:
           git config user.email "github-actions@github.com"
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
+        env:
+          ImageOS: ubuntu20
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release

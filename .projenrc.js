@@ -86,6 +86,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     {
       name: 'Setup Ruby',
       uses: 'ruby/setup-ruby@v1',
+      env: {
+        ImageOS: 'ubuntu20',
+      },
     },
   ],
 });
