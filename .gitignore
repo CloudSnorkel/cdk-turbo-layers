@@ -55,8 +55,8 @@ junit.xml
 tsconfig.json
 !/API.md
 /assets/
-!/src\package-codebuild-function.ts
-!/src\package-nodejs-function.ts
+!/src/package-codebuild-function.ts
+!/src/package-nodejs-function.ts
 test/.tmp
 test/default.integ.snapshot/asset.*
 test/default.integ.snapshot/**/asset.*

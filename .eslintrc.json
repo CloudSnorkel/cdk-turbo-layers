@@ -147,8 +147,8 @@
         "devDependencies": [
           "**/test/**",
           "**/build-tools/**",
-          "src\\package-codebuild.lambda.ts",
-          "src\\package-nodejs.lambda.ts"
+          "src/package-codebuild.lambda.ts",
+          "src/package-nodejs.lambda.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true
