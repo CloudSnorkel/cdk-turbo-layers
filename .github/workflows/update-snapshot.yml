@@ -20,6 +20,8 @@ jobs:
           fetch-depth: 0
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "2.7"
         env:
           ImageOs: ubuntu20
       - name: Install dependencies

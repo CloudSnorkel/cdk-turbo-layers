@@ -23,6 +23,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         env:
           ImageOS: ubuntu20
+        with:
+          ruby-version: "2.7"
       - name: Install dependencies
         run: yarn install --check-files
       - name: build
