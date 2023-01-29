@@ -82,6 +82,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   pullRequestTemplate: false,
+  workflowBootstrapSteps: [
+    {
+      name: 'Setup Ruby',
+      run: 'sudo apt-get update ; sudo apt-get install -y ruby',
+    },
+  ],
 });
 
 // disable automatic releases, but keep workflow that can be triggered manually
