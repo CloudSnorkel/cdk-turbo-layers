@@ -19,11 +19,7 @@ jobs:
           ref: main
           fetch-depth: 0
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "2.7"
-        env:
-          ImageOs: ubuntu20
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Snapshot main

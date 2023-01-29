@@ -85,13 +85,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   workflowBootstrapSteps: [
     {
       name: 'Setup Ruby',
-      uses: 'ruby/setup-ruby@v1',
-      env: {
-        ImageOS: 'ubuntu20',
-      },
-      with: {
-        'ruby-version': '2.7',
-      },
+      run: 'sudo apt-get update ; sudo apt-get install -y ruby',
     },
   ],
 });
