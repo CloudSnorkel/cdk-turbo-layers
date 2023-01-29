@@ -90,6 +90,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -127,6 +129,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -166,6 +170,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -201,6 +207,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -235,6 +243,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
