@@ -82,6 +82,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   pullRequestTemplate: false,
+  workflowBootstrapSteps: [
+    {
+      name: 'Setup Ruby',
+      uses: 'ruby/setup-ruby@v1',
+    },
+  ],
 });
 
 // disable automatic releases, but keep workflow that can be triggered manually
