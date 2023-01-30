@@ -47,6 +47,7 @@ new NodejsDependencyPackager(scope: Construct, id: string, props?: DependencyPac
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromInline">layerFromInline</a></code> | Create a layer for dependencies passed as an argument and installed with npm. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromPackageJson">layerFromPackageJson</a></code> | Create a layer for dependencies defined in package.json and (optionally) package-lock.json and installed with npm. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromYarn">layerFromYarn</a></code> | Create a layer for dependencies defined in package.json and yarn.lock and installed with yarn. |
 
@@ -59,6 +60,32 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `layerFromInline` <a name="layerFromInline" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromInline"></a>
+
+```typescript
+public layerFromInline(id: string, libraries: string[], props?: LayerProps): LayerVersion
+```
+
+Create a layer for dependencies passed as an argument and installed with npm.
+
+###### `id`<sup>Required</sup> <a name="id" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromInline.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `libraries`<sup>Required</sup> <a name="libraries" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromInline.parameter.libraries"></a>
+
+- *Type:* string[]
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromInline.parameter.props"></a>
+
+- *Type:* <a href="#@cloudsnorkel/cdk-turbo-layers.LayerProps">LayerProps</a>
+
+---
 
 ##### `layerFromPackageJson` <a name="layerFromPackageJson" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromPackageJson"></a>
 
@@ -743,7 +770,7 @@ const layerProps: LayerProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cloudsnorkel/cdk-turbo-layers.LayerProps.property.alwaysRebuild">alwaysRebuild</a></code> | <code>boolean</code> | Always rebuild the layer, even when the depdencies definition files haven't changed. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.LayerProps.property.alwaysRebuild">alwaysRebuild</a></code> | <code>boolean</code> | Always rebuild the layer, even when the dependencies definition files haven't changed. |
 
 ---
 
@@ -756,7 +783,7 @@ public readonly alwaysRebuild: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Always rebuild the layer, even when the depdencies definition files haven't changed.
+Always rebuild the layer, even when the dependencies definition files haven't changed.
 
 ---
 
