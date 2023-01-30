@@ -32,13 +32,7 @@ export class NodejsDependencyPackager extends BaseDependencyPackager {
     return this._newLayer(
       id, '.', // uniqueTempDir,
       outputDir => {
-        let packageJson = {
-          dependencies: <{ [id: string]: string }>{},
-        };
-        for (const library of libraries) {
-          const [name, version] = library.split('@', 2);
-          packageJson.dependencies[name] = version ?? '*';
-        }
+        const packageJson = librariesToPackageJson(libraries);
         fs.writeFileSync(join(outputDir, 'package.json'), JSON.stringify(packageJson));
       },
       libraries.join(','), // CDK will hash it for us
@@ -93,4 +87,24 @@ export class NodejsDependencyPackager extends BaseDependencyPackager {
       props,
     );
   }
+}
+
+/**
+ * @internal
+ */
+export function librariesToPackageJson(libraries: string[]): any {
+  let packageJson = {
+    dependencies: <{ [id: string]: string }>{},
+  };
+  for (const library of libraries) {
+    let prefix = '';
+    let libraryWithoutPrefix = library;
+    if (library.length && library[0] == '@') {
+      prefix = '@';
+      libraryWithoutPrefix = library.substring(1);
+    }
+    const [name, version] = libraryWithoutPrefix.split('@', 2);
+    packageJson.dependencies[prefix + name] = version ?? '*';
+  }
+  return packageJson;
 }
