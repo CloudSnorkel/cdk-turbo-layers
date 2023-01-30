@@ -78,7 +78,7 @@ new Function(this, 'Function with external source and requirements', {
 });
 ```
 
-## Older Implemntations
+## Older Implementations
 
 * [lovage](https://github.com/CloudSnorkel/lovage): standalone Python framework that uses the same trick to deploy decorated functions to AWS
 * [serverless-pydeps](https://github.com/CloudSnorkel/serverless-pydeps): plugin for [Serverless Framework](https://www.serverless.com/) that speeds up deployment
