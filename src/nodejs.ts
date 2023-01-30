@@ -26,6 +26,32 @@ export class NodejsDependencyPackager extends BaseDependencyPackager {
   }
 
   /**
+   * Create a layer for dependencies passed as an argument and installed with npm.
+   */
+  layerFromInline(id: string, libraries: string[], props?: LayerProps) {
+    return this._newLayer(
+      id, '.', // uniqueTempDir,
+      outputDir => {
+        let packageJson = {
+          dependencies: <{ [id: string]: string }>{},
+        };
+        for (const library of libraries) {
+          const [name, version] = library.split('@', 2);
+          packageJson.dependencies[name] = version ?? '*';
+        }
+        fs.writeFileSync(join(outputDir, 'package.json'), JSON.stringify(packageJson));
+      },
+      libraries.join(','), // CDK will hash it for us
+      [
+        'npm i',
+        'mkdir nodejs',
+        'mv node_modules nodejs/',
+      ],
+      props,
+    );
+  }
+
+  /**
    * Create a layer for dependencies defined in package.json and (optionally) package-lock.json and installed with npm.
    */
   layerFromPackageJson(id: string, path: string, props?: LayerProps) {
@@ -37,6 +63,7 @@ export class NodejsDependencyPackager extends BaseDependencyPackager {
           fs.copyFileSync(join(path, 'package-lock.json'), join(outputDir, 'package-lock.json'));
         }
       },
+      this._hashFiles(path, ['package.json'], ['package-lock.json']),
       [
         'npm ci',
         'mkdir nodejs',
@@ -56,6 +83,7 @@ export class NodejsDependencyPackager extends BaseDependencyPackager {
         fs.copyFileSync(join(path, 'package.json'), join(outputDir, 'package.json'));
         fs.copyFileSync(join(path, 'yarn.lock'), join(outputDir, 'yarn.lock'));
       },
+      this._hashFiles(path, ['package.json'], ['yarn.lock']),
       [
         'which yarn || npm install --global yarn',
         'yarn install --check-files --frozen-lockfile',

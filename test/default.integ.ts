@@ -7,8 +7,7 @@
 import * as cdk from 'aws-cdk-lib';
 import { aws_lambda as lambda, aws_logs as logs, Duration, triggers } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { NodejsDependencyPackager, PythonDependencyPackager, RubyDependencyPackager } from '../src';
-import { DependencyPackagerType } from '../src/base';
+import { NodejsDependencyPackager, PythonDependencyPackager, RubyDependencyPackager, DependencyPackagerType } from '../src';
 
 const app = new cdk.App();
 
@@ -71,13 +70,16 @@ class NodejsTest extends Construct {
       logRetention: logs.RetentionDays.ONE_DAY,
     };
 
-    // new triggers.TriggerFunction(this, 'NPM Test', {
+    new triggers.TriggerFunction(this, 'NPM Inline Test', {
+      ...nodeFunctionProps,
+      description: `Test npm ${runtime} ${type}`,
+      layers: [packager.layerFromInline('npm inline', ['lodash@^4'])],
+    });
     new triggers.TriggerFunction(this, 'NPM Test', {
       ...nodeFunctionProps,
       description: `Test npm ${runtime} ${type}`,
       layers: [packager.layerFromPackageJson('npm', 'test/assets/npm')],
     });
-    // new triggers.TriggerFunction(this, 'Yarn Test', {
     new triggers.TriggerFunction(this, 'Yarn Test', {
       ...nodeFunctionProps,
       description: `Test yarn ${runtime} ${type}`,

@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+import { join } from 'path';
 import {
   AssetHashType,
   aws_codebuild as codebuild,
@@ -11,6 +13,7 @@ import {
   CustomResource,
   DockerImage,
   Duration,
+  FileSystem,
   RemovalPolicy,
   Size,
   Stack,
@@ -97,7 +100,7 @@ export interface DependencyPackagerProps {
 
 export interface LayerProps {
   /**
-   * Always rebuild the layer, even when the depdencies definition files haven't changed.
+   * Always rebuild the layer, even when the dependencies definition files haven't changed.
    *
    * @default false
    */
@@ -231,7 +234,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
   /**
    * @internal
    */
-  protected _newLayer(id: string, path: string, assetGenerator: (outputDir: string) => void, commands: string[], layerProps?: LayerProps) {
+  protected _newLayer(id: string, path: string, assetGenerator: (outputDir: string) => void, assetHash: string, commands: string[], layerProps?: LayerProps) {
     return new LambdaDependencyLayer(this, id, {
       path,
       bundling: {
@@ -245,6 +248,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
         image: DockerImage.fromRegistry('public.ecr.aws/docker/library/busybox:stable'),
         command: ['exit 1'],
       },
+      assetHash: assetHash,
       alwaysRebuild: layerProps?.alwaysRebuild ?? false,
       project: this.project,
       provider: this.provider,
@@ -255,6 +259,23 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
       targetDirectory: this.targetDirectory,
     }).layer;
   }
+
+  /**
+   * @internal
+   */
+  protected _hashFiles(basePath: string, required: string[], optional?: string[]): string {
+    let hash = '';
+    for (const f of required) {
+      hash += FileSystem.fingerprint(join(basePath, f));
+    }
+    for (const f of optional ?? []) {
+      const p = join(basePath, f);
+      if (fs.existsSync(p)) {
+        hash += FileSystem.fingerprint(p);
+      }
+    }
+    return hash;
+  }
 }
 
 /**
@@ -262,6 +283,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
  */
 interface LambdaDependencyLayerProps {
   readonly path: string;
+  readonly assetHash: string;
   readonly bundling: BundlingOptions;
   readonly alwaysRebuild: boolean;
   readonly project?: codebuild.Project;
@@ -279,10 +301,16 @@ class LambdaDependencyLayer extends Construct {
   constructor(scope: Construct, id: string, readonly props: LambdaDependencyLayerProps) {
     super(scope, id);
 
+    // We hash the output files instead of the whole directory because:
+    //
+    // 1. It's faster than hashing the entire source directory
+    // 2. It allows the inline versions to use '.' as a fake source directory without conflict
+    // 3. It allows multiple source folders to share the same asset if the dependencies are the same
     const asset = new s3_assets.Asset(this, 'Dependencies Definition', {
       path: props.path,
-      assetHashType: AssetHashType.OUTPUT,
+      assetHashType: AssetHashType.CUSTOM,
       bundling: props.bundling,
+      assetHash: props.assetHash,
     });
 
     const cr = new CustomResource(this, 'Layer Packager', {

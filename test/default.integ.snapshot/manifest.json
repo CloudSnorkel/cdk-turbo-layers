@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9f6335be61659f654dba5d53537512a0636db74c50b9cd28fe759d7c6d2bb0cb.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/02341187704ba475cc44db56edbaded9e36be5d5a04d668175ec95966bf72f1c.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -585,6 +585,18 @@
             "data": "Nodejs16CodeBuildPackagerPackageHandlerLogRetentionFC000254"
           }
         ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/npm inline/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagernpminlineLayerPackager9024FC62"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/npm inline/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildPackagernpminlineLayer30204045"
+          }
+        ],
         "/Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/npm/Layer Packager/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -607,6 +619,36 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "Nodejs16CodeBuildPackageryarnLayer966A85CF"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Inline Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMInlineTestServiceRoleE29D6E7D"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Inline Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMInlineTest3E6DC010"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Inline Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMInlineTestLogRetention49921176"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Inline Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMInlineTestTrigger5A486D6D"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Inline Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16CodeBuildNPMInlineTestCurrentVersion36AF46938275ea351d93d4ef71a2c53b0f3b0b62"
           }
         ],
         "/Turbo-Layer-Test/Node.js 16 CodeBuild/NPM Test/ServiceRole/Resource": [
@@ -711,6 +753,18 @@
             "data": "Nodejs16LambdaPackagerLogRetentionAD22FB43"
           }
         ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/npm inline/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagernpminlineLayerPackagerED4AF140"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/npm inline/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaPackagernpminlineLayer3B0679C1"
+          }
+        ],
         "/Turbo-Layer-Test/Node.js 16 Lambda/Packager/npm/Layer Packager/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -733,6 +787,36 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "Nodejs16LambdaPackageryarnLayer53940168"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Inline Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMInlineTestServiceRole35F4BECF"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Inline Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMInlineTest84F855F4"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Inline Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMInlineTestLogRetentionEC2DEA6F"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Inline Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMInlineTestTrigger2CBFA440"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Inline Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs16LambdaNPMInlineTestCurrentVersion9980B73607888fe75ee65d481427692808167c0e"
           }
         ],
         "/Turbo-Layer-Test/Node.js 16 Lambda/NPM Test/ServiceRole/Resource": [
