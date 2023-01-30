@@ -78,6 +78,11 @@ new Function(this, 'Function with external source and requirements', {
 });
 ```
 
+## Older Implementations
+
+* [lovage](https://github.com/CloudSnorkel/lovage): standalone Python framework that uses the same trick to deploy decorated functions to AWS
+* [serverless-pydeps](https://github.com/CloudSnorkel/serverless-pydeps): plugin for [Serverless Framework](https://www.serverless.com/) that speeds up deployment
+
 [6]: https://pypi.org/project/cloudsnorkel.cdk-turbo-layers
 [7]: https://www.npmjs.com/package/@cloudsnorkel/cdk-turbo-layers
 [8]: https://search.maven.org/search?q=g:%22com.cloudsnorkel%22%20AND%20a:%22cdk.turbo-layers%22
