@@ -39,6 +39,7 @@ export class RubyDependencyPackager extends BaseDependencyPackager {
           fs.copyFileSync(join(path, 'Gemfile.lock'), join(outputDir, 'Gemfile.lock'));
         }
       },
+      this._hashFiles(path, ['Gemfile'], ['Gemfile.lock']),
       [
         'mkdir -p ruby/gems',
         'bundle config set path ruby/gems',
