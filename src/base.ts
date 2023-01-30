@@ -234,7 +234,9 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
   /**
    * @internal
    */
-  protected _newLayer(id: string, path: string, assetGenerator: (outputDir: string) => void, assetHash: string, commands: string[], layerProps?: LayerProps) {
+  protected _newLayer(id: string, path: string, assetGenerator: (outputDir: string) => void,
+    assetHash: string, commands: string[], layerProps?: LayerProps) {
+
     return new LambdaDependencyLayer(this, id, {
       path,
       bundling: {
