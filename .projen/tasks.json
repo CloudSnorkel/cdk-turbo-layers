@@ -52,6 +52,9 @@
           "spawn": "bundle:package-nodejs.lambda"
         },
         {
+          "exec": "rm -rf assets/package-ruby.lambda"
+        },
+        {
           "exec": "mkdir -p assets/package-python.lambda assets/package-ruby.lambda"
         },
         {
