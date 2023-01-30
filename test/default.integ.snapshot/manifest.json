@@ -1,5 +1,5 @@
 {
-  "version": "22.0.0",
+  "version": "29.0.0",
   "artifacts": {
     "Turbo-Layer-Test.assets": {
       "type": "cdk:asset-manifest",
@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/02341187704ba475cc44db56edbaded9e36be5d5a04d668175ec95966bf72f1c.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe29deee4ee42ab1b687b0ae26655af28590aa10e92045b8c7ecd30ce577ed77.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1069,6 +1069,114 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "Ruby27LambdaBundlerTestCurrentVersion082ABB9A5eef389d43e193ab53500e72948b2978"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerBucketBB2DF308"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerBucketPolicyDA2E5EE5"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceC859E2BC"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Logs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerLogsDD5572D5"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerRole43171DC4"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerRoleDefaultPolicy4740DBB6"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackager84096147"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerPackageHandlerServiceRole3759A412"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy2E2301F6"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerPackageHandlerDD55CE64"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagerPackageHandlerLogRetention4CA9BD29"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagermavenLayerPackager32036735"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildPackagermavenLayer825219AF"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildMavenTestServiceRoleA543C8E9"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildMavenTest9E1EDDC2"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildMavenTestLogRetention6A165039"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildMavenTestTrigger3AD3EE3D"
+          }
+        ],
+        "/Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Java11CodeBuildMavenTestCurrentVersion059F0C47d8029292a44253d93782f2a96cbe6c01"
           }
         ],
         "/Turbo-Layer-Test/BootstrapVersion": [
