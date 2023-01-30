@@ -38,6 +38,7 @@ export class PythonDependencyPackager extends BaseDependencyPackager {
       outputDir => {
         fs.writeFileSync(join(outputDir, 'requirements.txt'), requirements.join('\n'));
       },
+      requirements.join(','), // CDK will hash it for us
       [
         'python -m venv .venv',
         '.venv/bin/python -m pip --no-input --disable-pip-version-check install -t python --progress-bar off -r requirements.txt',
@@ -55,6 +56,7 @@ export class PythonDependencyPackager extends BaseDependencyPackager {
       outputDir => {
         fs.copyFileSync(join(path, 'requirements.txt'), join(outputDir, 'requirements.txt'));
       },
+      this._hashFiles(path, ['requirements.txt']),
       [
         'python -m venv .venv',
         '.venv/bin/python -m pip --no-input --disable-pip-version-check install -t python --progress-bar off -r requirements.txt',
@@ -75,6 +77,7 @@ export class PythonDependencyPackager extends BaseDependencyPackager {
           fs.copyFileSync(join(path, 'Pipfile.lock'), join(outputDir, 'Pipfile.lock'));
         }
       },
+      this._hashFiles(path, ['Pipfile'], ['Pipfile.lock']),
       [
         'pip install --no-input pipenv',
         'PIPENV_VENV_IN_PROJECT=1 pipenv sync',
@@ -96,6 +99,7 @@ export class PythonDependencyPackager extends BaseDependencyPackager {
           fs.copyFileSync(join(path, 'poetry.lock'), join(outputDir, 'poetry.lock'));
         }
       },
+      this._hashFiles(path, ['pyproject.toml'], ['poetry.lock']),
       [
         //'curl -sSL https://install.python-poetry.org | python -',
         'pip install --no-input poetry',

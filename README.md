@@ -74,9 +74,14 @@ new Function(this, 'Function with external source and requirements', {
     code: lambda.Code.fromAsset('lambda-src'),
     runtime: lambda.Runtime.PYTHON_3_9,
     // this will read pyproject.toml and poetry.lock and create a layer from the requirements in a Lambda function instead of locally
-    layers: [packager.layerFromInline('poetry requirements', 'lambda-src')],
+    layers: [packager.layerFromPoetry('poetry requirements', 'lambda-src')],
 });
 ```
+
+## Older Implementations
+
+* [lovage](https://github.com/CloudSnorkel/lovage): standalone Python framework that uses the same trick to deploy decorated functions to AWS
+* [serverless-pydeps](https://github.com/CloudSnorkel/serverless-pydeps): plugin for [Serverless Framework](https://www.serverless.com/) that speeds up deployment
 
 [6]: https://pypi.org/project/cloudsnorkel.cdk-turbo-layers
 [7]: https://www.npmjs.com/package/@cloudsnorkel/cdk-turbo-layers

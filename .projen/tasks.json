@@ -52,6 +52,9 @@
           "spawn": "bundle:package-nodejs.lambda"
         },
         {
+          "exec": "rm -rf assets/package-ruby.lambda"
+        },
+        {
           "exec": "mkdir -p assets/package-python.lambda assets/package-ruby.lambda"
         },
         {
@@ -73,37 +76,37 @@
     },
     "bundle:package-codebuild.lambda": {
       "name": "bundle:package-codebuild.lambda",
-      "description": "Create a JavaScript bundle from src\\package-codebuild.lambda.ts",
+      "description": "Create a JavaScript bundle from src/package-codebuild.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src\\package-codebuild.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets\\package-codebuild.lambda\\index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
+          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
         }
       ]
     },
     "bundle:package-codebuild.lambda:watch": {
       "name": "bundle:package-codebuild.lambda:watch",
-      "description": "Continuously update the JavaScript bundle from src\\package-codebuild.lambda.ts",
+      "description": "Continuously update the JavaScript bundle from src/package-codebuild.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src\\package-codebuild.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets\\package-codebuild.lambda\\index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
+          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
         }
       ]
     },
     "bundle:package-nodejs.lambda": {
       "name": "bundle:package-nodejs.lambda",
-      "description": "Create a JavaScript bundle from src\\package-nodejs.lambda.ts",
+      "description": "Create a JavaScript bundle from src/package-nodejs.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src\\package-nodejs.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets\\package-nodejs.lambda\\index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
+          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
         }
       ]
     },
     "bundle:package-nodejs.lambda:watch": {
       "name": "bundle:package-nodejs.lambda:watch",
-      "description": "Continuously update the JavaScript bundle from src\\package-nodejs.lambda.ts",
+      "description": "Continuously update the JavaScript bundle from src/package-nodejs.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src\\package-nodejs.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets\\package-nodejs.lambda\\index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
+          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
         }
       ]
     },
@@ -201,13 +204,13 @@
       "description": "assert the snapshot of integration test 'default'",
       "steps": [
         {
-          "exec": "[ -d \"test\\default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'default'. Run 'projen integ:default:deploy' to capture.\" && exit 1)"
+          "exec": "[ -d \"test/default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'default'. Run 'projen integ:default:deploy' to capture.\" && exit 1)"
         },
         {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test\\default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test\\.tmp\\default.integ\\assert.cdk.out > /dev/null"
+          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/.tmp/default.integ/assert.cdk.out > /dev/null"
         },
         {
-          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test\\default.integ.snapshot/ test\\.tmp\\default.integ\\assert.cdk.out/"
+          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test/default.integ.snapshot/ test/.tmp/default.integ/assert.cdk.out/"
         }
       ]
     },
@@ -216,16 +219,16 @@
       "description": "deploy integration test 'default' and capture snapshot",
       "steps": [
         {
-          "exec": "rm -fr test\\.tmp\\default.integ\\deploy.cdk.out"
+          "exec": "rm -fr test/.tmp/default.integ/deploy.cdk.out"
         },
         {
-          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test\\default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test\\.tmp\\default.integ\\deploy.cdk.out"
+          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test/.tmp/default.integ/deploy.cdk.out"
         },
         {
-          "exec": "rm -fr test\\default.integ.snapshot"
+          "exec": "rm -fr test/default.integ.snapshot"
         },
         {
-          "exec": "mv test\\.tmp\\default.integ\\deploy.cdk.out test\\default.integ.snapshot"
+          "exec": "mv test/.tmp/default.integ/deploy.cdk.out test/default.integ.snapshot"
         },
         {
           "spawn": "integ:default:destroy"
@@ -237,7 +240,7 @@
       "description": "destroy integration test 'default'",
       "steps": [
         {
-          "exec": "cdk destroy --app test\\default.integ.snapshot '**' --no-version-reporting"
+          "exec": "cdk destroy --app test/default.integ.snapshot '**' --no-version-reporting"
         }
       ]
     },
@@ -246,7 +249,7 @@
       "description": "update snapshot for integration test \"default\"",
       "steps": [
         {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test\\default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test\\default.integ.snapshot > /dev/null"
+          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/default.integ.snapshot > /dev/null"
         }
       ]
     },
@@ -255,7 +258,7 @@
       "description": "watch integration test 'default' (without updating snapshots)",
       "steps": [
         {
-          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test\\default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test\\.tmp\\default.integ\\deploy.cdk.out"
+          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test/.tmp/default.integ/deploy.cdk.out"
         }
       ]
     },

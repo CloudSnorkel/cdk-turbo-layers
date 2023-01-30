@@ -21,6 +21,8 @@ jobs:
         run: |-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
@@ -88,6 +90,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -125,6 +129,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -164,6 +170,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -199,6 +207,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -233,6 +243,8 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
+      - name: Setup Ruby
+        run: sudo apt-get update ; sudo apt-get install -y ruby
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies

@@ -451,7 +451,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "83884cf0e7322d94565e24639d2ae9c0e4cbc56d0836529372c8a9692881d574.zip"
+     "S3Key": "79df0a3b8f7c419b52052da8bd18d652d88f8f84375f3e38b59f0407ab4c3373.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -534,7 +534,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "1a5236919a906ae08f183dd713456aad095d9c070b227dcde18ffe5253599a68.zip"
+    "AssetKey": "9afa25b7aaac0f1e5c0a217c2ca3d8f0927ff079339a8514309eb1b4645571eb.zip"
    },
    "DependsOn": [
     "Python39CodeBuildPackagerPackageHandlerLogRetention9EF0CE38",
@@ -592,7 +592,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "1a5236919a906ae08f183dd713456aad095d9c070b227dcde18ffe5253599a68.zip"
+    "AssetKey": "03f139329aa3cbf7300e981458b586c05c3fce0792c3ee22bfa34d0a9912646b.zip"
    },
    "DependsOn": [
     "Python39CodeBuildPackagerPackageHandlerLogRetention9EF0CE38",
@@ -651,7 +651,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "196bd5c9f991bdf952ec8fedcc40bf2e6f15d939bf5321fd9e6b282783eb1d32.zip"
+    "AssetKey": "b16402ae719e85666f691bc00e986f9f774c225ba4b62de6f61717ecc40192e0.zip"
    },
    "DependsOn": [
     "Python39CodeBuildPackagerPackageHandlerLogRetention9EF0CE38",
@@ -711,7 +711,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "04a0e0ecd65f81e888db9181664129f35ecfb4d2936260c4f716fcd0f57916cd.zip"
+    "AssetKey": "0f2839f0f4ea6e7ef0f22531d18b093f3da3eefc1e27a7c67f63352913069cd3.zip"
    },
    "DependsOn": [
     "Python39CodeBuildPackagerPackageHandlerLogRetention9EF0CE38",
@@ -1505,6 +1505,28 @@
             [
              {
               "Fn::GetAtt": [
+               "Nodejs16CodeBuildNPMInlineTest3E6DC010",
+               "Arn"
+              ]
+             },
+             ":*"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Effect": "Allow",
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             {
+              "Fn::GetAtt": [
                "Nodejs16CodeBuildNPMTest45D7FE69",
                "Arn"
               ]
@@ -1528,6 +1550,28 @@
              {
               "Fn::GetAtt": [
                "Nodejs16CodeBuildYarnTest7D1D727E",
+               "Arn"
+              ]
+             },
+             ":*"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Effect": "Allow",
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             {
+              "Fn::GetAtt": [
+               "Nodejs16LambdaNPMInlineTest84F855F4",
                "Arn"
               ]
              },
@@ -1960,7 +2004,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "1a5236919a906ae08f183dd713456aad095d9c070b227dcde18ffe5253599a68.zip"
+    "AssetKey": "9afa25b7aaac0f1e5c0a217c2ca3d8f0927ff079339a8514309eb1b4645571eb.zip"
    },
    "DependsOn": [
     "Python39LambdaPackagerLogRetention94FABB34",
@@ -2012,7 +2056,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "1a5236919a906ae08f183dd713456aad095d9c070b227dcde18ffe5253599a68.zip"
+    "AssetKey": "03f139329aa3cbf7300e981458b586c05c3fce0792c3ee22bfa34d0a9912646b.zip"
    },
    "DependsOn": [
     "Python39LambdaPackagerLogRetention94FABB34",
@@ -2065,7 +2109,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "196bd5c9f991bdf952ec8fedcc40bf2e6f15d939bf5321fd9e6b282783eb1d32.zip"
+    "AssetKey": "b16402ae719e85666f691bc00e986f9f774c225ba4b62de6f61717ecc40192e0.zip"
    },
    "DependsOn": [
     "Python39LambdaPackagerLogRetention94FABB34",
@@ -2119,7 +2163,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "04a0e0ecd65f81e888db9181664129f35ecfb4d2936260c4f716fcd0f57916cd.zip"
+    "AssetKey": "0f2839f0f4ea6e7ef0f22531d18b093f3da3eefc1e27a7c67f63352913069cd3.zip"
    },
    "DependsOn": [
     "Python39LambdaPackagerLogRetention94FABB34",
@@ -3011,7 +3055,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "83884cf0e7322d94565e24639d2ae9c0e4cbc56d0836529372c8a9692881d574.zip"
+     "S3Key": "79df0a3b8f7c419b52052da8bd18d652d88f8f84375f3e38b59f0407ab4c3373.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -3064,6 +3108,63 @@
     "Nodejs16CodeBuildPackagerRoleB782C59C"
    ]
   },
+  "Nodejs16CodeBuildPackagernpminlineLayerPackager9024FC62": {
+   "Type": "Custom::LayerPackager",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Nodejs16CodeBuildPackagerPackageHandler83469A20",
+      "Arn"
+     ]
+    },
+    "ProjectName": {
+     "Ref": "Nodejs16CodeBuildPackagerD4BDB76B"
+    },
+    "BucketName": {
+     "Ref": "Nodejs16CodeBuildPackagerBucketB1D39C73"
+    },
+    "CodeBuildInstallCommands": [
+     "echo Installing Node.js 16",
+     "n 16"
+    ],
+    "PreinstallCommands": [],
+    "Commands": [
+     "npm i",
+     "mkdir nodejs",
+     "mv node_modules nodejs/"
+    ],
+    "PackagedDirectory": "nodejs",
+    "AssetBucket": {
+     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "AssetKey": "3bf5aad3a5db75c30ba530f89f7210a1eddb01c9a91cf0427515e6ef904bc869.zip"
+   },
+   "DependsOn": [
+    "Nodejs16CodeBuildPackagerPackageHandlerLogRetentionFC000254",
+    "Nodejs16CodeBuildPackagerPackageHandler83469A20",
+    "Nodejs16CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicyEC12B6EB",
+    "Nodejs16CodeBuildPackagerPackageHandlerServiceRoleEF00FDB1",
+    "Nodejs16CodeBuildPackagerD4BDB76B",
+    "Nodejs16CodeBuildPackagerRoleDefaultPolicy9B6FE89F",
+    "Nodejs16CodeBuildPackagerRoleB782C59C"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs16CodeBuildPackagernpminlineLayer30204045": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "Nodejs16CodeBuildPackagerBucketB1D39C73"
+     },
+     "S3Key": {
+      "Ref": "Nodejs16CodeBuildPackagernpminlineLayerPackager9024FC62"
+     }
+    },
+    "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/npm inline/Dependencies Definition"
+   }
+  },
   "Nodejs16CodeBuildPackagernpmLayerPackager09DE3582": {
    "Type": "Custom::LayerPackager",
    "Properties": {
@@ -3093,7 +3194,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "d301d7efed8346508508086b98d9121e8e845aaa946bfc09d3754801f3b14979.zip"
+    "AssetKey": "4a976e712b238000c04b209e96ba28d7567d8bbc7954fbbc97de024697cd4147.zip"
    },
    "DependsOn": [
     "Nodejs16CodeBuildPackagerPackageHandlerLogRetentionFC000254",
@@ -3151,7 +3252,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "5514f85c880d8179a38e906c17b5080b9f96cb5581e0010560b17a84b5d2c330.zip"
+    "AssetKey": "48521f734f8d682c72f0a91cf94ae3031c21aa5c06f2b05888e7f98061118c64.zip"
    },
    "DependsOn": [
     "Nodejs16CodeBuildPackagerPackageHandlerLogRetentionFC000254",
@@ -3177,6 +3278,110 @@
      }
     },
     "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 16 CodeBuild/Packager/yarn/Dependencies Definition"
+   }
+  },
+  "Nodejs16CodeBuildNPMInlineTestServiceRoleE29D6E7D": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs16CodeBuildNPMInlineTest3E6DC010": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "ZipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs16CodeBuildNPMInlineTestServiceRoleE29D6E7D",
+      "Arn"
+     ]
+    },
+    "Description": "Test npm nodejs16.x 1",
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "Nodejs16CodeBuildPackagernpminlineLayer30204045"
+     }
+    ],
+    "Runtime": "nodejs16.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "Nodejs16CodeBuildNPMInlineTestServiceRoleE29D6E7D"
+   ]
+  },
+  "Nodejs16CodeBuildNPMInlineTestLogRetention49921176": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs16CodeBuildNPMInlineTest3E6DC010"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 1
+   }
+  },
+  "Nodejs16CodeBuildNPMInlineTestTrigger5A486D6D": {
+   "Type": "Custom::Trigger",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91",
+      "Arn"
+     ]
+    },
+    "HandlerArn": {
+     "Ref": "Nodejs16CodeBuildNPMInlineTestCurrentVersion36AF46938275ea351d93d4ef71a2c53b0f3b0b62"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs16CodeBuildNPMInlineTestCurrentVersion36AF46938275ea351d93d4ef71a2c53b0f3b0b62": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "Nodejs16CodeBuildNPMInlineTest3E6DC010"
+    }
    }
   },
   "Nodejs16CodeBuildNPMTestServiceRoleE3A83EBA": {
@@ -3617,7 +3822,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "6b38bfdffb399914eec939d30cd034fea883f623e3a2b2da50283a60d64324b4.zip"
+     "S3Key": "fd5efeec68513edd262f2dddafb50d0ff7d4eaef75ea37c8f4401fb468e90c4d.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -3670,6 +3875,57 @@
     "RetentionInDays": 30
    }
   },
+  "Nodejs16LambdaPackagernpminlineLayerPackagerED4AF140": {
+   "Type": "Custom::LayerPackager",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Nodejs16LambdaPackager637B1B68",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "Nodejs16LambdaPackagerBucket49666ADA"
+    },
+    "CodeBuildInstallCommands": [
+     "echo Installing Node.js 16",
+     "n 16"
+    ],
+    "PreinstallCommands": [],
+    "Commands": [
+     "npm i",
+     "mkdir nodejs",
+     "mv node_modules nodejs/"
+    ],
+    "PackagedDirectory": "nodejs",
+    "AssetBucket": {
+     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "AssetKey": "3bf5aad3a5db75c30ba530f89f7210a1eddb01c9a91cf0427515e6ef904bc869.zip"
+   },
+   "DependsOn": [
+    "Nodejs16LambdaPackagerLogRetentionAD22FB43",
+    "Nodejs16LambdaPackager637B1B68",
+    "Nodejs16LambdaPackagerServiceRoleDefaultPolicy5E69D380",
+    "Nodejs16LambdaPackagerServiceRoleA2EB81E8"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs16LambdaPackagernpminlineLayer3B0679C1": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "Nodejs16LambdaPackagerBucket49666ADA"
+     },
+     "S3Key": {
+      "Ref": "Nodejs16LambdaPackagernpminlineLayerPackagerED4AF140"
+     }
+    },
+    "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 16 Lambda/Packager/npm inline/Dependencies Definition"
+   }
+  },
   "Nodejs16LambdaPackagernpmLayerPackagerBDD2B050": {
    "Type": "Custom::LayerPackager",
    "Properties": {
@@ -3696,7 +3952,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "d301d7efed8346508508086b98d9121e8e845aaa946bfc09d3754801f3b14979.zip"
+    "AssetKey": "4a976e712b238000c04b209e96ba28d7567d8bbc7954fbbc97de024697cd4147.zip"
    },
    "DependsOn": [
     "Nodejs16LambdaPackagerLogRetentionAD22FB43",
@@ -3748,7 +4004,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "5514f85c880d8179a38e906c17b5080b9f96cb5581e0010560b17a84b5d2c330.zip"
+    "AssetKey": "48521f734f8d682c72f0a91cf94ae3031c21aa5c06f2b05888e7f98061118c64.zip"
    },
    "DependsOn": [
     "Nodejs16LambdaPackagerLogRetentionAD22FB43",
@@ -3771,6 +4027,110 @@
      }
     },
     "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 16 Lambda/Packager/yarn/Dependencies Definition"
+   }
+  },
+  "Nodejs16LambdaNPMInlineTestServiceRole35F4BECF": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs16LambdaNPMInlineTest84F855F4": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "ZipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs16LambdaNPMInlineTestServiceRole35F4BECF",
+      "Arn"
+     ]
+    },
+    "Description": "Test npm nodejs16.x 0",
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "Nodejs16LambdaPackagernpminlineLayer3B0679C1"
+     }
+    ],
+    "Runtime": "nodejs16.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "Nodejs16LambdaNPMInlineTestServiceRole35F4BECF"
+   ]
+  },
+  "Nodejs16LambdaNPMInlineTestLogRetentionEC2DEA6F": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs16LambdaNPMInlineTest84F855F4"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 1
+   }
+  },
+  "Nodejs16LambdaNPMInlineTestTrigger2CBFA440": {
+   "Type": "Custom::Trigger",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91",
+      "Arn"
+     ]
+    },
+    "HandlerArn": {
+     "Ref": "Nodejs16LambdaNPMInlineTestCurrentVersion9980B73607888fe75ee65d481427692808167c0e"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs16LambdaNPMInlineTestCurrentVersion9980B73607888fe75ee65d481427692808167c0e": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "Nodejs16LambdaNPMInlineTest84F855F4"
+    }
    }
   },
   "Nodejs16LambdaNPMTestServiceRole722A5DDA": {
@@ -4432,7 +4792,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "83884cf0e7322d94565e24639d2ae9c0e4cbc56d0836529372c8a9692881d574.zip"
+     "S3Key": "79df0a3b8f7c419b52052da8bd18d652d88f8f84375f3e38b59f0407ab4c3373.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -4519,7 +4879,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "3a3b1e44f6779b642de6ce997821a23b9dfd82c1d337f4a4b368ab478a79b790.zip"
+    "AssetKey": "6dc9869af4e1a4375706e7cebc576340facec2e9f959d4bbca7aef8ddaf68954.zip"
    },
    "DependsOn": [
     "Ruby27CodeBuildPackagerPackageHandlerLogRetentionCC1A0B23",
@@ -4884,7 +5244,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f0d0bbe72671ec061e38138fe1540119514717821b10231cfbc2aa3a2718a133.zip"
+     "S3Key": "f477c7f293bd090acdff1a27566482b6271087ecfa3b1a406cfee832f546e580.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -4963,7 +5323,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "3a3b1e44f6779b642de6ce997821a23b9dfd82c1d337f4a4b368ab478a79b790.zip"
+    "AssetKey": "6dc9869af4e1a4375706e7cebc576340facec2e9f959d4bbca7aef8ddaf68954.zip"
    },
    "DependsOn": [
     "Ruby27LambdaPackagerLogRetention36C6CFDA",

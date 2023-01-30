@@ -82,6 +82,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   pullRequestTemplate: false,
+  workflowBootstrapSteps: [
+    {
+      name: 'Setup Ruby',
+      run: 'sudo apt-get update ; sudo apt-get install -y ruby',
+    },
+  ],
 });
 
 // disable automatic releases, but keep workflow that can be triggered manually
@@ -96,6 +102,7 @@ project.gitattributes.addAttributes('*.yml', 'eol=lf');
 project.gitattributes.addAttributes('Dockerfile', 'eol=lf');
 
 // extra lambdas
+project.bundler.bundleTask.exec('rm -rf assets/package-ruby.lambda');
 project.bundler.bundleTask.exec('mkdir -p assets/package-python.lambda assets/package-ruby.lambda');
 project.bundler.bundleTask.exec('cp src/package-python.lambda.py assets/package-python.lambda/index.py');
 project.bundler.bundleTask.exec('cp src/package-ruby.lambda.rb assets/package-ruby.lambda/index.rb');

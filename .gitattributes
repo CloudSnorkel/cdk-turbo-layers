@@ -22,8 +22,8 @@
 /API.md linguist-generated
 /LICENSE linguist-generated
 /package.json linguist-generated
-/src\package-codebuild-function.ts linguist-generated
-/src\package-nodejs-function.ts linguist-generated
+/src/package-codebuild-function.ts linguist-generated
+/src/package-nodejs-function.ts linguist-generated
 /tsconfig.dev.json linguist-generated
 /yarn.lock linguist-generated
 Dockerfile eol=lf
