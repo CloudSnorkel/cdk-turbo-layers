@@ -9,7 +9,12 @@ import { aws_lambda as lambda, aws_logs as logs, triggers } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { DependencyPackagerType, JavaDependencyPackager, NodejsDependencyPackager, PythonDependencyPackager, RubyDependencyPackager } from '../src';
 
-const app = new cdk.App();
+const app = new cdk.App({
+  context: {
+    // always run triggers by updating lambda on layer changes -- see https://github.com/aws/aws-cdk/issues/19098
+    '@aws-cdk/aws-lambda:recognizeLayerVersion': true,
+  },
+});
 
 const layerStack = new cdk.Stack(app, 'Turbo-Layer-Test');
 
