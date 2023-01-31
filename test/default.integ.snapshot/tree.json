@@ -7872,6 +7872,1004 @@
               "version": "10.0.5"
             }
           },
+          "Java 11 CodeBuild": {
+            "id": "Java 11 CodeBuild",
+            "path": "Turbo-Layer-Test/Java 11 CodeBuild",
+            "children": {
+              "Packager": {
+                "id": "Packager",
+                "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager",
+                "children": {
+                  "Bucket": {
+                    "id": "Bucket",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                          "aws:cdk:cloudformation:props": {
+                            "tags": [
+                              {
+                                "key": "aws-cdk:auto-delete-objects",
+                                "value": "true"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "Policy": {
+                        "id": "Policy",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket/Policy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket/Policy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                              "aws:cdk:cloudformation:props": {
+                                "bucket": {
+                                  "Ref": "Java11CodeBuildPackagerBucketBB2DF308"
+                                },
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "s3:GetBucket*",
+                                        "s3:List*",
+                                        "s3:DeleteObject*"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "AWS": {
+                                          "Fn::GetAtt": [
+                                            "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                                            "Arn"
+                                          ]
+                                        }
+                                      },
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "Java11CodeBuildPackagerBucketBB2DF308",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "Java11CodeBuildPackagerBucketBB2DF308",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "AutoDeleteObjectsCustomResource": {
+                        "id": "AutoDeleteObjectsCustomResource",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.Bucket",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "Logs": {
+                    "id": "Logs",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Logs",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Logs/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "retentionInDays": 30
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_logs.CfnLogGroup",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogGroup",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "Packager": {
+                    "id": "Packager",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager",
+                    "children": {
+                      "Role": {
+                        "id": "Role",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Role",
+                        "children": {
+                          "ImportRole": {
+                            "id": "ImportRole",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Role/ImportRole",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.Resource",
+                              "version": "2.54.0"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Role/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "codebuild.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                              "version": "2.54.0"
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Role/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Role/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": [
+                                            "logs:CreateLogStream",
+                                            "logs:PutLogEvents"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::GetAtt": [
+                                              "Java11CodeBuildPackagerLogsDD5572D5",
+                                              "Arn"
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": [
+                                            "logs:CreateLogGroup",
+                                            "logs:CreateLogStream",
+                                            "logs:PutLogEvents"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":logs:",
+                                                  {
+                                                    "Ref": "AWS::Region"
+                                                  },
+                                                  ":",
+                                                  {
+                                                    "Ref": "AWS::AccountId"
+                                                  },
+                                                  ":log-group:/aws/codebuild/",
+                                                  {
+                                                    "Ref": "Java11CodeBuildPackager84096147"
+                                                  }
+                                                ]
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":logs:",
+                                                  {
+                                                    "Ref": "AWS::Region"
+                                                  },
+                                                  ":",
+                                                  {
+                                                    "Ref": "AWS::AccountId"
+                                                  },
+                                                  ":log-group:/aws/codebuild/",
+                                                  {
+                                                    "Ref": "Java11CodeBuildPackager84096147"
+                                                  },
+                                                  ":*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "Action": [
+                                            "codebuild:CreateReportGroup",
+                                            "codebuild:CreateReport",
+                                            "codebuild:UpdateReport",
+                                            "codebuild:BatchPutTestCases",
+                                            "codebuild:BatchPutCodeCoverages"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                "arn:",
+                                                {
+                                                  "Ref": "AWS::Partition"
+                                                },
+                                                ":codebuild:",
+                                                {
+                                                  "Ref": "AWS::Region"
+                                                },
+                                                ":",
+                                                {
+                                                  "Ref": "AWS::AccountId"
+                                                },
+                                                ":report-group/",
+                                                {
+                                                  "Ref": "Java11CodeBuildPackager84096147"
+                                                },
+                                                "-*"
+                                              ]
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": [
+                                            "s3:DeleteObject*",
+                                            "s3:PutObject",
+                                            "s3:PutObjectLegalHold",
+                                            "s3:PutObjectRetention",
+                                            "s3:PutObjectTagging",
+                                            "s3:PutObjectVersionTagging",
+                                            "s3:Abort*"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::GetAtt": [
+                                                "Java11CodeBuildPackagerBucketBB2DF308",
+                                                "Arn"
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  {
+                                                    "Fn::GetAtt": [
+                                                      "Java11CodeBuildPackagerBucketBB2DF308",
+                                                      "Arn"
+                                                    ]
+                                                  },
+                                                  "/*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "Action": "s3:DeleteObject*",
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                {
+                                                  "Fn::GetAtt": [
+                                                    "Java11CodeBuildPackagerBucketBB2DF308",
+                                                    "Arn"
+                                                  ]
+                                                },
+                                                "/*"
+                                              ]
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": [
+                                            "s3:GetObject*",
+                                            "s3:GetBucket*",
+                                            "s3:List*"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":s3:::",
+                                                  {
+                                                    "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                                  }
+                                                ]
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":s3:::",
+                                                  {
+                                                    "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                                  },
+                                                  "/*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "Java11CodeBuildPackagerRoleDefaultPolicy4740DBB6",
+                                    "roles": [
+                                      {
+                                        "Ref": "Java11CodeBuildPackagerRole43171DC4"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                                  "version": "2.54.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.Policy",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Role",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Packager/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::CodeBuild::Project",
+                          "aws:cdk:cloudformation:props": {
+                            "artifacts": {
+                              "type": "NO_ARTIFACTS"
+                            },
+                            "environment": {
+                              "type": "LINUX_CONTAINER",
+                              "image": "aws/codebuild/amazonlinux2-x86_64-standard:4.0",
+                              "imagePullCredentialsType": "CODEBUILD",
+                              "privilegedMode": false,
+                              "computeType": "BUILD_GENERAL1_SMALL"
+                            },
+                            "serviceRole": {
+                              "Fn::GetAtt": [
+                                "Java11CodeBuildPackagerRole43171DC4",
+                                "Arn"
+                              ]
+                            },
+                            "source": {
+                              "type": "NO_SOURCE",
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"echo The real build spec will be put together by the custom resource\",\n        \"exit 1\"\n      ]\n    }\n  }\n}"
+                            },
+                            "cache": {
+                              "type": "NO_CACHE"
+                            },
+                            "description": "Lambda dependency packager for java11 in Turbo-Layer-Test",
+                            "encryptionKey": "alias/aws/s3",
+                            "logsConfig": {
+                              "cloudWatchLogs": {
+                                "status": "ENABLED",
+                                "groupName": {
+                                  "Ref": "Java11CodeBuildPackagerLogsDD5572D5"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_codebuild.CfnProject",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_codebuild.Project",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "Package Handler": {
+                    "id": "Package Handler",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler",
+                    "children": {
+                      "ServiceRole": {
+                        "id": "ServiceRole",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/ServiceRole",
+                        "children": {
+                          "ImportServiceRole": {
+                            "id": "ImportServiceRole",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/ServiceRole/ImportServiceRole",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.Resource",
+                              "version": "2.54.0"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/ServiceRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "lambda.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "managedPolicyArns": [
+                                  {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                      ]
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                              "version": "2.54.0"
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": "codebuild:StartBuild",
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::GetAtt": [
+                                              "Java11CodeBuildPackager84096147",
+                                              "Arn"
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": "s3:DeleteObject*",
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                {
+                                                  "Fn::GetAtt": [
+                                                    "Java11CodeBuildPackagerBucketBB2DF308",
+                                                    "Arn"
+                                                  ]
+                                                },
+                                                "/*"
+                                              ]
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "Java11CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy2E2301F6",
+                                    "roles": [
+                                      {
+                                        "Ref": "Java11CodeBuildPackagerPackageHandlerServiceRole3759A412"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                                  "version": "2.54.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.Policy",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Role",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "Code": {
+                        "id": "Code",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/Code",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/Code/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.54.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/Code/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                          "aws:cdk:cloudformation:props": {
+                            "code": {
+                              "s3Bucket": {
+                                "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                              },
+                              "s3Key": "79df0a3b8f7c419b52052da8bd18d652d88f8f84375f3e38b59f0407ab4c3373.zip"
+                            },
+                            "role": {
+                              "Fn::GetAtt": [
+                                "Java11CodeBuildPackagerPackageHandlerServiceRole3759A412",
+                                "Arn"
+                              ]
+                            },
+                            "description": "Turbo layer packager for java11 using CodeBuild",
+                            "environment": {
+                              "variables": {
+                                "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                              }
+                            },
+                            "handler": "index.handler",
+                            "runtime": "nodejs14.x"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "LogRetention": {
+                        "id": "LogRetention",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/LogRetention",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/LogRetention/Resource",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/Package Handler/LogGroup",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Function",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "maven": {
+                    "id": "maven",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven",
+                    "children": {
+                      "Dependencies Definition": {
+                        "id": "Dependencies Definition",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Dependencies Definition",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Dependencies Definition/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.54.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Dependencies Definition/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "Layer Packager": {
+                        "id": "Layer Packager",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Layer Packager",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Layer Packager/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "Layer": {
+                        "id": "Layer",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Layer",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Layer/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                              "aws:cdk:cloudformation:props": {
+                                "content": {
+                                  "s3Bucket": {
+                                    "Ref": "Java11CodeBuildPackagerBucketBB2DF308"
+                                  },
+                                  "s3Key": {
+                                    "Ref": "Java11CodeBuildPackagermavenLayerPackager32036735"
+                                  }
+                                },
+                                "description": "Automatically generated by turbo layers for Turbo-Layer-Test/Java 11 CodeBuild/Packager/maven/Dependencies Definition"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.0.5"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.5"
+                }
+              },
+              "Maven Test": {
+                "id": "Maven Test",
+                "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.54.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "8b5213c7062e6fae0c25738f70085c08a7b99e6f226d8ca8ef92da3e91460b8a.jar"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "Java11CodeBuildMavenTestServiceRoleA543C8E9",
+                            "Arn"
+                          ]
+                        },
+                        "description": "Test maven java11 1",
+                        "handler": "helloworld.App",
+                        "layers": [
+                          {
+                            "Ref": "Java11CodeBuildPackagermavenLayer825219AF"
+                          }
+                        ],
+                        "memorySize": 512,
+                        "runtime": "java11",
+                        "timeout": 60
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "LogRetention": {
+                    "id": "LogRetention",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/LogRetention",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/LogRetention/Resource",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/LogGroup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "Trigger": {
+                    "id": "Trigger",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Trigger",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Trigger/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/Trigger/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.54.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.triggers.Trigger",
+                      "version": "2.54.0"
+                    }
+                  },
+                  "CurrentVersion": {
+                    "id": "CurrentVersion",
+                    "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/CurrentVersion",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/CurrentVersion/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "Java11CodeBuildMavenTest9E1EDDC2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnVersion",
+                          "version": "2.54.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Version",
+                      "version": "2.54.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.triggers.TriggerFunction",
+                  "version": "2.54.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.0.5"
+            }
+          },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
             "path": "Turbo-Layer-Test/BootstrapVersion",

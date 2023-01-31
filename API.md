@@ -2,6 +2,164 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### JavaDependencyPackager <a name="JavaDependencyPackager" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager"></a>
+
+- *Implements:* aws-cdk-lib.aws_iam.IGrantable, aws-cdk-lib.aws_ec2.IConnectable
+
+Packager for creating Lambda layers for Java dependencies in AWS.
+
+Nothing is done locally so this doesn't require Docker and doesn't upload huge files to S3.
+
+#### Initializers <a name="Initializers" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.Initializer"></a>
+
+```typescript
+import { JavaDependencyPackager } from '@cloudsnorkel/cdk-turbo-layers'
+
+new JavaDependencyPackager(scope: Construct, id: string, props?: DependencyPackagerProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.Initializer.parameter.props">props</a></code> | <code><a href="#@cloudsnorkel/cdk-turbo-layers.DependencyPackagerProps">DependencyPackagerProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@cloudsnorkel/cdk-turbo-layers.DependencyPackagerProps">DependencyPackagerProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.layerFromMaven">layerFromMaven</a></code> | Create a layer for dependencies defined in pom.xml installed with Maven. |
+
+---
+
+##### `toString` <a name="toString" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `layerFromMaven` <a name="layerFromMaven" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.layerFromMaven"></a>
+
+```typescript
+public layerFromMaven(id: string, path: string, props?: LayerProps): LayerVersion
+```
+
+Create a layer for dependencies defined in pom.xml installed with Maven.
+
+###### `id`<sup>Required</sup> <a name="id" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.layerFromMaven.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `path`<sup>Required</sup> <a name="path" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.layerFromMaven.parameter.path"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.layerFromMaven.parameter.props"></a>
+
+- *Type:* <a href="#@cloudsnorkel/cdk-turbo-layers.LayerProps">LayerProps</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.isConstruct"></a>
+
+```typescript
+import { JavaDependencyPackager } from '@cloudsnorkel/cdk-turbo-layers'
+
+JavaDependencyPackager.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.property.connections">connections</a></code> | <code>aws-cdk-lib.aws_ec2.Connections</code> | The network connections associated with this resource. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.property.grantPrincipal">grantPrincipal</a></code> | <code>aws-cdk-lib.aws_iam.IPrincipal</code> | The principal to grant permissions to. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `connections`<sup>Required</sup> <a name="connections" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.property.connections"></a>
+
+```typescript
+public readonly connections: Connections;
+```
+
+- *Type:* aws-cdk-lib.aws_ec2.Connections
+
+The network connections associated with this resource.
+
+---
+
+##### `grantPrincipal`<sup>Required</sup> <a name="grantPrincipal" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.property.grantPrincipal"></a>
+
+```typescript
+public readonly grantPrincipal: IPrincipal;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.IPrincipal
+
+The principal to grant permissions to.
+
+---
+
+
 ### NodejsDependencyPackager <a name="NodejsDependencyPackager" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager"></a>
 
 - *Implements:* aws-cdk-lib.aws_iam.IGrantable, aws-cdk-lib.aws_ec2.IConnectable
