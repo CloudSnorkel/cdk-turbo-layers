@@ -124,7 +124,7 @@ class JavaTest extends Construct {
       type,
     });
 
-    const rubyFunctionProps: lambda.FunctionProps = {
+    const javaFunctionProps: lambda.FunctionProps = {
       handler: 'helloworld.App',
       code: lambda.Code.fromAsset('test/assets/maven', {
         bundling: {
@@ -150,7 +150,7 @@ class JavaTest extends Construct {
     };
 
     new triggers.TriggerFunction(this, 'Maven Test', {
-      ...rubyFunctionProps,
+      ...javaFunctionProps,
       description: `Test maven ${runtime} ${type}`,
       layers: [packager.layerFromMaven('maven', 'test/assets/maven')],
     });
