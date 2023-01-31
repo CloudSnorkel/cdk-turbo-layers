@@ -124,8 +124,8 @@ fi`];
 /**
  * Convert commands to a command that logs everything into /tmp/codebuild.log.
  *
- * @return ( set -ex; command-1 ; command 2 ;  ) 2>&1 | tee /tmp/codebuild.log
+ * @return set -o pipefail ; ( set -ex; command-1 ; command 2 ;  ) 2>&1 | tee /tmp/codebuild.log
  */
 function logCommands(commands: string[]): string[] {
-  return [['( set -ex'].concat(commands).concat([' ) 2>&1 | tee /tmp/codebuild.log']).join(' ; ')];
+  return [['set -o pipefail ; ( set -ex'].concat(commands).concat([' ) 2>&1 | tee /tmp/codebuild.log']).join(' ; ')];
 }
