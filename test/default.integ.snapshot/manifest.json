@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe29deee4ee42ab1b687b0ae26655af28590aa10e92045b8c7ecd30ce577ed77.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f6d5934bba9f0683e3e28764c8981ad3507ff426a9993004c49e77d164087eec.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1176,7 +1176,7 @@
         "/Turbo-Layer-Test/Java 11 CodeBuild/Maven Test/CurrentVersion/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "Java11CodeBuildMavenTestCurrentVersion059F0C47d8029292a44253d93782f2a96cbe6c01"
+            "data": "Java11CodeBuildMavenTestCurrentVersion059F0C470f1597b2f6ce81b6ccdf557f0125d915"
           }
         ],
         "/Turbo-Layer-Test/BootstrapVersion": [

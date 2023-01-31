@@ -4,8 +4,6 @@
  * and our functions were able to successfully import the dependencies from our turbo layer.
  */
 
-import * as os from 'os';
-import * as path from 'path';
 import * as cdk from 'aws-cdk-lib';
 import { aws_lambda as lambda, aws_logs as logs, triggers } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
@@ -126,6 +124,9 @@ class JavaTest extends Construct {
 
     const javaFunctionProps: lambda.FunctionProps = {
       handler: 'helloworld.App',
+      // GitHub Actions is not configured to allow Docker-in-Docker, and even if it was, the JAR file hash changes with every build.
+      // That's why we just use a static file that was built well once. It was built using the commented out code below.
+      /*
       code: lambda.Code.fromAsset('test/assets/maven', {
         bundling: {
           image: runtime.bundlingImage,
@@ -143,6 +144,8 @@ class JavaTest extends Construct {
           outputType: cdk.BundlingOutput.ARCHIVED,
         },
       }),
+      */
+      code: lambda.Code.fromAsset('test/assets/maven/FunctionOne.jar'),
       runtime,
       timeout: cdk.Duration.minutes(1),
       memorySize: 512, // really java???

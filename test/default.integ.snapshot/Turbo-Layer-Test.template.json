@@ -6076,7 +6076,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f4d7f9b762daf18a520884133be5af87c4077e7996691a8b865c97a0a0a08870.jar"
+     "S3Key": "8b5213c7062e6fae0c25738f70085c08a7b99e6f226d8ca8ef92da3e91460b8a.jar"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -6132,13 +6132,13 @@
      ]
     },
     "HandlerArn": {
-     "Ref": "Java11CodeBuildMavenTestCurrentVersion059F0C47d8029292a44253d93782f2a96cbe6c01"
+     "Ref": "Java11CodeBuildMavenTestCurrentVersion059F0C470f1597b2f6ce81b6ccdf557f0125d915"
     }
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
   },
-  "Java11CodeBuildMavenTestCurrentVersion059F0C47d8029292a44253d93782f2a96cbe6c01": {
+  "Java11CodeBuildMavenTestCurrentVersion059F0C470f1597b2f6ce81b6ccdf557f0125d915": {
    "Type": "AWS::Lambda::Version",
    "Properties": {
     "FunctionName": {
