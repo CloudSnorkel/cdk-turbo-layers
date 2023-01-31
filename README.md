@@ -22,6 +22,7 @@ Supported Lambda runtimes:
 * Python
 * Node.js
 * Ruby
+* Java
 
 ## API
 
