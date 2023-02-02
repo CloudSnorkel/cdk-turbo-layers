@@ -154,7 +154,7 @@
       },
       "python": {
         "distName": "cloudsnorkel.cdk-turbo-layers",
-        "module": "cloudsnorkel.cdk_turbo-layers"
+        "module": "cloudsnorkel.cdk_turbo_layers"
       },
       "dotnet": {
         "namespace": "CloudSnorkel",
