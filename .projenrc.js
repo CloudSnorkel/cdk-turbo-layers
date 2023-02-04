@@ -1,5 +1,6 @@
 const { awscdk } = require('projen');
 const { Stability } = require('projen/lib/cdk/jsii-project');
+const { NodePackageManager } = require('projen/lib/javascript');
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amir Szekely',
@@ -18,6 +19,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@types/aws-lambda',
     'adm-zip',
     '@types/adm-zip',
+    'xterm-benchmark',
+    'execa',
+    '@aws-cdk/aws-lambda-python-alpha',
   ],
   deps: [
   ],
@@ -88,6 +92,15 @@ const project = new awscdk.AwsCdkConstructLibrary({
       run: 'sudo apt-get update ; sudo apt-get install -y ruby',
     },
   ],
+  scripts: {
+    benchmark: 'esbuild benchmark/deployment.ts --bundle --target=node14 --platform=node --outfile=benchmark/deployment.js --format=cjs --external:xterm-benchmark && xterm-benchmark benchmark/deployment.js',
+  },
+  eslintOptions: {
+    dirs: ['benchmark'],
+  },
+  tsconfig: {
+    include: ['benchmark/**/*.ts'],
+  },
 });
 
 // disable automatic releases, but keep workflow that can be triggered manually

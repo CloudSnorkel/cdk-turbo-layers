@@ -1,6 +1,10 @@
 {
   "dependencies": [
     {
+      "name": "@aws-cdk/aws-lambda-python-alpha",
+      "type": "build"
+    },
+    {
       "name": "@aws-sdk/types",
       "type": "build"
     },
@@ -77,6 +81,10 @@
       "type": "build"
     },
     {
+      "name": "execa",
+      "type": "build"
+    },
+    {
       "name": "jest-junit",
       "version": "^13",
       "type": "build"
@@ -131,6 +139,10 @@
     },
     {
       "name": "typescript",
+      "type": "build"
+    },
+    {
+      "name": "xterm-benchmark",
       "type": "build"
     },
     {

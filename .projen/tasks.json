@@ -1,5 +1,13 @@
 {
   "tasks": {
+    "benchmark": {
+      "name": "benchmark",
+      "steps": [
+        {
+          "exec": "esbuild benchmark/deployment.ts --bundle --target=node14 --platform=node --outfile=benchmark/deployment.js --format=cjs --external:xterm-benchmark && xterm-benchmark benchmark/deployment.js"
+        }
+      ]
+    },
     "build": {
       "name": "build",
       "description": "Full release build",
@@ -195,7 +203,7 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools .projenrc.js"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern benchmark test build-tools .projenrc.js"
         }
       ]
     },
