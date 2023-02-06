@@ -6,8 +6,11 @@ import { beforeEach, afterEach, before, perfContext, RuntimeCase } from 'xterm-b
 
 const VANILLA_APP_PATH = path.join(__dirname, 'vanilla-app');
 const TURBO_APP_PATH = path.join(__dirname, 'turbo-app');
-const FUNCTION_PY_PATH = path.join('benchmark', 'function', 'index.py');
-const FUNCTION_REQS_PATH = path.join('benchmark', 'function', 'requirements.txt');
+const VANILLA_5_APP_PATH = path.join(__dirname, 'vanilla-5-app');
+const TURBO_5_APP_PATH = path.join(__dirname, 'turbo-5-app');
+const FUNCTIONS = ['function1', 'function2', 'function3', 'function4', 'function5'];
+const FUNCTION_PY_PATHS = FUNCTIONS.map(f => path.join('benchmark', f, 'index.py'));
+const FUNCTION_REQS_PATHS = FUNCTIONS.map(f => path.join('benchmark', f, 'requirements.txt'));
 
 before(async () => {
   await new Promise((resolve, reject) => {
@@ -40,17 +43,21 @@ afterEach(async () => {
   await fs.promises.rm(path.join(TURBO_APP_PATH, 'cdk.out'), { recursive: true, force: true, maxRetries: 10, retryDelay: 1 });
   // restore index.py to unmodified version
   console.log('      Resetting function...');
-  await execa('git', ['checkout', '--', FUNCTION_PY_PATH, FUNCTION_REQS_PATH]);
+  await execa('git', ['checkout', '--', ...FUNCTION_PY_PATHS, ...FUNCTION_REQS_PATHS]);
 });
 
 async function randomizeFunction() {
-  const code = await fs.promises.readFile(FUNCTION_PY_PATH, { encoding: 'utf-8' });
-  await fs.promises.writeFile(FUNCTION_PY_PATH, code.replace(/'RANDOM.*'/, `'RANDOM ${Date.now()}'`));
+  for (const py of FUNCTION_PY_PATHS) {
+    const code = await fs.promises.readFile(py, { encoding: 'utf-8' });
+    await fs.promises.writeFile(py, code.replace(/'RANDOM.*'/, `'RANDOM ${Date.now()}'`));
+  }
 }
 
 async function addRequirement() {
-  const code = await fs.promises.readFile(FUNCTION_REQS_PATH, { encoding: 'utf-8' });
-  await fs.promises.writeFile(FUNCTION_REQS_PATH, code + '\nPillow');
+  for (const req of FUNCTION_REQS_PATHS) {
+    const code = await fs.promises.readFile(req, { encoding: 'utf-8' });
+    await fs.promises.writeFile(req, code + '\nPillow');
+  }
 }
 
 function generateCases(appDir: string) {
@@ -93,3 +100,5 @@ function generateCases(appDir: string) {
 
 perfContext('Vanilla (PythonFunction)', generateCases(VANILLA_APP_PATH));
 perfContext('Turbo Layers', generateCases(TURBO_APP_PATH));
+perfContext('Vanilla (5x PythonFunction)', generateCases(VANILLA_5_APP_PATH));
+perfContext('Turbo Layers (5x Function w/ shared layer)', generateCases(TURBO_5_APP_PATH));

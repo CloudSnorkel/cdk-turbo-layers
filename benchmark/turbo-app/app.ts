@@ -8,12 +8,12 @@ const stack = new cdk.Stack(app, 'Turbo-Layers-Benchmark', {
 });
 new lambda.Function(stack, 'Function', {
   runtime: lambda.Runtime.PYTHON_3_9,
-  code: lambda.Code.fromAsset('../function'),
+  code: lambda.Code.fromAsset('../function1'),
   handler: 'index.handler',
   logRetention: logs.RetentionDays.ONE_DAY,
   layers: [
     new PythonDependencyPackager(stack, 'Packager', {
       runtime: lambda.Runtime.PYTHON_3_9,
-    }).layerFromRequirementsTxt('Layer', '../function'),
+    }).layerFromRequirementsTxt('Layer', '../function1'),
   ],
 });
