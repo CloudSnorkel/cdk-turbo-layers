@@ -13,7 +13,7 @@ Speed up deployment of Lambda functions by creating dependency layers in AWS ins
 * 🔁 Never re-package dependencies just because of a small code change
 * ☁️ Never download another single dependency package locally again
 * 🏋️ Never upload oversized code packages again
-* 🌎 Edit your code in the browser -- no more "deployment package too large to enable inline code editing" errors
+* 🌎 Edit your code in the browser -- no more "deployment package too large to enable inline code editing"
 * ❌ Uninstall Docker from your laptop and extend your battery life
 * ☕ Take shorter coffee breaks when deploying
 
@@ -28,10 +28,14 @@ Supported Lambda runtimes:
 
 Below are synth and deploy times for a simple Python function with [`PythonFunction`](https://docs.aws.amazon.com/cdk/api/v2/docs/@aws-cdk_aws-lambda-python-alpha.PythonFunction.html) compared to Turbo Layers. The [benchmark](benchmark/deployment.ts) ran three times and the best time were taken for each step.
 
-| Method                | Initial<br/>Synth | Initial<br/>Deploy | Code Change<br/>Synth | Code Change<br/>Deploy | New Dependency<br/>Synth | New Dependency<br/>Deploy |
-|:----------------------|-------------------|--------------------|-----------------------|------------------------|--------------------------|---------------------------|
-| **💤 PythonFunction** | 1:21              | 1:18               | 0:31                  | 0:49                   | 0:33                     | 0:52                      |
-| **🚀 Turbo Layers**   | 0:06              | 2:05               | 0:06                  | 0:29                   | 0:06                     | 1:50                      |
+|                        | 💤 PythonFunction   | 🚀 Turbo Layers  | 💤 5x PythonFunction | 🚀 5x Functions w/ Shared Turbo Layer |
+|------------------------|---------------------|------------------|----------------------|---------------------------------------|
+| Initial Synth          | 1:21                | 0:06             | 2:43                 | 0:06                                  |
+| Initial Deploy         | 1:18                | 2:05             | 2:10                 | 2:06                                  |
+| Code Change Synth      | 0:31                | 0:06             | 1:21                 | 0:06                                  |
+| Code Change Deploy     | 0:49                | 0:29             | 1:19                 | 0:36                                  |
+| New Dependency Synth   | 0:33                | 0:06             | 1:30                 | 0:06                                  |
+| New Dependency Deploy  | 0:52                | 1:50             | 1:31                 | 1:50                                  |
 
 As you can see, code changes synth much faster and deploy a bit faster too. Dependency changes take longer to deploy, but are assumed to be way less frequent than code changes. The more dependencies your function uses, the better the results will be.
 
