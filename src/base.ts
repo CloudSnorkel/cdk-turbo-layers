@@ -202,6 +202,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
     } else if (this.type == DependencyPackagerType.LAMBDA) {
       const lambdaProps = {
         description: `Turbo layer packager for ${runtime}`,
+        runtime: runtime,
         timeout: Duration.minutes(15),
         memorySize: 1024,
         ephemeralStorageSize: Size.gibibytes(10),
