@@ -16,8 +16,8 @@ export class PackageNodejsFunction extends lambda.Function {
   constructor(scope: Construct, id: string, props?: PackageNodejsFunctionProps) {
     super(scope, id, {
       description: 'src/package-nodejs.lambda.ts',
-      runtime: new lambda.Runtime('nodejs14.x', lambda.RuntimeFamily.NODEJS),
       ...props,
+      runtime: new lambda.Runtime('nodejs14.x', lambda.RuntimeFamily.NODEJS),
       handler: 'index.handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../assets/package-nodejs.lambda')),
     });
