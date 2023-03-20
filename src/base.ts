@@ -202,6 +202,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
     } else if (this.type == DependencyPackagerType.LAMBDA) {
       const lambdaProps = {
         description: `Turbo layer packager for ${runtime}`,
+        runtime: runtime,
         timeout: Duration.minutes(15),
         memorySize: 1024,
         ephemeralStorageSize: Size.gibibytes(10),
@@ -216,6 +217,11 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
         this.provider = new PackagePythonFunction(this, 'Packager', lambdaProps);
       } else if (runtime.family == lambda.RuntimeFamily.NODEJS) {
         this.provider = new PackageNodejsFunction(this, 'Packager', lambdaProps);
+        // we can't set the runtime from here, so we have to manually override it.
+        // projen puts `...props` before its own `runtime` setting and so its default `runtime` always wins.
+        // https://github.com/projen/projen/blob/564341a55309e06939c86248bc76cabc590fd835/src/awscdk/lambda-function.ts#L253-L256
+        const func = this.provider.node.defaultChild as lambda.CfnFunction;
+        func.runtime = runtime.name;
       } else if (runtime.family == lambda.RuntimeFamily.RUBY) {
         this.provider = new PackageRubyFunction(this, 'Packager', lambdaProps);
       } else {
