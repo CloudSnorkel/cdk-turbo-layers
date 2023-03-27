@@ -660,7 +660,7 @@
                               }
                             },
                             "handler": "index.handler",
-                            "runtime": "nodejs14.x"
+                            "runtime": "nodejs16.x"
                           }
                         },
                         "constructInfo": {
@@ -4105,7 +4105,7 @@
                               }
                             },
                             "handler": "index.handler",
-                            "runtime": "nodejs14.x"
+                            "runtime": "nodejs16.x"
                           }
                         },
                         "constructInfo": {
@@ -6816,7 +6816,7 @@
                               }
                             },
                             "handler": "index.handler",
-                            "runtime": "nodejs14.x"
+                            "runtime": "nodejs16.x"
                           }
                         },
                         "constructInfo": {
@@ -8524,7 +8524,7 @@
                               }
                             },
                             "handler": "index.handler",
-                            "runtime": "nodejs14.x"
+                            "runtime": "nodejs16.x"
                           }
                         },
                         "constructInfo": {

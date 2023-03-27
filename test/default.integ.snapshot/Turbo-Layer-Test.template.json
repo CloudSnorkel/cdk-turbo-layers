@@ -466,7 +466,7 @@
      }
     },
     "Handler": "index.handler",
-    "Runtime": "nodejs14.x"
+    "Runtime": "nodejs16.x"
    },
    "DependsOn": [
     "Python39CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicyB6DB807A",
@@ -3092,7 +3092,7 @@
      }
     },
     "Handler": "index.handler",
-    "Runtime": "nodejs14.x"
+    "Runtime": "nodejs16.x"
    },
    "DependsOn": [
     "Nodejs16CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicyEC12B6EB",
@@ -4829,7 +4829,7 @@
      }
     },
     "Handler": "index.handler",
-    "Runtime": "nodejs14.x"
+    "Runtime": "nodejs16.x"
    },
    "DependsOn": [
     "Ruby27CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy9D0C9B7C",
@@ -5943,7 +5943,7 @@
      }
     },
     "Handler": "index.handler",
-    "Runtime": "nodejs14.x"
+    "Runtime": "nodejs16.x"
    },
    "DependsOn": [
     "Java11CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy2E2301F6",
