@@ -10,7 +10,7 @@ jobs:
   on-failure:
     runs-on: ubuntu-latest
     container:
-      image: jsii/superchain:1-buster-slim-node14
+      image: jsii/superchain:1-buster-slim-node16
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - name: Checkout
