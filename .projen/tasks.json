@@ -87,7 +87,7 @@
       "description": "Create a JavaScript bundle from src/package-codebuild.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
+          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node16\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
         }
       ]
     },
@@ -96,7 +96,7 @@
       "description": "Continuously update the JavaScript bundle from src/package-codebuild.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
+          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node16\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
         }
       ]
     },
@@ -105,7 +105,7 @@
       "description": "Create a JavaScript bundle from src/package-nodejs.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
+          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node16\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
         }
       ]
     },
@@ -114,7 +114,7 @@
       "description": "Continuously update the JavaScript bundle from src/package-nodejs.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
+          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node16\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
         }
       ]
     },
@@ -204,6 +204,24 @@
       "steps": [
         {
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern benchmark test build-tools .projenrc.js"
+        }
+      ]
+    },
+    "install": {
+      "name": "install",
+      "description": "Install project dependencies and update lockfile (non-frozen)",
+      "steps": [
+        {
+          "exec": "yarn install --check-files"
+        }
+      ]
+    },
+    "install:ci": {
+      "name": "install:ci",
+      "description": "Install project dependencies using frozen lockfile",
+      "steps": [
+        {
+          "exec": "yarn install --check-files --frozen-lockfile"
         }
       ]
     },
@@ -452,19 +470,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii'"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii'"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii'"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii'"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii'"
         },
         {
           "exec": "yarn install --check-files"
