@@ -1,5 +1,5 @@
 {
-  "version": "22.0.0",
+  "version": "31.0.0",
   "artifacts": {
     "Turbo-Layer-Test.assets": {
       "type": "cdk:asset-manifest",
@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/8eff964f4580bfb468a0bc929c1cc764e2d541e6f1eb6e0683856399b44c4926.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/02ff047d79f320097e160bcfec197cf7e838da74b20105794e314f9d81bcc9a1.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -265,6 +265,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "Python39CodeBuildPoetryCurrentVersionDBDF4A62bda03456dafba602c33723cecd0fc0f7"
+          }
+        ],
+        "/Turbo-Layer-Test/DefaultCrNodeVersionMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DefaultCrNodeVersionMap"
           }
         ],
         "/Turbo-Layer-Test/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
