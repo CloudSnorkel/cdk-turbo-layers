@@ -651,7 +651,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "92b203cee21831e338fadce00a539907b3ab96f6bc61e6dbcc7b27c6502a896f.zip"
+    "AssetKey": "ccb22ba62bed07e24fa4a44291fef20665fef66c280b2ebcd2c88ea4b86bf7b5.zip"
    },
    "DependsOn": [
     "Python39CodeBuildPackagerPackageHandlerLogRetention9EF0CE38",
@@ -830,7 +830,9 @@
     },
     "HandlerArn": {
      "Ref": "Python39CodeBuildInlineCurrentVersionB518F84425b60b2b0059905de46a43f54ef95b47"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -934,7 +936,9 @@
     },
     "HandlerArn": {
      "Ref": "Python39CodeBuildRequirementstxtCurrentVersion58C0F2398f99bfcc578e271c16b9c491a83b6878"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -1038,7 +1042,9 @@
     },
     "HandlerArn": {
      "Ref": "Python39CodeBuildPipenvCurrentVersion1BE5D406e3248fcd5c090b0cdadc4394d3d1cfc7"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -1142,7 +1148,9 @@
     },
     "HandlerArn": {
      "Ref": "Python39CodeBuildPoetryCurrentVersionDBDF4A62bda03456dafba602c33723cecd0fc0f7"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -1184,7 +1192,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "3f51abb709b8e65167a45aeed02bab11540603d909005d7148230ba5ce6c74d7.zip"
+     "S3Key": "40aa87cdf43c4095cec18bc443965f22ab2f8c1ace47e482a0ba4e35d83b0cc9.zip"
     },
     "Timeout": 900,
     "MemorySize": 128,
@@ -1195,7 +1203,7 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs14.x",
+    "Runtime": "nodejs16.x",
     "Description": {
      "Fn::Join": [
       "",
@@ -1272,12 +1280,20 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Handler": "index.handler",
-    "Runtime": "nodejs14.x",
+    "Runtime": {
+     "Fn::FindInMap": [
+      "DefaultCrNodeVersionMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    },
     "Code": {
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "eb5b005c858404ea0c8f68098ed5dcdf5340e02461f149751d10f59c210d5ef8.zip"
+     "S3Key": "f5b6a6d08a8206e67d0b54e2a29abd7e0472d835abc71037de3a93545b5edacc.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -1704,7 +1720,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "b5b182c36096f19283e1157c12aed83c585041a5e7c0547e8fe9b548bd22ebf2.zip"
+     "S3Key": "e6b302aaee9bb5261338cf6b21e540e805eeaf2c18eb3246f7556104f361f68d.zip"
     },
     "Timeout": 900,
     "MemorySize": 128,
@@ -1715,7 +1731,7 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs14.x"
+    "Runtime": "nodejs16.x"
    },
    "DependsOn": [
     "AWSCDKTriggerCustomResourceProviderCustomResourceProviderRoleE18FAF0A"
@@ -2131,7 +2147,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "92b203cee21831e338fadce00a539907b3ab96f6bc61e6dbcc7b27c6502a896f.zip"
+    "AssetKey": "ccb22ba62bed07e24fa4a44291fef20665fef66c280b2ebcd2c88ea4b86bf7b5.zip"
    },
    "DependsOn": [
     "Python39LambdaPackagerLogRetention94FABB34",
@@ -2301,7 +2317,9 @@
     },
     "HandlerArn": {
      "Ref": "Python39LambdaInlineCurrentVersionB087E9ADee9f1da1ddbdf2607bcfe1e5bdfabbbc"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -2405,7 +2423,9 @@
     },
     "HandlerArn": {
      "Ref": "Python39LambdaRequirementstxtCurrentVersionAA10683F3b5315a145751ed8f98531cdc95048dd"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -2509,7 +2529,9 @@
     },
     "HandlerArn": {
      "Ref": "Python39LambdaPipenvCurrentVersionF5E775168462818246d323299edf758dffa1a80b"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -2613,7 +2635,9 @@
     },
     "HandlerArn": {
      "Ref": "Python39LambdaPoetryCurrentVersionF952E83Ae55aabf928d8bea8aca2c9ef1c03a06a"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -3393,7 +3417,9 @@
     },
     "HandlerArn": {
      "Ref": "Nodejs16CodeBuildNPMInlineTestCurrentVersion36AF4693106be0bcba041d2b4b4e1353d70271c6"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -3497,7 +3523,9 @@
     },
     "HandlerArn": {
      "Ref": "Nodejs16CodeBuildNPMTestCurrentVersionF9452363be3821f111810eb99db2281b64c235b9"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -3601,7 +3629,9 @@
     },
     "HandlerArn": {
      "Ref": "Nodejs16CodeBuildYarnTestCurrentVersionAFCB7D835cbd7780bd5b773e47919f87a7e979ec"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -4142,7 +4172,9 @@
     },
     "HandlerArn": {
      "Ref": "Nodejs16LambdaNPMInlineTestCurrentVersion9980B736748eec8da1c495bc417264395091b5e2"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -4246,7 +4278,9 @@
     },
     "HandlerArn": {
      "Ref": "Nodejs16LambdaNPMTestCurrentVersion90E373BA7c09d3cfb76526d03cf188b83425a315"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -4350,7 +4384,9 @@
     },
     "HandlerArn": {
      "Ref": "Nodejs16LambdaYarnTestCurrentVersion7E1F1E0E700262356e13bbf971efaf760dbf7ba5"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -5023,7 +5059,9 @@
     },
     "HandlerArn": {
      "Ref": "Ruby27CodeBuildBundlerTestCurrentVersionE9E016CF6fd3cb7a072d0fe299b87b4ac9fee869"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "300000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -5464,7 +5502,9 @@
     },
     "HandlerArn": {
      "Ref": "Ruby27LambdaBundlerTestCurrentVersion082ABB9A1608ce79a1dcae659c62ae2a819b59ac"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "300000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -6133,7 +6173,9 @@
     },
     "HandlerArn": {
      "Ref": "Java11CodeBuildMavenTestCurrentVersion059F0C47523cf27d85b1dcd22d88efc8d5143a66"
-    }
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -6144,6 +6186,109 @@
     "FunctionName": {
      "Ref": "Java11CodeBuildMavenTest9E1EDDC2"
     }
+   }
+  }
+ },
+ "Mappings": {
+  "DefaultCrNodeVersionMap": {
+   "af-south-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-east-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-northeast-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-northeast-2": {
+    "value": "nodejs16.x"
+   },
+   "ap-northeast-3": {
+    "value": "nodejs16.x"
+   },
+   "ap-south-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-south-2": {
+    "value": "nodejs16.x"
+   },
+   "ap-southeast-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-southeast-2": {
+    "value": "nodejs16.x"
+   },
+   "ap-southeast-3": {
+    "value": "nodejs16.x"
+   },
+   "ca-central-1": {
+    "value": "nodejs16.x"
+   },
+   "cn-north-1": {
+    "value": "nodejs16.x"
+   },
+   "cn-northwest-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-central-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-central-2": {
+    "value": "nodejs16.x"
+   },
+   "eu-north-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-south-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-south-2": {
+    "value": "nodejs16.x"
+   },
+   "eu-west-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-west-2": {
+    "value": "nodejs16.x"
+   },
+   "eu-west-3": {
+    "value": "nodejs16.x"
+   },
+   "me-central-1": {
+    "value": "nodejs16.x"
+   },
+   "me-south-1": {
+    "value": "nodejs16.x"
+   },
+   "sa-east-1": {
+    "value": "nodejs16.x"
+   },
+   "us-east-1": {
+    "value": "nodejs16.x"
+   },
+   "us-east-2": {
+    "value": "nodejs16.x"
+   },
+   "us-gov-east-1": {
+    "value": "nodejs16.x"
+   },
+   "us-gov-west-1": {
+    "value": "nodejs16.x"
+   },
+   "us-iso-east-1": {
+    "value": "nodejs14.x"
+   },
+   "us-iso-west-1": {
+    "value": "nodejs14.x"
+   },
+   "us-isob-east-1": {
+    "value": "nodejs14.x"
+   },
+   "us-west-1": {
+    "value": "nodejs16.x"
+   },
+   "us-west-2": {
+    "value": "nodejs16.x"
    }
   }
  },

@@ -18,9 +18,6 @@ test('Packager runtime version matches', () => {
   const app = new cdk.App();
   const stack = new cdk.Stack(app, 'test');
 
-  new NodejsDependencyPackager(stack, 'packager 14', {
-    runtime: lambda.Runtime.NODEJS_14_X,
-  });
   new NodejsDependencyPackager(stack, 'packager 16', {
     runtime: lambda.Runtime.NODEJS_16_X,
   });
@@ -30,12 +27,6 @@ test('Packager runtime version matches', () => {
 
   const template = Template.fromStack(stack);
 
-  template.hasResourceProperties(
-    'AWS::Lambda::Function',
-    Match.objectLike({
-      Runtime: lambda.Runtime.NODEJS_14_X.name,
-    }),
-  );
   template.hasResourceProperties(
     'AWS::Lambda::Function',
     Match.objectLike({
