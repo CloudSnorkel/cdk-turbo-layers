@@ -25,6 +25,11 @@
   resolved "https://registry.yarnpkg.com/@aws-cdk/asset-node-proxy-agent-v5/-/asset-node-proxy-agent-v5-2.0.166.tgz#467507db141cd829ff8aa9d6ea5519310a4276b8"
   integrity sha512-j0xnccpUQHXJKPgCwQcGGNu4lRiC1PptYfdxBIH1L4dRK91iBxtSQHESRQX+yB47oGLaF/WfNN/aF3WXwlhikg==
 
+"@aws-cdk/aws-lambda-python-alpha@^2.77.0-alpha.0":
+  version "2.77.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda-python-alpha/-/aws-lambda-python-alpha-2.77.0-alpha.0.tgz#c8fd1d0cad6774bb5d4f153005e29b76302bb336"
+  integrity sha512-3OGqG2O1CE7570gBpcxdRJkAiMJvpm2r5N3pYo8E+tzTAGcqfqlPwDbTE5MgBCNSEbCr3dvNtOU7fKRCUCGwnQ==
+
 "@aws-sdk/types@^3.398.0":
   version "3.398.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.398.0.tgz#8ce02559536670f9188cddfce32e9dd12b4fe965"
