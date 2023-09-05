@@ -711,7 +711,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "dd5c906fad98392d7d2ad1afebc073355245a973f2ae0bbcf65de331b87e9a16.zip"
+    "AssetKey": "8027155b2fe0082463e964e02fb250c3a2524c68e420e6d8aee03b43a27f893e.zip"
    },
    "DependsOn": [
     "Python39CodeBuildPackagerPackageHandlerLogRetention9EF0CE38",
@@ -2201,7 +2201,7 @@
     "AssetBucket": {
      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
     },
-    "AssetKey": "dd5c906fad98392d7d2ad1afebc073355245a973f2ae0bbcf65de331b87e9a16.zip"
+    "AssetKey": "8027155b2fe0082463e964e02fb250c3a2524c68e420e6d8aee03b43a27f893e.zip"
    },
    "DependsOn": [
     "Python39LambdaPackagerLogRetention94FABB34",
