@@ -28,7 +28,8 @@ export async function handler(event: AWSLambda.CloudFormationCustomResourceEvent
     // setup home
     try {
       fs.mkdirSync('/tmp/home');
-    } catch (err: any) {
+    } catch (err) {
+      // @ts-ignore
       if (err.code !== 'EEXIST') {
         throw err;
       }

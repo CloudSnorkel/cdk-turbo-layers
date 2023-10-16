@@ -164,7 +164,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
         subnetSelection: internalProps.props?.subnetSelection,
         environment: {
           buildImage: this.architecture == lambda.Architecture.X86_64 ?
-            codebuild.LinuxBuildImage.AMAZON_LINUX_2_4 : codebuild.LinuxArmBuildImage.AMAZON_LINUX_2_STANDARD_2_0,
+            codebuild.LinuxBuildImage.AMAZON_LINUX_2_5 : codebuild.LinuxArmBuildImage.AMAZON_LINUX_2_STANDARD_2_0,
         },
         logging: {
           cloudWatch: {
