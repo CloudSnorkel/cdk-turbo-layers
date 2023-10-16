@@ -1,14 +1,13 @@
 import * as child_process from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
+import { DeleteObjectCommand, GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import * as AWSLambda from 'aws-lambda';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import * as AWS from 'aws-sdk';
 import { customResourceRespond } from './cr';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const AdmZip = require('adm-zip');
 
-const s3 = new AWS.S3();
+const s3 = new S3Client();
 
 
 /* eslint-disable @typescript-eslint/no-require-imports, import/no-extraneous-dependencies */
@@ -30,6 +29,7 @@ export async function handler(event: AWSLambda.CloudFormationCustomResourceEvent
     try {
       fs.mkdirSync('/tmp/home');
     } catch (err) {
+      // @ts-ignore
       if (err.code !== 'EEXIST') {
         throw err;
       }
@@ -56,10 +56,10 @@ export async function handler(event: AWSLambda.CloudFormationCustomResourceEvent
         break;
       case 'Delete':
         try {
-          await s3.deleteObject({
+          await s3.send(new DeleteObjectCommand({
             Bucket: targetBucket,
             Key: event.PhysicalResourceId,
-          }).promise();
+          }));
         } catch (error) {
           console.error(`Ignoring error to delete s3://${targetBucket}/${event.PhysicalResourceId}`);
         }
@@ -78,15 +78,15 @@ async function install(assetBucket: string, assetKey: string, commands: string[]
     // extract asset with package.json file
     console.log('Downloading and unpacking asset...');
 
-    const assetObject = await s3.getObject({
+    const assetObject = await s3.send(new GetObjectCommand({
       Bucket: assetBucket,
       Key: assetKey,
-    }).promise();
+    }));
     if (!assetObject.Body) {
       throw new Error('Unable to read asset');
     }
 
-    new AdmZip(assetObject.Body as Buffer).extractAllTo(temp);
+    new AdmZip(Buffer.from(await assetObject.Body.transformToByteArray())).extractAllTo(temp);
 
     // run installation commands
     console.log('Running installation commands...');
@@ -127,11 +127,11 @@ async function install(assetBucket: string, assetKey: string, commands: string[]
 
     // upload package
     console.log('Uploading package...');
-    await s3.upload({
+    await s3.send(new PutObjectCommand({
       Bucket: targetBucket,
       Key: `${zipHash}.zip`,
       Body: fs.createReadStream(zipPath),
-    }).promise();
+    }));
 
     return `${zipHash}.zip`;
   } finally {

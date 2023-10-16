@@ -1,11 +1,11 @@
 /* eslint-disable-next-line import/no-extraneous-dependencies,import/no-unresolved */
+import { CodeBuildClient, StartBuildCommand } from '@aws-sdk/client-codebuild';
+import { DeleteObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import * as AWSLambda from 'aws-lambda';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import * as AWS from 'aws-sdk';
 import { customResourceRespond } from './cr';
 
-const codebuild = new AWS.CodeBuild();
-const s3 = new AWS.S3();
+const codebuild = new CodeBuildClient();
+const s3 = new S3Client();
 
 
 /* eslint-disable @typescript-eslint/no-require-imports, import/no-extraneous-dependencies */
@@ -43,7 +43,7 @@ fi`];
       case 'Create':
       case 'Update':
         console.log(`Starting CodeBuild project ${projectName}`);
-        await codebuild.startBuild({
+        await codebuild.send(new StartBuildCommand({
           projectName,
           sourceTypeOverride: 'S3',
           sourceLocationOverride: `${assetBucket}/${assetKey}`,
@@ -101,14 +101,14 @@ fi`];
               },
             },
           }, null, 2),
-        }).promise();
+        }));
         break;
       case 'Delete':
         try {
-          await s3.deleteObject({
+          await s3.send(new DeleteObjectCommand({
             Bucket: targetBucket,
             Key: event.PhysicalResourceId,
-          }).promise();
+          }));
         } catch (e) {
           console.error(`Ignoring error to delete s3://${targetBucket}/${event.PhysicalResourceId}`);
         }

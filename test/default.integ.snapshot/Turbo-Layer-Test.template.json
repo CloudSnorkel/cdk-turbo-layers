@@ -329,7 +329,7 @@
     },
     "Environment": {
      "ComputeType": "BUILD_GENERAL1_SMALL",
-     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:4.0",
+     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:5.0",
      "ImagePullCredentialsType": "CODEBUILD",
      "PrivilegedMode": false,
      "Type": "LINUX_CONTAINER"
@@ -451,7 +451,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "611fff8139d552c84d2e687a1cb26c16d91f18a3d5b311f3da290d2c651c3083.zip"
+     "S3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -1192,18 +1192,18 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "40aa87cdf43c4095cec18bc443965f22ab2f8c1ace47e482a0ba4e35d83b0cc9.zip"
+     "S3Key": "d28a3fa64d0bd6c7c6f1d6fd707d3e6dc5c81fe8f47891b89459b6492586997f.zip"
     },
     "Timeout": 900,
     "MemorySize": 128,
-    "Handler": "__entrypoint__.handler",
+    "Handler": "index.handler",
     "Role": {
      "Fn::GetAtt": [
       "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
       "Arn"
      ]
     },
-    "Runtime": "nodejs16.x",
+    "Runtime": "nodejs18.x",
     "Description": {
      "Fn::Join": [
       "",
@@ -1293,7 +1293,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f5b6a6d08a8206e67d0b54e2a29abd7e0472d835abc71037de3a93545b5edacc.zip"
+     "S3Key": "5fa1330271b8967d9254ba2d4a07144f8acefe8b77e6d6bba38261373a50d5f8.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -1653,6 +1653,138 @@
             [
              {
               "Fn::GetAtt": [
+               "Nodejs18CodeBuildNPMInlineTest2E004270",
+               "Arn"
+              ]
+             },
+             ":*"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Effect": "Allow",
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             {
+              "Fn::GetAtt": [
+               "Nodejs18CodeBuildNPMTest4642EE2D",
+               "Arn"
+              ]
+             },
+             ":*"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Effect": "Allow",
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             {
+              "Fn::GetAtt": [
+               "Nodejs18CodeBuildYarnTest4486EC0A",
+               "Arn"
+              ]
+             },
+             ":*"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Effect": "Allow",
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             {
+              "Fn::GetAtt": [
+               "Nodejs18LambdaNPMInlineTest3C9BC6C6",
+               "Arn"
+              ]
+             },
+             ":*"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Effect": "Allow",
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             {
+              "Fn::GetAtt": [
+               "Nodejs18LambdaNPMTest880421DA",
+               "Arn"
+              ]
+             },
+             ":*"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Effect": "Allow",
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             {
+              "Fn::GetAtt": [
+               "Nodejs18LambdaYarnTestAE6021EA",
+               "Arn"
+              ]
+             },
+             ":*"
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Effect": "Allow",
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             {
+              "Fn::GetAtt": [
                "Ruby27CodeBuildBundlerTestE35A0D6F",
                "Arn"
               ]
@@ -1720,7 +1852,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "e6b302aaee9bb5261338cf6b21e540e805eeaf2c18eb3246f7556104f361f68d.zip"
+     "S3Key": "61b977bd2ad84e98e78440b618c2decfff23ec89f32908ad25d182c090bf6bec.zip"
     },
     "Timeout": 900,
     "MemorySize": 128,
@@ -1731,7 +1863,7 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs16.x"
+    "Runtime": "nodejs18.x"
    },
    "DependsOn": [
     "AWSCDKTriggerCustomResourceProviderCustomResourceProviderRoleE18FAF0A"
@@ -2979,7 +3111,7 @@
     },
     "Environment": {
      "ComputeType": "BUILD_GENERAL1_SMALL",
-     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:4.0",
+     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:5.0",
      "ImagePullCredentialsType": "CODEBUILD",
      "PrivilegedMode": false,
      "Type": "LINUX_CONTAINER"
@@ -3101,7 +3233,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "611fff8139d552c84d2e687a1cb26c16d91f18a3d5b311f3da290d2c651c3083.zip"
+     "S3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -3874,7 +4006,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "75f547f8ec7caf5df0eae3fb02f0336444654208d287492b50cfe563b46b9588.zip"
+     "S3Key": "d8e069c3d23367d81973703087b6be6d81ac1f0273b49cebb151001100ed95d5.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -4399,6 +4531,1755 @@
     }
    }
   },
+  "Nodejs18CodeBuildPackagerBucket79764435": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "aws-cdk:auto-delete-objects",
+      "Value": "true"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildPackagerBucketPolicy1FFB1A92": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:DeleteObject*"
+       ],
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::GetAtt": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+          "Arn"
+         ]
+        }
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "Nodejs18CodeBuildPackagerBucket79764435",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "Nodejs18CodeBuildPackagerBucket79764435",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   }
+  },
+  "Nodejs18CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceF163B54A": {
+   "Type": "Custom::S3AutoDeleteObjects",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+    }
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildPackagerBucketPolicy1FFB1A92"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildPackagerLogsE4807E34": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "RetentionInDays": 30
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildPackagerRole6D628672": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "codebuild.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   }
+  },
+  "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "Nodejs18CodeBuildPackagerLogsE4807E34",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":logs:",
+           {
+            "Ref": "AWS::Region"
+           },
+           ":",
+           {
+            "Ref": "AWS::AccountId"
+           },
+           ":log-group:/aws/codebuild/",
+           {
+            "Ref": "Nodejs18CodeBuildPackager634BA08F"
+           }
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":logs:",
+           {
+            "Ref": "AWS::Region"
+           },
+           ":",
+           {
+            "Ref": "AWS::AccountId"
+           },
+           ":log-group:/aws/codebuild/",
+           {
+            "Ref": "Nodejs18CodeBuildPackager634BA08F"
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "codebuild:CreateReportGroup",
+        "codebuild:CreateReport",
+        "codebuild:UpdateReport",
+        "codebuild:BatchPutTestCases",
+        "codebuild:BatchPutCodeCoverages"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":codebuild:",
+          {
+           "Ref": "AWS::Region"
+          },
+          ":",
+          {
+           "Ref": "AWS::AccountId"
+          },
+          ":report-group/",
+          {
+           "Ref": "Nodejs18CodeBuildPackager634BA08F"
+          },
+          "-*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:DeleteObject*",
+        "s3:PutObject",
+        "s3:PutObjectLegalHold",
+        "s3:PutObjectRetention",
+        "s3:PutObjectTagging",
+        "s3:PutObjectVersionTagging",
+        "s3:Abort*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "Nodejs18CodeBuildPackagerBucket79764435",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "Nodejs18CodeBuildPackagerBucket79764435",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "s3:DeleteObject*",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "Nodejs18CodeBuildPackagerBucket79764435",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+           }
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+    "Roles": [
+     {
+      "Ref": "Nodejs18CodeBuildPackagerRole6D628672"
+     }
+    ]
+   }
+  },
+  "Nodejs18CodeBuildPackager634BA08F": {
+   "Type": "AWS::CodeBuild::Project",
+   "Properties": {
+    "Artifacts": {
+     "Type": "NO_ARTIFACTS"
+    },
+    "Environment": {
+     "ComputeType": "BUILD_GENERAL1_SMALL",
+     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:5.0",
+     "ImagePullCredentialsType": "CODEBUILD",
+     "PrivilegedMode": false,
+     "Type": "LINUX_CONTAINER"
+    },
+    "ServiceRole": {
+     "Fn::GetAtt": [
+      "Nodejs18CodeBuildPackagerRole6D628672",
+      "Arn"
+     ]
+    },
+    "Source": {
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"echo The real build spec will be put together by the custom resource\",\n        \"exit 1\"\n      ]\n    }\n  }\n}",
+     "Type": "NO_SOURCE"
+    },
+    "Cache": {
+     "Type": "NO_CACHE"
+    },
+    "Description": "Lambda dependency packager for nodejs18.x in Turbo-Layer-Test",
+    "EncryptionKey": "alias/aws/s3",
+    "LogsConfig": {
+     "CloudWatchLogs": {
+      "GroupName": {
+       "Ref": "Nodejs18CodeBuildPackagerLogsE4807E34"
+      },
+      "Status": "ENABLED"
+     }
+    }
+   }
+  },
+  "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildPackager634BA08F",
+    "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+    "Nodejs18CodeBuildPackagerRole6D628672"
+   ]
+  },
+  "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "codebuild:StartBuild",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "Nodejs18CodeBuildPackager634BA08F",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "s3:DeleteObject*",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "Nodejs18CodeBuildPackagerBucket79764435",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A",
+    "Roles": [
+     {
+      "Ref": "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5"
+     }
+    ]
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildPackager634BA08F",
+    "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+    "Nodejs18CodeBuildPackagerRole6D628672"
+   ]
+  },
+  "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5",
+      "Arn"
+     ]
+    },
+    "Description": "Turbo layer packager for nodejs18.x using CodeBuild",
+    "Environment": {
+     "Variables": {
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+     }
+    },
+    "Handler": "index.handler",
+    "Runtime": "nodejs18.x"
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A",
+    "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5",
+    "Nodejs18CodeBuildPackager634BA08F",
+    "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+    "Nodejs18CodeBuildPackagerRole6D628672"
+   ]
+  },
+  "Nodejs18CodeBuildPackagerPackageHandlerLogRetentionAA03C43C": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 30
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildPackager634BA08F",
+    "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+    "Nodejs18CodeBuildPackagerRole6D628672"
+   ]
+  },
+  "Nodejs18CodeBuildPackagernpminlineLayerPackager99DCCE8B": {
+   "Type": "Custom::LayerPackager",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2",
+      "Arn"
+     ]
+    },
+    "ProjectName": {
+     "Ref": "Nodejs18CodeBuildPackager634BA08F"
+    },
+    "BucketName": {
+     "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+    },
+    "CodeBuildInstallCommands": [
+     "echo Installing Node.js 18",
+     "n 18"
+    ],
+    "PreinstallCommands": [],
+    "Commands": [
+     "npm i",
+     "mkdir nodejs",
+     "mv node_modules nodejs/"
+    ],
+    "PackagedDirectory": "nodejs",
+    "AssetBucket": {
+     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "AssetKey": "3bf5aad3a5db75c30ba530f89f7210a1eddb01c9a91cf0427515e6ef904bc869.zip"
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildPackagerPackageHandlerLogRetentionAA03C43C",
+    "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2",
+    "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A",
+    "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5",
+    "Nodejs18CodeBuildPackager634BA08F",
+    "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+    "Nodejs18CodeBuildPackagerRole6D628672"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildPackagernpminlineLayer66D8F642": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+     },
+     "S3Key": {
+      "Ref": "Nodejs18CodeBuildPackagernpminlineLayerPackager99DCCE8B"
+     }
+    },
+    "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Dependencies Definition"
+   }
+  },
+  "Nodejs18CodeBuildPackagernpmLayerPackager65607D01": {
+   "Type": "Custom::LayerPackager",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2",
+      "Arn"
+     ]
+    },
+    "ProjectName": {
+     "Ref": "Nodejs18CodeBuildPackager634BA08F"
+    },
+    "BucketName": {
+     "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+    },
+    "CodeBuildInstallCommands": [
+     "echo Installing Node.js 18",
+     "n 18"
+    ],
+    "PreinstallCommands": [],
+    "Commands": [
+     "npm ci",
+     "mkdir nodejs",
+     "mv node_modules nodejs/"
+    ],
+    "PackagedDirectory": "nodejs",
+    "AssetBucket": {
+     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "AssetKey": "4a976e712b238000c04b209e96ba28d7567d8bbc7954fbbc97de024697cd4147.zip"
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildPackagerPackageHandlerLogRetentionAA03C43C",
+    "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2",
+    "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A",
+    "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5",
+    "Nodejs18CodeBuildPackager634BA08F",
+    "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+    "Nodejs18CodeBuildPackagerRole6D628672"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildPackagernpmLayer8B6CB973": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+     },
+     "S3Key": {
+      "Ref": "Nodejs18CodeBuildPackagernpmLayerPackager65607D01"
+     }
+    },
+    "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Dependencies Definition"
+   }
+  },
+  "Nodejs18CodeBuildPackageryarnLayerPackager4C59A305": {
+   "Type": "Custom::LayerPackager",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2",
+      "Arn"
+     ]
+    },
+    "ProjectName": {
+     "Ref": "Nodejs18CodeBuildPackager634BA08F"
+    },
+    "BucketName": {
+     "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+    },
+    "CodeBuildInstallCommands": [
+     "echo Installing Node.js 18",
+     "n 18"
+    ],
+    "PreinstallCommands": [],
+    "Commands": [
+     "which yarn || npm install --global yarn",
+     "yarn install --check-files --frozen-lockfile",
+     "mkdir nodejs",
+     "mv node_modules nodejs/"
+    ],
+    "PackagedDirectory": "nodejs",
+    "AssetBucket": {
+     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "AssetKey": "48521f734f8d682c72f0a91cf94ae3031c21aa5c06f2b05888e7f98061118c64.zip"
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildPackagerPackageHandlerLogRetentionAA03C43C",
+    "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2",
+    "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A",
+    "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5",
+    "Nodejs18CodeBuildPackager634BA08F",
+    "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+    "Nodejs18CodeBuildPackagerRole6D628672"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildPackageryarnLayer3299566A": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+     },
+     "S3Key": {
+      "Ref": "Nodejs18CodeBuildPackageryarnLayerPackager4C59A305"
+     }
+    },
+    "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Dependencies Definition"
+   }
+  },
+  "Nodejs18CodeBuildNPMInlineTestServiceRoleA84C1254": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs18CodeBuildNPMInlineTest2E004270": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "ZipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs18CodeBuildNPMInlineTestServiceRoleA84C1254",
+      "Arn"
+     ]
+    },
+    "Description": "Test npm nodejs18.x 1",
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "Nodejs18CodeBuildPackagernpminlineLayer66D8F642"
+     }
+    ],
+    "Runtime": "nodejs18.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildNPMInlineTestServiceRoleA84C1254"
+   ]
+  },
+  "Nodejs18CodeBuildNPMInlineTestLogRetentionEA1A4245": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs18CodeBuildNPMInlineTest2E004270"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 1
+   }
+  },
+  "Nodejs18CodeBuildNPMInlineTestTrigger07F19AF0": {
+   "Type": "Custom::Trigger",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91",
+      "Arn"
+     ]
+    },
+    "HandlerArn": {
+     "Ref": "Nodejs18CodeBuildNPMInlineTestCurrentVersion407B373Ab5ec84688a3aa5d87ca817539e551d72"
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildNPMInlineTestCurrentVersion407B373Ab5ec84688a3aa5d87ca817539e551d72": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "Nodejs18CodeBuildNPMInlineTest2E004270"
+    }
+   }
+  },
+  "Nodejs18CodeBuildNPMTestServiceRoleA521C672": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs18CodeBuildNPMTest4642EE2D": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "ZipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs18CodeBuildNPMTestServiceRoleA521C672",
+      "Arn"
+     ]
+    },
+    "Description": "Test npm nodejs18.x 1",
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "Nodejs18CodeBuildPackagernpmLayer8B6CB973"
+     }
+    ],
+    "Runtime": "nodejs18.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildNPMTestServiceRoleA521C672"
+   ]
+  },
+  "Nodejs18CodeBuildNPMTestLogRetention261516D8": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs18CodeBuildNPMTest4642EE2D"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 1
+   }
+  },
+  "Nodejs18CodeBuildNPMTestTrigger0856CACF": {
+   "Type": "Custom::Trigger",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91",
+      "Arn"
+     ]
+    },
+    "HandlerArn": {
+     "Ref": "Nodejs18CodeBuildNPMTestCurrentVersionDACB1E7Eb4c2d438bf2ccf1faa578e9a571c08cb"
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildNPMTestCurrentVersionDACB1E7Eb4c2d438bf2ccf1faa578e9a571c08cb": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "Nodejs18CodeBuildNPMTest4642EE2D"
+    }
+   }
+  },
+  "Nodejs18CodeBuildYarnTestServiceRole137F64A5": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs18CodeBuildYarnTest4486EC0A": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "ZipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs18CodeBuildYarnTestServiceRole137F64A5",
+      "Arn"
+     ]
+    },
+    "Description": "Test yarn nodejs18.x 1",
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "Nodejs18CodeBuildPackageryarnLayer3299566A"
+     }
+    ],
+    "Runtime": "nodejs18.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "Nodejs18CodeBuildYarnTestServiceRole137F64A5"
+   ]
+  },
+  "Nodejs18CodeBuildYarnTestLogRetention5ECA4C10": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs18CodeBuildYarnTest4486EC0A"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 1
+   }
+  },
+  "Nodejs18CodeBuildYarnTestTrigger66F49BAB": {
+   "Type": "Custom::Trigger",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91",
+      "Arn"
+     ]
+    },
+    "HandlerArn": {
+     "Ref": "Nodejs18CodeBuildYarnTestCurrentVersionD2B4C7E1a12d430817114c39b1702076f2c82aad"
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18CodeBuildYarnTestCurrentVersionD2B4C7E1a12d430817114c39b1702076f2c82aad": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "Nodejs18CodeBuildYarnTest4486EC0A"
+    }
+   }
+  },
+  "Nodejs18LambdaPackagerBucket8961068E": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "aws-cdk:auto-delete-objects",
+      "Value": "true"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18LambdaPackagerBucketPolicy4A9F35C6": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:DeleteObject*"
+       ],
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::GetAtt": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+          "Arn"
+         ]
+        }
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "Nodejs18LambdaPackagerBucket8961068E",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "Nodejs18LambdaPackagerBucket8961068E",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   }
+  },
+  "Nodejs18LambdaPackagerBucketAutoDeleteObjectsCustomResourceD8AEE71D": {
+   "Type": "Custom::S3AutoDeleteObjects",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+    }
+   },
+   "DependsOn": [
+    "Nodejs18LambdaPackagerBucketPolicy4A9F35C6"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18LambdaPackagerServiceRole7E341DE4": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs18LambdaPackagerServiceRoleDefaultPolicy68AAA00A": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:DeleteObject*",
+        "s3:PutObject",
+        "s3:PutObjectLegalHold",
+        "s3:PutObjectRetention",
+        "s3:PutObjectTagging",
+        "s3:PutObjectVersionTagging",
+        "s3:Abort*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "Nodejs18LambdaPackagerBucket8961068E",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "Nodejs18LambdaPackagerBucket8961068E",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "s3:DeleteObject*",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "Nodejs18LambdaPackagerBucket8961068E",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+           }
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "Nodejs18LambdaPackagerServiceRoleDefaultPolicy68AAA00A",
+    "Roles": [
+     {
+      "Ref": "Nodejs18LambdaPackagerServiceRole7E341DE4"
+     }
+    ]
+   }
+  },
+  "Nodejs18LambdaPackager85BAE326": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "d8e069c3d23367d81973703087b6be6d81ac1f0273b49cebb151001100ed95d5.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs18LambdaPackagerServiceRole7E341DE4",
+      "Arn"
+     ]
+    },
+    "Architectures": [
+     "x86_64"
+    ],
+    "Description": "Turbo layer packager for nodejs18.x",
+    "Environment": {
+     "Variables": {
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+     }
+    },
+    "EphemeralStorage": {
+     "Size": 10240
+    },
+    "Handler": "index.handler",
+    "MemorySize": 1024,
+    "Runtime": "nodejs18.x",
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "Nodejs18LambdaPackagerServiceRoleDefaultPolicy68AAA00A",
+    "Nodejs18LambdaPackagerServiceRole7E341DE4"
+   ]
+  },
+  "Nodejs18LambdaPackagerLogRetention8EEAD47C": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs18LambdaPackager85BAE326"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 30
+   }
+  },
+  "Nodejs18LambdaPackagernpminlineLayerPackagerB88C3747": {
+   "Type": "Custom::LayerPackager",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Nodejs18LambdaPackager85BAE326",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+    },
+    "CodeBuildInstallCommands": [
+     "echo Installing Node.js 18",
+     "n 18"
+    ],
+    "PreinstallCommands": [],
+    "Commands": [
+     "npm i",
+     "mkdir nodejs",
+     "mv node_modules nodejs/"
+    ],
+    "PackagedDirectory": "nodejs",
+    "AssetBucket": {
+     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "AssetKey": "3bf5aad3a5db75c30ba530f89f7210a1eddb01c9a91cf0427515e6ef904bc869.zip"
+   },
+   "DependsOn": [
+    "Nodejs18LambdaPackagerLogRetention8EEAD47C",
+    "Nodejs18LambdaPackager85BAE326",
+    "Nodejs18LambdaPackagerServiceRoleDefaultPolicy68AAA00A",
+    "Nodejs18LambdaPackagerServiceRole7E341DE4"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18LambdaPackagernpminlineLayer49352DA7": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+     },
+     "S3Key": {
+      "Ref": "Nodejs18LambdaPackagernpminlineLayerPackagerB88C3747"
+     }
+    },
+    "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Dependencies Definition"
+   }
+  },
+  "Nodejs18LambdaPackagernpmLayerPackagerBFA1C741": {
+   "Type": "Custom::LayerPackager",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Nodejs18LambdaPackager85BAE326",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+    },
+    "CodeBuildInstallCommands": [
+     "echo Installing Node.js 18",
+     "n 18"
+    ],
+    "PreinstallCommands": [],
+    "Commands": [
+     "npm ci",
+     "mkdir nodejs",
+     "mv node_modules nodejs/"
+    ],
+    "PackagedDirectory": "nodejs",
+    "AssetBucket": {
+     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "AssetKey": "4a976e712b238000c04b209e96ba28d7567d8bbc7954fbbc97de024697cd4147.zip"
+   },
+   "DependsOn": [
+    "Nodejs18LambdaPackagerLogRetention8EEAD47C",
+    "Nodejs18LambdaPackager85BAE326",
+    "Nodejs18LambdaPackagerServiceRoleDefaultPolicy68AAA00A",
+    "Nodejs18LambdaPackagerServiceRole7E341DE4"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18LambdaPackagernpmLayerDD458507": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+     },
+     "S3Key": {
+      "Ref": "Nodejs18LambdaPackagernpmLayerPackagerBFA1C741"
+     }
+    },
+    "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Dependencies Definition"
+   }
+  },
+  "Nodejs18LambdaPackageryarnLayerPackager428E1F0F": {
+   "Type": "Custom::LayerPackager",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Nodejs18LambdaPackager85BAE326",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+    },
+    "CodeBuildInstallCommands": [
+     "echo Installing Node.js 18",
+     "n 18"
+    ],
+    "PreinstallCommands": [],
+    "Commands": [
+     "which yarn || npm install --global yarn",
+     "yarn install --check-files --frozen-lockfile",
+     "mkdir nodejs",
+     "mv node_modules nodejs/"
+    ],
+    "PackagedDirectory": "nodejs",
+    "AssetBucket": {
+     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+    },
+    "AssetKey": "48521f734f8d682c72f0a91cf94ae3031c21aa5c06f2b05888e7f98061118c64.zip"
+   },
+   "DependsOn": [
+    "Nodejs18LambdaPackagerLogRetention8EEAD47C",
+    "Nodejs18LambdaPackager85BAE326",
+    "Nodejs18LambdaPackagerServiceRoleDefaultPolicy68AAA00A",
+    "Nodejs18LambdaPackagerServiceRole7E341DE4"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18LambdaPackageryarnLayer52A0260C": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+     },
+     "S3Key": {
+      "Ref": "Nodejs18LambdaPackageryarnLayerPackager428E1F0F"
+     }
+    },
+    "Description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Dependencies Definition"
+   }
+  },
+  "Nodejs18LambdaNPMInlineTestServiceRole5E208618": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs18LambdaNPMInlineTest3C9BC6C6": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "ZipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs18LambdaNPMInlineTestServiceRole5E208618",
+      "Arn"
+     ]
+    },
+    "Description": "Test npm nodejs18.x 0",
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "Nodejs18LambdaPackagernpminlineLayer49352DA7"
+     }
+    ],
+    "Runtime": "nodejs18.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "Nodejs18LambdaNPMInlineTestServiceRole5E208618"
+   ]
+  },
+  "Nodejs18LambdaNPMInlineTestLogRetentionFD2F8351": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs18LambdaNPMInlineTest3C9BC6C6"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 1
+   }
+  },
+  "Nodejs18LambdaNPMInlineTestTriggerE22A7460": {
+   "Type": "Custom::Trigger",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91",
+      "Arn"
+     ]
+    },
+    "HandlerArn": {
+     "Ref": "Nodejs18LambdaNPMInlineTestCurrentVersion6041FE859b5523c462a9d9e2a02bf04e65c60a4c"
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18LambdaNPMInlineTestCurrentVersion6041FE859b5523c462a9d9e2a02bf04e65c60a4c": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "Nodejs18LambdaNPMInlineTest3C9BC6C6"
+    }
+   }
+  },
+  "Nodejs18LambdaNPMTestServiceRoleB5A92577": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs18LambdaNPMTest880421DA": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "ZipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs18LambdaNPMTestServiceRoleB5A92577",
+      "Arn"
+     ]
+    },
+    "Description": "Test npm nodejs18.x 0",
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "Nodejs18LambdaPackagernpmLayerDD458507"
+     }
+    ],
+    "Runtime": "nodejs18.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "Nodejs18LambdaNPMTestServiceRoleB5A92577"
+   ]
+  },
+  "Nodejs18LambdaNPMTestLogRetentionE14F43A7": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs18LambdaNPMTest880421DA"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 1
+   }
+  },
+  "Nodejs18LambdaNPMTestTrigger131AD264": {
+   "Type": "Custom::Trigger",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91",
+      "Arn"
+     ]
+    },
+    "HandlerArn": {
+     "Ref": "Nodejs18LambdaNPMTestCurrentVersion301002D43b737a94284bca1c955570765e9c0adb"
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18LambdaNPMTestCurrentVersion301002D43b737a94284bca1c955570765e9c0adb": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "Nodejs18LambdaNPMTest880421DA"
+    }
+   }
+  },
+  "Nodejs18LambdaYarnTestServiceRole155A0993": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Nodejs18LambdaYarnTestAE6021EA": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "ZipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Nodejs18LambdaYarnTestServiceRole155A0993",
+      "Arn"
+     ]
+    },
+    "Description": "Test yarn nodejs18.x 0",
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "Nodejs18LambdaPackageryarnLayer52A0260C"
+     }
+    ],
+    "Runtime": "nodejs18.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "Nodejs18LambdaYarnTestServiceRole155A0993"
+   ]
+  },
+  "Nodejs18LambdaYarnTestLogRetentionD6464F47": {
+   "Type": "Custom::LogRetention",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "Arn"
+     ]
+    },
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Nodejs18LambdaYarnTestAE6021EA"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 1
+   }
+  },
+  "Nodejs18LambdaYarnTestTrigger7A3176ED": {
+   "Type": "Custom::Trigger",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91",
+      "Arn"
+     ]
+    },
+    "HandlerArn": {
+     "Ref": "Nodejs18LambdaYarnTestCurrentVersionC6BD10EFa0da227130f722d956db41bacc92cca8"
+    },
+    "InvocationType": "RequestResponse",
+    "Timeout": "60000"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Nodejs18LambdaYarnTestCurrentVersionC6BD10EFa0da227130f722d956db41bacc92cca8": {
+   "Type": "AWS::Lambda::Version",
+   "Properties": {
+    "FunctionName": {
+     "Ref": "Nodejs18LambdaYarnTestAE6021EA"
+    }
+   }
+  },
   "Ruby27CodeBuildPackagerBucketD708F0AD": {
    "Type": "AWS::S3::Bucket",
    "Properties": {
@@ -4728,7 +6609,7 @@
     },
     "Environment": {
      "ComputeType": "BUILD_GENERAL1_SMALL",
-     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:4.0",
+     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:5.0",
      "ImagePullCredentialsType": "CODEBUILD",
      "PrivilegedMode": false,
      "Type": "LINUX_CONTAINER"
@@ -4850,7 +6731,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "611fff8139d552c84d2e687a1cb26c16d91f18a3d5b311f3da290d2c651c3083.zip"
+     "S3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -5846,7 +7727,7 @@
     },
     "Environment": {
      "ComputeType": "BUILD_GENERAL1_SMALL",
-     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:4.0",
+     "Image": "aws/codebuild/amazonlinux2-x86_64-standard:5.0",
      "ImagePullCredentialsType": "CODEBUILD",
      "PrivilegedMode": false,
      "Type": "LINUX_CONTAINER"
@@ -5968,7 +7849,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "611fff8139d552c84d2e687a1cb26c16d91f18a3d5b311f3da290d2c651c3083.zip"
+     "S3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
     },
     "Role": {
      "Fn::GetAtt": [

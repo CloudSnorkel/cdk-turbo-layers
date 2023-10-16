@@ -169,6 +169,8 @@ new PythonTest(layerStack, 'Python 3.9 CodeBuild', lambda.Runtime.PYTHON_3_9, De
 new PythonTest(layerStack, 'Python 3.9 Lambda', lambda.Runtime.PYTHON_3_9, DependencyPackagerType.LAMBDA);
 new NodejsTest(layerStack, 'Node.js 16 CodeBuild', lambda.Runtime.NODEJS_16_X, DependencyPackagerType.CODEBUILD);
 new NodejsTest(layerStack, 'Node.js 16 Lambda', lambda.Runtime.NODEJS_16_X, DependencyPackagerType.LAMBDA);
+new NodejsTest(layerStack, 'Node.js 18 CodeBuild', lambda.Runtime.NODEJS_18_X, DependencyPackagerType.CODEBUILD);
+new NodejsTest(layerStack, 'Node.js 18 Lambda', lambda.Runtime.NODEJS_18_X, DependencyPackagerType.LAMBDA);
 new RubyTest(layerStack, 'Ruby 2.7 CodeBuild', lambda.Runtime.RUBY_2_7, DependencyPackagerType.CODEBUILD);
 new RubyTest(layerStack, 'Ruby 2.7 Lambda', lambda.Runtime.RUBY_2_7, DependencyPackagerType.LAMBDA);
 new JavaTest(layerStack, 'Java 11 CodeBuild', lambda.Runtime.JAVA_11, DependencyPackagerType.CODEBUILD);
