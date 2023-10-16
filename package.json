@@ -51,8 +51,8 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/aws-lambda-python-alpha": "^2.100.0-alpha.0",
-    "@aws-sdk/types": "^3.425.0",
+    "@aws-cdk/aws-lambda-python-alpha": "^2.101.0-alpha.0",
+    "@aws-sdk/types": "^3.428.0",
     "@types/adm-zip": "^0.5.2",
     "@types/aws-lambda": "^8.10.124",
     "@types/jest": "^27",
@@ -62,7 +62,7 @@
     "adm-zip": "^0.5.10",
     "aws-cdk": "^2",
     "aws-cdk-lib": "2.77.0",
-    "aws-sdk": "^2.1472.0",
+    "aws-sdk": "^2.1473.0",
     "constructs": "10.0.5",
     "esbuild": "^0.19.4",
     "eslint": "^8",
@@ -78,7 +78,7 @@
     "jsii-pacmak": "^1.90.0",
     "jsii-rosetta": "1.x",
     "npm-check-updates": "^16",
-    "projen": "^0.74.6",
+    "projen": "^0.74.17",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
