@@ -645,7 +645,7 @@
                               "s3Bucket": {
                                 "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                               },
-                              "s3Key": "611fff8139d552c84d2e687a1cb26c16d91f18a3d5b311f3da290d2c651c3083.zip"
+                              "s3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
                             },
                             "role": {
                               "Fn::GetAtt": [
@@ -4098,7 +4098,7 @@
                               "s3Bucket": {
                                 "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                               },
-                              "s3Key": "611fff8139d552c84d2e687a1cb26c16d91f18a3d5b311f3da290d2c651c3083.zip"
+                              "s3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
                             },
                             "role": {
                               "Fn::GetAtt": [
@@ -5305,7 +5305,7 @@
                               "s3Bucket": {
                                 "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                               },
-                              "s3Key": "75f547f8ec7caf5df0eae3fb02f0336444654208d287492b50cfe563b46b9588.zip"
+                              "s3Key": "d8e069c3d23367d81973703087b6be6d81ac1f0273b49cebb151001100ed95d5.zip"
                             },
                             "role": {
                               "Fn::GetAtt": [
@@ -6172,6 +6172,2717 @@
               "version": "10.0.5"
             }
           },
+          "Node.js 18 CodeBuild": {
+            "id": "Node.js 18 CodeBuild",
+            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild",
+            "children": {
+              "Packager": {
+                "id": "Packager",
+                "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager",
+                "children": {
+                  "Bucket": {
+                    "id": "Bucket",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                          "aws:cdk:cloudformation:props": {
+                            "tags": [
+                              {
+                                "key": "aws-cdk:auto-delete-objects",
+                                "value": "true"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Policy": {
+                        "id": "Policy",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket/Policy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket/Policy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                              "aws:cdk:cloudformation:props": {
+                                "bucket": {
+                                  "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+                                },
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "s3:GetBucket*",
+                                        "s3:List*",
+                                        "s3:DeleteObject*"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "AWS": {
+                                          "Fn::GetAtt": [
+                                            "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                                            "Arn"
+                                          ]
+                                        }
+                                      },
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "Nodejs18CodeBuildPackagerBucket79764435",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "Nodejs18CodeBuildPackagerBucket79764435",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "AutoDeleteObjectsCustomResource": {
+                        "id": "AutoDeleteObjectsCustomResource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.Bucket",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Logs": {
+                    "id": "Logs",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Logs",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Logs/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "retentionInDays": 30
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_logs.CfnLogGroup",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogGroup",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Packager": {
+                    "id": "Packager",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager",
+                    "children": {
+                      "Role": {
+                        "id": "Role",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Role",
+                        "children": {
+                          "ImportRole": {
+                            "id": "ImportRole",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Role/ImportRole",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.Resource",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Role/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "codebuild.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Role/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Role/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": [
+                                            "logs:CreateLogStream",
+                                            "logs:PutLogEvents"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::GetAtt": [
+                                              "Nodejs18CodeBuildPackagerLogsE4807E34",
+                                              "Arn"
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": [
+                                            "logs:CreateLogGroup",
+                                            "logs:CreateLogStream",
+                                            "logs:PutLogEvents"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":logs:",
+                                                  {
+                                                    "Ref": "AWS::Region"
+                                                  },
+                                                  ":",
+                                                  {
+                                                    "Ref": "AWS::AccountId"
+                                                  },
+                                                  ":log-group:/aws/codebuild/",
+                                                  {
+                                                    "Ref": "Nodejs18CodeBuildPackager634BA08F"
+                                                  }
+                                                ]
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":logs:",
+                                                  {
+                                                    "Ref": "AWS::Region"
+                                                  },
+                                                  ":",
+                                                  {
+                                                    "Ref": "AWS::AccountId"
+                                                  },
+                                                  ":log-group:/aws/codebuild/",
+                                                  {
+                                                    "Ref": "Nodejs18CodeBuildPackager634BA08F"
+                                                  },
+                                                  ":*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "Action": [
+                                            "codebuild:CreateReportGroup",
+                                            "codebuild:CreateReport",
+                                            "codebuild:UpdateReport",
+                                            "codebuild:BatchPutTestCases",
+                                            "codebuild:BatchPutCodeCoverages"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                "arn:",
+                                                {
+                                                  "Ref": "AWS::Partition"
+                                                },
+                                                ":codebuild:",
+                                                {
+                                                  "Ref": "AWS::Region"
+                                                },
+                                                ":",
+                                                {
+                                                  "Ref": "AWS::AccountId"
+                                                },
+                                                ":report-group/",
+                                                {
+                                                  "Ref": "Nodejs18CodeBuildPackager634BA08F"
+                                                },
+                                                "-*"
+                                              ]
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": [
+                                            "s3:DeleteObject*",
+                                            "s3:PutObject",
+                                            "s3:PutObjectLegalHold",
+                                            "s3:PutObjectRetention",
+                                            "s3:PutObjectTagging",
+                                            "s3:PutObjectVersionTagging",
+                                            "s3:Abort*"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::GetAtt": [
+                                                "Nodejs18CodeBuildPackagerBucket79764435",
+                                                "Arn"
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  {
+                                                    "Fn::GetAtt": [
+                                                      "Nodejs18CodeBuildPackagerBucket79764435",
+                                                      "Arn"
+                                                    ]
+                                                  },
+                                                  "/*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "Action": "s3:DeleteObject*",
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                {
+                                                  "Fn::GetAtt": [
+                                                    "Nodejs18CodeBuildPackagerBucket79764435",
+                                                    "Arn"
+                                                  ]
+                                                },
+                                                "/*"
+                                              ]
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": [
+                                            "s3:GetObject*",
+                                            "s3:GetBucket*",
+                                            "s3:List*"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":s3:::",
+                                                  {
+                                                    "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                                  }
+                                                ]
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":s3:::",
+                                                  {
+                                                    "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                                  },
+                                                  "/*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
+                                    "roles": [
+                                      {
+                                        "Ref": "Nodejs18CodeBuildPackagerRole6D628672"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                                  "version": "2.77.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.Policy",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Role",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::CodeBuild::Project",
+                          "aws:cdk:cloudformation:props": {
+                            "artifacts": {
+                              "type": "NO_ARTIFACTS"
+                            },
+                            "environment": {
+                              "type": "LINUX_CONTAINER",
+                              "image": "aws/codebuild/amazonlinux2-x86_64-standard:4.0",
+                              "imagePullCredentialsType": "CODEBUILD",
+                              "privilegedMode": false,
+                              "computeType": "BUILD_GENERAL1_SMALL"
+                            },
+                            "serviceRole": {
+                              "Fn::GetAtt": [
+                                "Nodejs18CodeBuildPackagerRole6D628672",
+                                "Arn"
+                              ]
+                            },
+                            "source": {
+                              "type": "NO_SOURCE",
+                              "buildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"echo The real build spec will be put together by the custom resource\",\n        \"exit 1\"\n      ]\n    }\n  }\n}"
+                            },
+                            "cache": {
+                              "type": "NO_CACHE"
+                            },
+                            "description": "Lambda dependency packager for nodejs18.x in Turbo-Layer-Test",
+                            "encryptionKey": "alias/aws/s3",
+                            "logsConfig": {
+                              "cloudWatchLogs": {
+                                "status": "ENABLED",
+                                "groupName": {
+                                  "Ref": "Nodejs18CodeBuildPackagerLogsE4807E34"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_codebuild.CfnProject",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_codebuild.Project",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Package Handler": {
+                    "id": "Package Handler",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler",
+                    "children": {
+                      "ServiceRole": {
+                        "id": "ServiceRole",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/ServiceRole",
+                        "children": {
+                          "ImportServiceRole": {
+                            "id": "ImportServiceRole",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/ServiceRole/ImportServiceRole",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.Resource",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/ServiceRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "lambda.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "managedPolicyArns": [
+                                  {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                      ]
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": "codebuild:StartBuild",
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::GetAtt": [
+                                              "Nodejs18CodeBuildPackager634BA08F",
+                                              "Arn"
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": "s3:DeleteObject*",
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                {
+                                                  "Fn::GetAtt": [
+                                                    "Nodejs18CodeBuildPackagerBucket79764435",
+                                                    "Arn"
+                                                  ]
+                                                },
+                                                "/*"
+                                              ]
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A",
+                                    "roles": [
+                                      {
+                                        "Ref": "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                                  "version": "2.77.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.Policy",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Role",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Code": {
+                        "id": "Code",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/Code",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/Code/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/Code/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                          "aws:cdk:cloudformation:props": {
+                            "code": {
+                              "s3Bucket": {
+                                "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                              },
+                              "s3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
+                            },
+                            "role": {
+                              "Fn::GetAtt": [
+                                "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5",
+                                "Arn"
+                              ]
+                            },
+                            "description": "Turbo layer packager for nodejs18.x using CodeBuild",
+                            "environment": {
+                              "variables": {
+                                "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                              }
+                            },
+                            "handler": "index.handler",
+                            "runtime": "nodejs18.x"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "LogRetention": {
+                        "id": "LogRetention",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/LogRetention",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/LogRetention/Resource",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/LogGroup",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Function",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "npm inline": {
+                    "id": "npm inline",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline",
+                    "children": {
+                      "Dependencies Definition": {
+                        "id": "Dependencies Definition",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Dependencies Definition",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Dependencies Definition/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Dependencies Definition/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer Packager": {
+                        "id": "Layer Packager",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Layer Packager",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Layer Packager/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer": {
+                        "id": "Layer",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Layer",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Layer/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                              "aws:cdk:cloudformation:props": {
+                                "content": {
+                                  "s3Bucket": {
+                                    "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+                                  },
+                                  "s3Key": {
+                                    "Ref": "Nodejs18CodeBuildPackagernpminlineLayerPackager99DCCE8B"
+                                  }
+                                },
+                                "description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Dependencies Definition"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.0.5"
+                    }
+                  },
+                  "npm": {
+                    "id": "npm",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm",
+                    "children": {
+                      "Dependencies Definition": {
+                        "id": "Dependencies Definition",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Dependencies Definition",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Dependencies Definition/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Dependencies Definition/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer Packager": {
+                        "id": "Layer Packager",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Layer Packager",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Layer Packager/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer": {
+                        "id": "Layer",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Layer",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Layer/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                              "aws:cdk:cloudformation:props": {
+                                "content": {
+                                  "s3Bucket": {
+                                    "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+                                  },
+                                  "s3Key": {
+                                    "Ref": "Nodejs18CodeBuildPackagernpmLayerPackager65607D01"
+                                  }
+                                },
+                                "description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Dependencies Definition"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.0.5"
+                    }
+                  },
+                  "yarn": {
+                    "id": "yarn",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn",
+                    "children": {
+                      "Dependencies Definition": {
+                        "id": "Dependencies Definition",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Dependencies Definition",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Dependencies Definition/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Dependencies Definition/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer Packager": {
+                        "id": "Layer Packager",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Layer Packager",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Layer Packager/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer": {
+                        "id": "Layer",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Layer",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Layer/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                              "aws:cdk:cloudformation:props": {
+                                "content": {
+                                  "s3Bucket": {
+                                    "Ref": "Nodejs18CodeBuildPackagerBucket79764435"
+                                  },
+                                  "s3Key": {
+                                    "Ref": "Nodejs18CodeBuildPackageryarnLayerPackager4C59A305"
+                                  }
+                                },
+                                "description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Dependencies Definition"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.0.5"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.5"
+                }
+              },
+              "NPM Inline Test": {
+                "id": "NPM Inline Test",
+                "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "zipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "Nodejs18CodeBuildNPMInlineTestServiceRoleA84C1254",
+                            "Arn"
+                          ]
+                        },
+                        "description": "Test npm nodejs18.x 1",
+                        "handler": "index.handler",
+                        "layers": [
+                          {
+                            "Ref": "Nodejs18CodeBuildPackagernpminlineLayer66D8F642"
+                          }
+                        ],
+                        "runtime": "nodejs18.x",
+                        "timeout": 60
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogRetention": {
+                    "id": "LogRetention",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/LogRetention",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/LogRetention/Resource",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/LogGroup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Trigger": {
+                    "id": "Trigger",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/Trigger",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/Trigger/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/Trigger/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.triggers.Trigger",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "CurrentVersion": {
+                    "id": "CurrentVersion",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/CurrentVersion",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/CurrentVersion/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "Nodejs18CodeBuildNPMInlineTest2E004270"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Version",
+                      "version": "2.77.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.triggers.TriggerFunction",
+                  "version": "2.77.0"
+                }
+              },
+              "NPM Test": {
+                "id": "NPM Test",
+                "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "zipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "Nodejs18CodeBuildNPMTestServiceRoleA521C672",
+                            "Arn"
+                          ]
+                        },
+                        "description": "Test npm nodejs18.x 1",
+                        "handler": "index.handler",
+                        "layers": [
+                          {
+                            "Ref": "Nodejs18CodeBuildPackagernpmLayer8B6CB973"
+                          }
+                        ],
+                        "runtime": "nodejs18.x",
+                        "timeout": 60
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogRetention": {
+                    "id": "LogRetention",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/LogRetention",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/LogRetention/Resource",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/LogGroup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Trigger": {
+                    "id": "Trigger",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/Trigger",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/Trigger/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/Trigger/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.triggers.Trigger",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "CurrentVersion": {
+                    "id": "CurrentVersion",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/CurrentVersion",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/CurrentVersion/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "Nodejs18CodeBuildNPMTest4642EE2D"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Version",
+                      "version": "2.77.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.triggers.TriggerFunction",
+                  "version": "2.77.0"
+                }
+              },
+              "Yarn Test": {
+                "id": "Yarn Test",
+                "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "zipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "Nodejs18CodeBuildYarnTestServiceRole137F64A5",
+                            "Arn"
+                          ]
+                        },
+                        "description": "Test yarn nodejs18.x 1",
+                        "handler": "index.handler",
+                        "layers": [
+                          {
+                            "Ref": "Nodejs18CodeBuildPackageryarnLayer3299566A"
+                          }
+                        ],
+                        "runtime": "nodejs18.x",
+                        "timeout": 60
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogRetention": {
+                    "id": "LogRetention",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/LogRetention",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/LogRetention/Resource",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/LogGroup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Trigger": {
+                    "id": "Trigger",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/Trigger",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/Trigger/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/Trigger/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.triggers.Trigger",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "CurrentVersion": {
+                    "id": "CurrentVersion",
+                    "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/CurrentVersion",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/CurrentVersion/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "Nodejs18CodeBuildYarnTest4486EC0A"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Version",
+                      "version": "2.77.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.triggers.TriggerFunction",
+                  "version": "2.77.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.0.5"
+            }
+          },
+          "Node.js 18 Lambda": {
+            "id": "Node.js 18 Lambda",
+            "path": "Turbo-Layer-Test/Node.js 18 Lambda",
+            "children": {
+              "Packager": {
+                "id": "Packager",
+                "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager",
+                "children": {
+                  "Bucket": {
+                    "id": "Bucket",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                          "aws:cdk:cloudformation:props": {
+                            "tags": [
+                              {
+                                "key": "aws-cdk:auto-delete-objects",
+                                "value": "true"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Policy": {
+                        "id": "Policy",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket/Policy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket/Policy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                              "aws:cdk:cloudformation:props": {
+                                "bucket": {
+                                  "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+                                },
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "s3:GetBucket*",
+                                        "s3:List*",
+                                        "s3:DeleteObject*"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "AWS": {
+                                          "Fn::GetAtt": [
+                                            "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                                            "Arn"
+                                          ]
+                                        }
+                                      },
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "Nodejs18LambdaPackagerBucket8961068E",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "Nodejs18LambdaPackagerBucket8961068E",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "AutoDeleteObjectsCustomResource": {
+                        "id": "AutoDeleteObjectsCustomResource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket/AutoDeleteObjectsCustomResource",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket/AutoDeleteObjectsCustomResource/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.Bucket",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Packager": {
+                    "id": "Packager",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager",
+                    "children": {
+                      "ServiceRole": {
+                        "id": "ServiceRole",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/ServiceRole",
+                        "children": {
+                          "ImportServiceRole": {
+                            "id": "ImportServiceRole",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/ServiceRole/ImportServiceRole",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.Resource",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/ServiceRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "lambda.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "managedPolicyArns": [
+                                  {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                      ]
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/ServiceRole/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/ServiceRole/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": [
+                                            "s3:DeleteObject*",
+                                            "s3:PutObject",
+                                            "s3:PutObjectLegalHold",
+                                            "s3:PutObjectRetention",
+                                            "s3:PutObjectTagging",
+                                            "s3:PutObjectVersionTagging",
+                                            "s3:Abort*"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::GetAtt": [
+                                                "Nodejs18LambdaPackagerBucket8961068E",
+                                                "Arn"
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  {
+                                                    "Fn::GetAtt": [
+                                                      "Nodejs18LambdaPackagerBucket8961068E",
+                                                      "Arn"
+                                                    ]
+                                                  },
+                                                  "/*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "Action": "s3:DeleteObject*",
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                {
+                                                  "Fn::GetAtt": [
+                                                    "Nodejs18LambdaPackagerBucket8961068E",
+                                                    "Arn"
+                                                  ]
+                                                },
+                                                "/*"
+                                              ]
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": [
+                                            "s3:GetObject*",
+                                            "s3:GetBucket*",
+                                            "s3:List*"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": [
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":s3:::",
+                                                  {
+                                                    "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                                  }
+                                                ]
+                                              ]
+                                            },
+                                            {
+                                              "Fn::Join": [
+                                                "",
+                                                [
+                                                  "arn:",
+                                                  {
+                                                    "Ref": "AWS::Partition"
+                                                  },
+                                                  ":s3:::",
+                                                  {
+                                                    "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                                  },
+                                                  "/*"
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "Nodejs18LambdaPackagerServiceRoleDefaultPolicy68AAA00A",
+                                    "roles": [
+                                      {
+                                        "Ref": "Nodejs18LambdaPackagerServiceRole7E341DE4"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                                  "version": "2.77.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.Policy",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Role",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Code": {
+                        "id": "Code",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/Code",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/Code/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/Code/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                          "aws:cdk:cloudformation:props": {
+                            "code": {
+                              "s3Bucket": {
+                                "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                              },
+                              "s3Key": "d8e069c3d23367d81973703087b6be6d81ac1f0273b49cebb151001100ed95d5.zip"
+                            },
+                            "role": {
+                              "Fn::GetAtt": [
+                                "Nodejs18LambdaPackagerServiceRole7E341DE4",
+                                "Arn"
+                              ]
+                            },
+                            "architectures": [
+                              "x86_64"
+                            ],
+                            "description": "Turbo layer packager for nodejs18.x",
+                            "environment": {
+                              "variables": {
+                                "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                              }
+                            },
+                            "ephemeralStorage": {
+                              "size": 10240
+                            },
+                            "handler": "index.handler",
+                            "memorySize": 1024,
+                            "runtime": "nodejs18.x",
+                            "timeout": 900
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "LogRetention": {
+                        "id": "LogRetention",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/LogRetention",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/LogRetention/Resource",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/LogGroup",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Function",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "npm inline": {
+                    "id": "npm inline",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline",
+                    "children": {
+                      "Dependencies Definition": {
+                        "id": "Dependencies Definition",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Dependencies Definition",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Dependencies Definition/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Dependencies Definition/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer Packager": {
+                        "id": "Layer Packager",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Layer Packager",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Layer Packager/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer": {
+                        "id": "Layer",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Layer",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Layer/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                              "aws:cdk:cloudformation:props": {
+                                "content": {
+                                  "s3Bucket": {
+                                    "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+                                  },
+                                  "s3Key": {
+                                    "Ref": "Nodejs18LambdaPackagernpminlineLayerPackagerB88C3747"
+                                  }
+                                },
+                                "description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Dependencies Definition"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.0.5"
+                    }
+                  },
+                  "npm": {
+                    "id": "npm",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm",
+                    "children": {
+                      "Dependencies Definition": {
+                        "id": "Dependencies Definition",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Dependencies Definition",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Dependencies Definition/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Dependencies Definition/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer Packager": {
+                        "id": "Layer Packager",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Layer Packager",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Layer Packager/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer": {
+                        "id": "Layer",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Layer",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Layer/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                              "aws:cdk:cloudformation:props": {
+                                "content": {
+                                  "s3Bucket": {
+                                    "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+                                  },
+                                  "s3Key": {
+                                    "Ref": "Nodejs18LambdaPackagernpmLayerPackagerBFA1C741"
+                                  }
+                                },
+                                "description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Dependencies Definition"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.0.5"
+                    }
+                  },
+                  "yarn": {
+                    "id": "yarn",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn",
+                    "children": {
+                      "Dependencies Definition": {
+                        "id": "Dependencies Definition",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Dependencies Definition",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Dependencies Definition/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.77.0"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Dependencies Definition/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer Packager": {
+                        "id": "Layer Packager",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Layer Packager",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Layer Packager/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Layer": {
+                        "id": "Layer",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Layer",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Layer/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                              "aws:cdk:cloudformation:props": {
+                                "content": {
+                                  "s3Bucket": {
+                                    "Ref": "Nodejs18LambdaPackagerBucket8961068E"
+                                  },
+                                  "s3Key": {
+                                    "Ref": "Nodejs18LambdaPackageryarnLayerPackager428E1F0F"
+                                  }
+                                },
+                                "description": "Automatically generated by turbo layers for Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Dependencies Definition"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.0.5"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.5"
+                }
+              },
+              "NPM Inline Test": {
+                "id": "NPM Inline Test",
+                "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "zipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "Nodejs18LambdaNPMInlineTestServiceRole5E208618",
+                            "Arn"
+                          ]
+                        },
+                        "description": "Test npm nodejs18.x 0",
+                        "handler": "index.handler",
+                        "layers": [
+                          {
+                            "Ref": "Nodejs18LambdaPackagernpminlineLayer49352DA7"
+                          }
+                        ],
+                        "runtime": "nodejs18.x",
+                        "timeout": 60
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogRetention": {
+                    "id": "LogRetention",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/LogRetention",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/LogRetention/Resource",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/LogGroup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Trigger": {
+                    "id": "Trigger",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/Trigger",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/Trigger/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/Trigger/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.triggers.Trigger",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "CurrentVersion": {
+                    "id": "CurrentVersion",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/CurrentVersion",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/CurrentVersion/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "Nodejs18LambdaNPMInlineTest3C9BC6C6"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Version",
+                      "version": "2.77.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.triggers.TriggerFunction",
+                  "version": "2.77.0"
+                }
+              },
+              "NPM Test": {
+                "id": "NPM Test",
+                "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "zipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "Nodejs18LambdaNPMTestServiceRoleB5A92577",
+                            "Arn"
+                          ]
+                        },
+                        "description": "Test npm nodejs18.x 0",
+                        "handler": "index.handler",
+                        "layers": [
+                          {
+                            "Ref": "Nodejs18LambdaPackagernpmLayerDD458507"
+                          }
+                        ],
+                        "runtime": "nodejs18.x",
+                        "timeout": 60
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogRetention": {
+                    "id": "LogRetention",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/LogRetention",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/LogRetention/Resource",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/LogGroup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Trigger": {
+                    "id": "Trigger",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/Trigger",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/Trigger/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/Trigger/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.triggers.Trigger",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "CurrentVersion": {
+                    "id": "CurrentVersion",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/CurrentVersion",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/CurrentVersion/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "Nodejs18LambdaNPMTest880421DA"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Version",
+                      "version": "2.77.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.triggers.TriggerFunction",
+                  "version": "2.77.0"
+                }
+              },
+              "Yarn Test": {
+                "id": "Yarn Test",
+                "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.77.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "zipFile": "module.exports.handler = (event, context, callback) => {require(\"lodash\");callback();}"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "Nodejs18LambdaYarnTestServiceRole155A0993",
+                            "Arn"
+                          ]
+                        },
+                        "description": "Test yarn nodejs18.x 0",
+                        "handler": "index.handler",
+                        "layers": [
+                          {
+                            "Ref": "Nodejs18LambdaPackageryarnLayer52A0260C"
+                          }
+                        ],
+                        "runtime": "nodejs18.x",
+                        "timeout": 60
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogRetention": {
+                    "id": "LogRetention",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/LogRetention",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/LogRetention/Resource",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.LogRetention",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/LogGroup",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "Trigger": {
+                    "id": "Trigger",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/Trigger",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/Trigger/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/Trigger/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.77.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.triggers.Trigger",
+                      "version": "2.77.0"
+                    }
+                  },
+                  "CurrentVersion": {
+                    "id": "CurrentVersion",
+                    "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/CurrentVersion",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/CurrentVersion/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "Nodejs18LambdaYarnTestAE6021EA"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnVersion",
+                          "version": "2.77.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Version",
+                      "version": "2.77.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.triggers.TriggerFunction",
+                  "version": "2.77.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.0.5"
+            }
+          },
           "Ruby 2.7 CodeBuild": {
             "id": "Ruby 2.7 CodeBuild",
             "path": "Turbo-Layer-Test/Ruby 2.7 CodeBuild",
@@ -6809,7 +9520,7 @@
                               "s3Bucket": {
                                 "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                               },
-                              "s3Key": "611fff8139d552c84d2e687a1cb26c16d91f18a3d5b311f3da290d2c651c3083.zip"
+                              "s3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
                             },
                             "role": {
                               "Fn::GetAtt": [
@@ -8517,7 +11228,7 @@
                               "s3Bucket": {
                                 "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                               },
-                              "s3Key": "611fff8139d552c84d2e687a1cb26c16d91f18a3d5b311f3da290d2c651c3083.zip"
+                              "s3Key": "4ace167f140d06c41c4341333484cea99eca5faa4f0359d203839b3e7956a102.zip"
                             },
                             "role": {
                               "Fn::GetAtt": [

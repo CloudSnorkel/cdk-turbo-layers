@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/70e2efee6f5ed2f653455df94122c9a80e1f3c3fcfbc96517e2bf4476741499d.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/12fc37fe63c4e8c1cd414d9f88013e6fb727d50abee15fed3294a634b955ce38.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -883,6 +883,366 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "Nodejs16LambdaYarnTestCurrentVersion7E1F1E0E700262356e13bbf971efaf760dbf7ba5"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerBucket79764435"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerBucketPolicy1FFB1A92"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceF163B54A"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Logs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerLogsE4807E34"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerRole6D628672"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackager634BA08F"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerPackageHandlerC425E4C2"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/Package Handler/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagerPackageHandlerLogRetentionAA03C43C"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagernpminlineLayerPackager99DCCE8B"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm inline/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagernpminlineLayer66D8F642"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagernpmLayerPackager65607D01"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/npm/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackagernpmLayer8B6CB973"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackageryarnLayerPackager4C59A305"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Packager/yarn/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildPackageryarnLayer3299566A"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMInlineTestServiceRoleA84C1254"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMInlineTest2E004270"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMInlineTestLogRetentionEA1A4245"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMInlineTestTrigger07F19AF0"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Inline Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMInlineTestCurrentVersion407B373Ab5ec84688a3aa5d87ca817539e551d72"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMTestServiceRoleA521C672"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMTest4642EE2D"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMTestLogRetention261516D8"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMTestTrigger0856CACF"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/NPM Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildNPMTestCurrentVersionDACB1E7Eb4c2d438bf2ccf1faa578e9a571c08cb"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildYarnTestServiceRole137F64A5"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildYarnTest4486EC0A"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildYarnTestLogRetention5ECA4C10"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildYarnTestTrigger66F49BAB"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 CodeBuild/Yarn Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18CodeBuildYarnTestCurrentVersionD2B4C7E1a12d430817114c39b1702076f2c82aad"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagerBucket8961068E"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagerBucketPolicy4A9F35C6"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagerBucketAutoDeleteObjectsCustomResourceD8AEE71D"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagerServiceRole7E341DE4"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagerServiceRoleDefaultPolicy68AAA00A"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackager85BAE326"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/Packager/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagerLogRetention8EEAD47C"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagernpminlineLayerPackagerB88C3747"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm inline/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagernpminlineLayer49352DA7"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagernpmLayerPackagerBFA1C741"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/npm/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackagernpmLayerDD458507"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Layer Packager/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackageryarnLayerPackager428E1F0F"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Packager/yarn/Layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaPackageryarnLayer52A0260C"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMInlineTestServiceRole5E208618"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMInlineTest3C9BC6C6"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMInlineTestLogRetentionFD2F8351"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMInlineTestTriggerE22A7460"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Inline Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMInlineTestCurrentVersion6041FE859b5523c462a9d9e2a02bf04e65c60a4c"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMTestServiceRoleB5A92577"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMTest880421DA"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMTestLogRetentionE14F43A7"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMTestTrigger131AD264"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/NPM Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaNPMTestCurrentVersion301002D43b737a94284bca1c955570765e9c0adb"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaYarnTestServiceRole155A0993"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaYarnTestAE6021EA"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaYarnTestLogRetentionD6464F47"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaYarnTestTrigger7A3176ED"
+          }
+        ],
+        "/Turbo-Layer-Test/Node.js 18 Lambda/Yarn Test/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Nodejs18LambdaYarnTestCurrentVersionC6BD10EFa0da227130f722d956db41bacc92cca8"
           }
         ],
         "/Turbo-Layer-Test/Ruby 2.7 CodeBuild/Packager/Bucket/Resource": [

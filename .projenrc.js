@@ -14,8 +14,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   description: 'Speed-up Lambda function deployment with dependency layers built in AWS',
   devDeps: [
     'esbuild', // for faster NodejsFunction bundling
-    'aws-sdk',
-    '@aws-sdk/types',
+    '@aws-sdk/client-codebuild',
+    '@aws-sdk/client-s3',
     '@types/aws-lambda',
     'adm-zip',
     '@types/adm-zip',
@@ -100,6 +100,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   tsconfig: {
     include: ['benchmark/**/*.ts'],
+  },
+  lambdaOptions: {
+    bundlingOptions: {
+      // we can't count on @aws-sdk to be there because the user might use nodejs 16 or 18
+      // this will cause @aws-sdk to be bundled in our lambda
+      externals: [],
+    },
   },
 });
 
