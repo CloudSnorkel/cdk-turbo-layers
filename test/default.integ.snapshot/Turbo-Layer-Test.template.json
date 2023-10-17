@@ -7919,9 +7919,9 @@
     },
     "CodeBuildInstallCommands": [
      "echo Installing java-11-amazon-corretto",
-     "yum install -y java-11-amazon-corretto",
-     "alternatives --set java /usr/lib/jvm/java-11-amazon-corretto.*/bin/java",
-     "alternatives --set javac /usr/lib/jvm/java-11-amazon-corretto.*/bin/javac"
+     "yum install -y java-11-amazon-corretto-devel.x86_64 java-11-amazon-corretto-headless.x86_64",
+     "alternatives --set java $(rpm -ql java-11-amazon-corretto-headless.x86_64 | grep bin/java$ | head -n 1)",
+     "alternatives --set javac $(rpm -ql java-11-amazon-corretto-devel.x86_64 | grep bin/javac$ | head -n 1)"
     ],
     "PreinstallCommands": [],
     "Commands": [
