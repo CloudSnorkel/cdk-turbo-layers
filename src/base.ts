@@ -197,7 +197,8 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
         ],
         logRetention: RetentionDays.ONE_MONTH,
       });
-            this.provider.node.addDependency(this.project);
+      this.provider.node.addDependency(this.packagesBucket); // wait for everything, including auto deleter
+      this.provider.node.addDependency(this.project);
       this.packagesBucket.grantDelete(this.provider);
     } else if (this.type == DependencyPackagerType.LAMBDA) {
       const lambdaProps = {
