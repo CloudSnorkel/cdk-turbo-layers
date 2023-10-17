@@ -390,6 +390,9 @@
     ]
    },
    "DependsOn": [
+    "Python39CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceAA71CB1D",
+    "Python39CodeBuildPackagerBucketPolicy085FFF5B",
+    "Python39CodeBuildPackagerBucketCA23805D",
     "Python39CodeBuildPackager2F58010A",
     "Python39CodeBuildPackagerRoleDefaultPolicy9A656F97",
     "Python39CodeBuildPackagerRole273A7C9A"
@@ -439,6 +442,9 @@
     ]
    },
    "DependsOn": [
+    "Python39CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceAA71CB1D",
+    "Python39CodeBuildPackagerBucketPolicy085FFF5B",
+    "Python39CodeBuildPackagerBucketCA23805D",
     "Python39CodeBuildPackager2F58010A",
     "Python39CodeBuildPackagerRoleDefaultPolicy9A656F97",
     "Python39CodeBuildPackagerRole273A7C9A"
@@ -469,6 +475,9 @@
     "Runtime": "nodejs18.x"
    },
    "DependsOn": [
+    "Python39CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceAA71CB1D",
+    "Python39CodeBuildPackagerBucketPolicy085FFF5B",
+    "Python39CodeBuildPackagerBucketCA23805D",
     "Python39CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicyB6DB807A",
     "Python39CodeBuildPackagerPackageHandlerServiceRoleF8F622D6",
     "Python39CodeBuildPackager2F58010A",
@@ -499,6 +508,9 @@
     "RetentionInDays": 30
    },
    "DependsOn": [
+    "Python39CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceAA71CB1D",
+    "Python39CodeBuildPackagerBucketPolicy085FFF5B",
+    "Python39CodeBuildPackagerBucketCA23805D",
     "Python39CodeBuildPackager2F58010A",
     "Python39CodeBuildPackagerRoleDefaultPolicy9A656F97",
     "Python39CodeBuildPackagerRole273A7C9A"
@@ -3172,6 +3184,9 @@
     ]
    },
    "DependsOn": [
+    "Nodejs16CodeBuildPackagerBucketAutoDeleteObjectsCustomResource17EFB133",
+    "Nodejs16CodeBuildPackagerBucketPolicy0A0D06D9",
+    "Nodejs16CodeBuildPackagerBucketB1D39C73",
     "Nodejs16CodeBuildPackagerD4BDB76B",
     "Nodejs16CodeBuildPackagerRoleDefaultPolicy9B6FE89F",
     "Nodejs16CodeBuildPackagerRoleB782C59C"
@@ -3221,6 +3236,9 @@
     ]
    },
    "DependsOn": [
+    "Nodejs16CodeBuildPackagerBucketAutoDeleteObjectsCustomResource17EFB133",
+    "Nodejs16CodeBuildPackagerBucketPolicy0A0D06D9",
+    "Nodejs16CodeBuildPackagerBucketB1D39C73",
     "Nodejs16CodeBuildPackagerD4BDB76B",
     "Nodejs16CodeBuildPackagerRoleDefaultPolicy9B6FE89F",
     "Nodejs16CodeBuildPackagerRoleB782C59C"
@@ -3251,6 +3269,9 @@
     "Runtime": "nodejs18.x"
    },
    "DependsOn": [
+    "Nodejs16CodeBuildPackagerBucketAutoDeleteObjectsCustomResource17EFB133",
+    "Nodejs16CodeBuildPackagerBucketPolicy0A0D06D9",
+    "Nodejs16CodeBuildPackagerBucketB1D39C73",
     "Nodejs16CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicyEC12B6EB",
     "Nodejs16CodeBuildPackagerPackageHandlerServiceRoleEF00FDB1",
     "Nodejs16CodeBuildPackagerD4BDB76B",
@@ -3281,6 +3302,9 @@
     "RetentionInDays": 30
    },
    "DependsOn": [
+    "Nodejs16CodeBuildPackagerBucketAutoDeleteObjectsCustomResource17EFB133",
+    "Nodejs16CodeBuildPackagerBucketPolicy0A0D06D9",
+    "Nodejs16CodeBuildPackagerBucketB1D39C73",
     "Nodejs16CodeBuildPackagerD4BDB76B",
     "Nodejs16CodeBuildPackagerRoleDefaultPolicy9B6FE89F",
     "Nodejs16CodeBuildPackagerRoleB782C59C"
@@ -4921,6 +4945,9 @@
     ]
    },
    "DependsOn": [
+    "Nodejs18CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceF163B54A",
+    "Nodejs18CodeBuildPackagerBucketPolicy1FFB1A92",
+    "Nodejs18CodeBuildPackagerBucket79764435",
     "Nodejs18CodeBuildPackager634BA08F",
     "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
     "Nodejs18CodeBuildPackagerRole6D628672"
@@ -4970,6 +4997,9 @@
     ]
    },
    "DependsOn": [
+    "Nodejs18CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceF163B54A",
+    "Nodejs18CodeBuildPackagerBucketPolicy1FFB1A92",
+    "Nodejs18CodeBuildPackagerBucket79764435",
     "Nodejs18CodeBuildPackager634BA08F",
     "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
     "Nodejs18CodeBuildPackagerRole6D628672"
@@ -5000,6 +5030,9 @@
     "Runtime": "nodejs18.x"
    },
    "DependsOn": [
+    "Nodejs18CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceF163B54A",
+    "Nodejs18CodeBuildPackagerBucketPolicy1FFB1A92",
+    "Nodejs18CodeBuildPackagerBucket79764435",
     "Nodejs18CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy3B9AD09A",
     "Nodejs18CodeBuildPackagerPackageHandlerServiceRole77FDFFB5",
     "Nodejs18CodeBuildPackager634BA08F",
@@ -5030,6 +5063,9 @@
     "RetentionInDays": 30
    },
    "DependsOn": [
+    "Nodejs18CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceF163B54A",
+    "Nodejs18CodeBuildPackagerBucketPolicy1FFB1A92",
+    "Nodejs18CodeBuildPackagerBucket79764435",
     "Nodejs18CodeBuildPackager634BA08F",
     "Nodejs18CodeBuildPackagerRoleDefaultPolicyB84C7E27",
     "Nodejs18CodeBuildPackagerRole6D628672"
@@ -6670,6 +6706,9 @@
     ]
    },
    "DependsOn": [
+    "Ruby27CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceDCCC1575",
+    "Ruby27CodeBuildPackagerBucketPolicy336D6357",
+    "Ruby27CodeBuildPackagerBucketD708F0AD",
     "Ruby27CodeBuildPackagerD263016B",
     "Ruby27CodeBuildPackagerRoleDefaultPolicy8FA138BC",
     "Ruby27CodeBuildPackagerRoleA38F9233"
@@ -6719,6 +6758,9 @@
     ]
    },
    "DependsOn": [
+    "Ruby27CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceDCCC1575",
+    "Ruby27CodeBuildPackagerBucketPolicy336D6357",
+    "Ruby27CodeBuildPackagerBucketD708F0AD",
     "Ruby27CodeBuildPackagerD263016B",
     "Ruby27CodeBuildPackagerRoleDefaultPolicy8FA138BC",
     "Ruby27CodeBuildPackagerRoleA38F9233"
@@ -6749,6 +6791,9 @@
     "Runtime": "nodejs18.x"
    },
    "DependsOn": [
+    "Ruby27CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceDCCC1575",
+    "Ruby27CodeBuildPackagerBucketPolicy336D6357",
+    "Ruby27CodeBuildPackagerBucketD708F0AD",
     "Ruby27CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy9D0C9B7C",
     "Ruby27CodeBuildPackagerPackageHandlerServiceRole17E6EAAF",
     "Ruby27CodeBuildPackagerD263016B",
@@ -6779,6 +6824,9 @@
     "RetentionInDays": 30
    },
    "DependsOn": [
+    "Ruby27CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceDCCC1575",
+    "Ruby27CodeBuildPackagerBucketPolicy336D6357",
+    "Ruby27CodeBuildPackagerBucketD708F0AD",
     "Ruby27CodeBuildPackagerD263016B",
     "Ruby27CodeBuildPackagerRoleDefaultPolicy8FA138BC",
     "Ruby27CodeBuildPackagerRoleA38F9233"
@@ -7788,6 +7836,9 @@
     ]
    },
    "DependsOn": [
+    "Java11CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceC859E2BC",
+    "Java11CodeBuildPackagerBucketPolicyDA2E5EE5",
+    "Java11CodeBuildPackagerBucketBB2DF308",
     "Java11CodeBuildPackager84096147",
     "Java11CodeBuildPackagerRoleDefaultPolicy4740DBB6",
     "Java11CodeBuildPackagerRole43171DC4"
@@ -7837,6 +7888,9 @@
     ]
    },
    "DependsOn": [
+    "Java11CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceC859E2BC",
+    "Java11CodeBuildPackagerBucketPolicyDA2E5EE5",
+    "Java11CodeBuildPackagerBucketBB2DF308",
     "Java11CodeBuildPackager84096147",
     "Java11CodeBuildPackagerRoleDefaultPolicy4740DBB6",
     "Java11CodeBuildPackagerRole43171DC4"
@@ -7867,6 +7921,9 @@
     "Runtime": "nodejs18.x"
    },
    "DependsOn": [
+    "Java11CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceC859E2BC",
+    "Java11CodeBuildPackagerBucketPolicyDA2E5EE5",
+    "Java11CodeBuildPackagerBucketBB2DF308",
     "Java11CodeBuildPackagerPackageHandlerServiceRoleDefaultPolicy2E2301F6",
     "Java11CodeBuildPackagerPackageHandlerServiceRole3759A412",
     "Java11CodeBuildPackager84096147",
@@ -7897,6 +7954,9 @@
     "RetentionInDays": 30
    },
    "DependsOn": [
+    "Java11CodeBuildPackagerBucketAutoDeleteObjectsCustomResourceC859E2BC",
+    "Java11CodeBuildPackagerBucketPolicyDA2E5EE5",
+    "Java11CodeBuildPackagerBucketBB2DF308",
     "Java11CodeBuildPackager84096147",
     "Java11CodeBuildPackagerRoleDefaultPolicy4740DBB6",
     "Java11CodeBuildPackagerRole43171DC4"
