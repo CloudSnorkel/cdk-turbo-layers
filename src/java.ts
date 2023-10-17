@@ -8,7 +8,7 @@ import { BaseDependencyPackager, DependencyPackagerProps, LayerProps } from './b
  * Packager for creating Lambda layers for Java dependencies in AWS. Nothing is done locally so this doesn't require Docker and doesn't upload huge files to S3.
  */
 export class JavaDependencyPackager extends BaseDependencyPackager {
-  private static runtimePackage(props?: DependencyPackagerProps) {
+  private static basePackage(props?: DependencyPackagerProps) {
     switch (props?.runtime ?? lambda.Runtime.JAVA_11) {
       case lambda.Runtime.JAVA_8:
       case lambda.Runtime.JAVA_8_CORRETTO:
@@ -20,16 +20,27 @@ export class JavaDependencyPackager extends BaseDependencyPackager {
     }
   }
 
+  private static packageArch(props?: DependencyPackagerProps) {
+    switch (props?.architecture ?? lambda.Architecture.X86_64) {
+      case lambda.Architecture.X86_64:
+        return 'x86_64';
+      case lambda.Architecture.ARM_64:
+        return 'aarch64';
+      default:
+        throw new Error(`We do not support ${props?.architecture?.name} yet`);
+    }
+  }
+
   constructor(scope: Construct, id: string, props?: DependencyPackagerProps) {
     super(scope, id, {
       props,
       runtimeFamily: lambda.RuntimeFamily.JAVA,
       defaultRuntime: lambda.Runtime.JAVA_11,
       codeBuildRuntimeInstallCommands: [
-        `echo Installing ${JavaDependencyPackager.runtimePackage(props)}`,
-        `yum install -y ${JavaDependencyPackager.runtimePackage(props)}`,
-        `alternatives --set java /usr/lib/jvm/${JavaDependencyPackager.runtimePackage(props)}.*/bin/java`,
-        `alternatives --set javac /usr/lib/jvm/${JavaDependencyPackager.runtimePackage(props)}.*/bin/javac`,
+        `echo Installing ${JavaDependencyPackager.basePackage(props)}`,
+        `yum install -y ${JavaDependencyPackager.basePackage(props)}-devel.${JavaDependencyPackager.packageArch(props)} ${JavaDependencyPackager.basePackage(props)}-headless.${JavaDependencyPackager.packageArch(props)}`,
+        `alternatives --set java $(rpm -ql ${JavaDependencyPackager.basePackage(props)}-headless.${JavaDependencyPackager.packageArch(props)} | grep bin/java$ | head -n 1)`,
+        `alternatives --set javac $(rpm -ql ${JavaDependencyPackager.basePackage(props)}-devel.${JavaDependencyPackager.packageArch(props)} | grep bin/javac$ | head -n 1)`,
       ],
       targetDirectory: 'java',
     });
