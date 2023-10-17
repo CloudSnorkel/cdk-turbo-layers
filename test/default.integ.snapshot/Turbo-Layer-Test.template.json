@@ -6848,7 +6848,8 @@
      "Ref": "Ruby27CodeBuildPackagerBucketD708F0AD"
     },
     "CodeBuildInstallCommands": [
-     "RUBY_VERSION=`rbenv install -l | tr -d ' ' | grep ^2.7 | sort -Vr | head -n 1`",
+     "yum install -y perl",
+     "RUBY_VERSION=`rbenv install -L | tr -d ' ' | grep ^2.7 | sort -Vr | head -n 1`",
      "echo Installing Ruby ${RUBY_VERSION}",
      "rbenv install -s ${RUBY_VERSION}",
      "rbenv global ${RUBY_VERSION}"
@@ -7294,7 +7295,8 @@
      "Ref": "Ruby27LambdaPackagerBucket8E60AB86"
     },
     "CodeBuildInstallCommands": [
-     "RUBY_VERSION=`rbenv install -l | tr -d ' ' | grep ^2.7 | sort -Vr | head -n 1`",
+     "yum install -y perl",
+     "RUBY_VERSION=`rbenv install -L | tr -d ' ' | grep ^2.7 | sort -Vr | head -n 1`",
      "echo Installing Ruby ${RUBY_VERSION}",
      "rbenv install -s ${RUBY_VERSION}",
      "rbenv global ${RUBY_VERSION}"
