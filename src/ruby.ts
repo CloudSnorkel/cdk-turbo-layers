@@ -18,7 +18,8 @@ export class RubyDependencyPackager extends BaseDependencyPackager {
       runtimeFamily: lambda.RuntimeFamily.RUBY,
       defaultRuntime: lambda.Runtime.RUBY_2_7,
       codeBuildRuntimeInstallCommands: [
-        `RUBY_VERSION=\`rbenv install -l | tr -d ' ' | grep ^${RubyDependencyPackager.runtimeVersion(props)} | sort -Vr | head -n 1\``,
+        'yum install -y perl', // Can't locate FindBin.pm in @INC
+        `RUBY_VERSION=\`rbenv install -L | tr -d ' ' | grep ^${RubyDependencyPackager.runtimeVersion(props)} | sort -Vr | head -n 1\``,
         'echo Installing Ruby ${RUBY_VERSION}',
         'rbenv install -s ${RUBY_VERSION}',
         'rbenv global ${RUBY_VERSION}',
