@@ -19,11 +19,12 @@ const app = new cdk.App({
 const layerStack = new cdk.Stack(app, 'Turbo-Layer-Test');
 
 class PythonTest extends Construct {
-  constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType) {
+  constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType, architecture: lambda.Architecture) {
     super(scope, id);
 
     const packager = new PythonDependencyPackager(this, 'Packager', {
       runtime,
+      architecture,
       type,
     });
 
@@ -31,6 +32,7 @@ class PythonTest extends Construct {
       handler: 'index.handler',
       code: lambda.Code.fromInline('def handler(event, context):\n  import requests'),
       runtime,
+      architecture,
       timeout: cdk.Duration.minutes(1), // sometimes Lambda hates me
       logRetention: logs.RetentionDays.ONE_DAY,
     };
@@ -59,11 +61,12 @@ class PythonTest extends Construct {
 }
 
 class NodejsTest extends Construct {
-  constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType) {
+  constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType, architecture: lambda.Architecture) {
     super(scope, id);
 
     const packager = new NodejsDependencyPackager(this, 'Packager', {
       runtime,
+      architecture,
       type,
     });
 
@@ -71,6 +74,7 @@ class NodejsTest extends Construct {
       handler: 'index.handler',
       code: lambda.Code.fromInline('module.exports.handler = (event, context, callback) => {require("lodash");callback();}'),
       runtime,
+      architecture,
       timeout: cdk.Duration.minutes(1), // sometimes Lambda hates me
       logRetention: logs.RetentionDays.ONE_DAY,
     };
@@ -94,11 +98,12 @@ class NodejsTest extends Construct {
 }
 
 class RubyTest extends Construct {
-  constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType) {
+  constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType, architecture: lambda.Architecture) {
     super(scope, id);
 
     const packager = new RubyDependencyPackager(this, 'Packager', {
       runtime,
+      architecture,
       type,
     });
 
@@ -106,6 +111,7 @@ class RubyTest extends Construct {
       handler: 'index.handler',
       code: lambda.Code.fromAsset('test/assets/ruby_handler'),
       runtime,
+      architecture,
       timeout: cdk.Duration.minutes(5), // Ruby takes a while to start
       logRetention: logs.RetentionDays.ONE_DAY,
     };
@@ -119,11 +125,12 @@ class RubyTest extends Construct {
 }
 
 class JavaTest extends Construct {
-  constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType) {
+  constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType, architecture: lambda.Architecture) {
     super(scope, id);
 
     const packager = new JavaDependencyPackager(this, 'Packager', {
       runtime,
+      architecture,
       type,
     });
 
@@ -152,6 +159,7 @@ class JavaTest extends Construct {
       */
       code: lambda.Code.fromAsset('test/assets/maven/FunctionOne.jar'),
       runtime,
+      architecture,
       timeout: cdk.Duration.minutes(1),
       memorySize: 512, // really java???
       logRetention: logs.RetentionDays.ONE_DAY,
@@ -165,12 +173,21 @@ class JavaTest extends Construct {
   }
 }
 
-new PythonTest(layerStack, 'Python 3.9 CodeBuild', lambda.Runtime.PYTHON_3_9, DependencyPackagerType.CODEBUILD);
-new PythonTest(layerStack, 'Python 3.9 Lambda', lambda.Runtime.PYTHON_3_9, DependencyPackagerType.LAMBDA);
-new NodejsTest(layerStack, 'Node.js 16 CodeBuild', lambda.Runtime.NODEJS_16_X, DependencyPackagerType.CODEBUILD);
-new NodejsTest(layerStack, 'Node.js 16 Lambda', lambda.Runtime.NODEJS_16_X, DependencyPackagerType.LAMBDA);
-new NodejsTest(layerStack, 'Node.js 18 CodeBuild', lambda.Runtime.NODEJS_18_X, DependencyPackagerType.CODEBUILD);
-new NodejsTest(layerStack, 'Node.js 18 Lambda', lambda.Runtime.NODEJS_18_X, DependencyPackagerType.LAMBDA);
-new RubyTest(layerStack, 'Ruby 2.7 CodeBuild', lambda.Runtime.RUBY_2_7, DependencyPackagerType.CODEBUILD);
-new RubyTest(layerStack, 'Ruby 2.7 Lambda', lambda.Runtime.RUBY_2_7, DependencyPackagerType.LAMBDA);
-new JavaTest(layerStack, 'Java 11 CodeBuild', lambda.Runtime.JAVA_11, DependencyPackagerType.CODEBUILD);
+new PythonTest(layerStack, 'Python 3.9 CodeBuild x64', lambda.Runtime.PYTHON_3_9, DependencyPackagerType.CODEBUILD, lambda.Architecture.X86_64);
+new PythonTest(layerStack, 'Python 3.9 Lambda x64', lambda.Runtime.PYTHON_3_9, DependencyPackagerType.LAMBDA, lambda.Architecture.X86_64);
+new PythonTest(layerStack, 'Python 3.9 CodeBuild arm64', lambda.Runtime.PYTHON_3_9, DependencyPackagerType.CODEBUILD, lambda.Architecture.ARM_64);
+new PythonTest(layerStack, 'Python 3.9 Lambda arm64', lambda.Runtime.PYTHON_3_9, DependencyPackagerType.LAMBDA, lambda.Architecture.ARM_64);
+new NodejsTest(layerStack, 'Node.js 16 CodeBuild x64', lambda.Runtime.NODEJS_16_X, DependencyPackagerType.CODEBUILD, lambda.Architecture.X86_64);
+new NodejsTest(layerStack, 'Node.js 16 Lambda x64', lambda.Runtime.NODEJS_16_X, DependencyPackagerType.LAMBDA, lambda.Architecture.X86_64);
+new NodejsTest(layerStack, 'Node.js 18 CodeBuild x64', lambda.Runtime.NODEJS_18_X, DependencyPackagerType.CODEBUILD, lambda.Architecture.X86_64);
+new NodejsTest(layerStack, 'Node.js 18 Lambda x64', lambda.Runtime.NODEJS_18_X, DependencyPackagerType.LAMBDA, lambda.Architecture.X86_64);
+new NodejsTest(layerStack, 'Node.js 16 CodeBuild arm64', lambda.Runtime.NODEJS_16_X, DependencyPackagerType.CODEBUILD, lambda.Architecture.ARM_64);
+new NodejsTest(layerStack, 'Node.js 16 Lambda arm64', lambda.Runtime.NODEJS_16_X, DependencyPackagerType.LAMBDA, lambda.Architecture.ARM_64);
+new NodejsTest(layerStack, 'Node.js 18 CodeBuild arm64', lambda.Runtime.NODEJS_18_X, DependencyPackagerType.CODEBUILD, lambda.Architecture.ARM_64);
+new NodejsTest(layerStack, 'Node.js 18 Lambda arm64', lambda.Runtime.NODEJS_18_X, DependencyPackagerType.LAMBDA, lambda.Architecture.ARM_64);
+new RubyTest(layerStack, 'Ruby 2.7 CodeBuild x64', lambda.Runtime.RUBY_2_7, DependencyPackagerType.CODEBUILD, lambda.Architecture.X86_64);
+new RubyTest(layerStack, 'Ruby 2.7 Lambda x64', lambda.Runtime.RUBY_2_7, DependencyPackagerType.LAMBDA, lambda.Architecture.X86_64);
+new RubyTest(layerStack, 'Ruby 2.7 CodeBuild arm64', lambda.Runtime.RUBY_2_7, DependencyPackagerType.CODEBUILD, lambda.Architecture.ARM_64);
+new RubyTest(layerStack, 'Ruby 2.7 Lambda arm64', lambda.Runtime.RUBY_2_7, DependencyPackagerType.LAMBDA, lambda.Architecture.ARM_64);
+new JavaTest(layerStack, 'Java 11 CodeBuild x64', lambda.Runtime.JAVA_11, DependencyPackagerType.CODEBUILD, lambda.Architecture.X86_64);
+new JavaTest(layerStack, 'Java 11 CodeBuild arm64', lambda.Runtime.JAVA_11, DependencyPackagerType.CODEBUILD, lambda.Architecture.ARM_64);
