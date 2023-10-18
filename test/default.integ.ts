@@ -5,8 +5,8 @@
  */
 
 import * as cdk from 'aws-cdk-lib';
-import { aws_lambda as lambda, aws_logs as logs, triggers } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
+import { Aspects, aws_lambda as lambda, aws_logs as logs, CustomResource, IAspect, triggers } from 'aws-cdk-lib';
+import { Construct, IConstruct } from 'constructs';
 import { DependencyPackagerType, JavaDependencyPackager, NodejsDependencyPackager, PythonDependencyPackager, RubyDependencyPackager } from '../src';
 
 const app = new cdk.App({
@@ -191,3 +191,35 @@ new RubyTest(layerStack, 'Ruby 2.7 CodeBuild arm64', lambda.Runtime.RUBY_2_7, De
 new RubyTest(layerStack, 'Ruby 2.7 Lambda arm64', lambda.Runtime.RUBY_2_7, DependencyPackagerType.LAMBDA, lambda.Architecture.ARM_64);
 new JavaTest(layerStack, 'Java 11 CodeBuild x64', lambda.Runtime.JAVA_11, DependencyPackagerType.CODEBUILD, lambda.Architecture.X86_64);
 new JavaTest(layerStack, 'Java 11 CodeBuild arm64', lambda.Runtime.JAVA_11, DependencyPackagerType.CODEBUILD, lambda.Architecture.ARM_64);
+
+// don't run too many tests at once or CodeBuild will fail
+class CodeBuildThrottle implements IAspect {
+  private lastBatch: CustomResource[] = [];
+  private batch: CustomResource[] = [];
+
+  public visit(construct: IConstruct) {
+    if (construct instanceof CustomResource) {
+      if (construct.node.id != 'Layer Packager' || !construct.node.path.includes('CodeBuild')) {
+        return;
+      }
+
+      this.batch.push(construct);
+
+      if (this.batch.length == 8) {
+        this.flush();
+      }
+    }
+  }
+
+  public flush() {
+    for (const cr of this.batch) {
+      cr.node.addDependency(...this.lastBatch);
+    }
+    this.lastBatch = this.batch;
+    this.batch = [];
+  }
+}
+
+const throttler = new CodeBuildThrottle();
+Aspects.of(layerStack).add(throttler);
+throttler.flush();

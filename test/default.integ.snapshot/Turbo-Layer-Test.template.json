@@ -5990,7 +5990,15 @@
     "Nodejs16CodeBuildx64PackagerPackageHandlerServiceRole91B5AB66",
     "Nodejs16CodeBuildx64PackagerA6063BBD",
     "Nodejs16CodeBuildx64PackagerRoleDefaultPolicyAFE454F4",
-    "Nodejs16CodeBuildx64PackagerRole494BBCAB"
+    "Nodejs16CodeBuildx64PackagerRole494BBCAB",
+    "Python39CodeBuildarm64PackagerinlineLayerPackagerB5CE670D",
+    "Python39CodeBuildarm64PackagerpipenvLayerPackager24ADF96B",
+    "Python39CodeBuildarm64PackagerpoetryLayerPackager12C68C85",
+    "Python39CodeBuildarm64PackagerreqtxtLayerPackagerAFB714F5",
+    "Python39CodeBuildx64PackagerinlineLayerPackagerA5CE79BF",
+    "Python39CodeBuildx64PackagerpipenvLayerPackagerBB9315FE",
+    "Python39CodeBuildx64PackagerpoetryLayerPackagerA81F3B6F",
+    "Python39CodeBuildx64PackagerreqtxtLayerPackager1D694C79"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -6047,7 +6055,15 @@
     "Nodejs16CodeBuildx64PackagerPackageHandlerServiceRole91B5AB66",
     "Nodejs16CodeBuildx64PackagerA6063BBD",
     "Nodejs16CodeBuildx64PackagerRoleDefaultPolicyAFE454F4",
-    "Nodejs16CodeBuildx64PackagerRole494BBCAB"
+    "Nodejs16CodeBuildx64PackagerRole494BBCAB",
+    "Python39CodeBuildarm64PackagerinlineLayerPackagerB5CE670D",
+    "Python39CodeBuildarm64PackagerpipenvLayerPackager24ADF96B",
+    "Python39CodeBuildarm64PackagerpoetryLayerPackager12C68C85",
+    "Python39CodeBuildarm64PackagerreqtxtLayerPackagerAFB714F5",
+    "Python39CodeBuildx64PackagerinlineLayerPackagerA5CE79BF",
+    "Python39CodeBuildx64PackagerpipenvLayerPackagerBB9315FE",
+    "Python39CodeBuildx64PackagerpoetryLayerPackagerA81F3B6F",
+    "Python39CodeBuildx64PackagerreqtxtLayerPackager1D694C79"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -6105,7 +6121,15 @@
     "Nodejs16CodeBuildx64PackagerPackageHandlerServiceRole91B5AB66",
     "Nodejs16CodeBuildx64PackagerA6063BBD",
     "Nodejs16CodeBuildx64PackagerRoleDefaultPolicyAFE454F4",
-    "Nodejs16CodeBuildx64PackagerRole494BBCAB"
+    "Nodejs16CodeBuildx64PackagerRole494BBCAB",
+    "Python39CodeBuildarm64PackagerinlineLayerPackagerB5CE670D",
+    "Python39CodeBuildarm64PackagerpipenvLayerPackager24ADF96B",
+    "Python39CodeBuildarm64PackagerpoetryLayerPackager12C68C85",
+    "Python39CodeBuildarm64PackagerreqtxtLayerPackagerAFB714F5",
+    "Python39CodeBuildx64PackagerinlineLayerPackagerA5CE79BF",
+    "Python39CodeBuildx64PackagerpipenvLayerPackagerBB9315FE",
+    "Python39CodeBuildx64PackagerpoetryLayerPackagerA81F3B6F",
+    "Python39CodeBuildx64PackagerreqtxtLayerPackager1D694C79"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -7769,7 +7793,15 @@
     "Nodejs18CodeBuildx64PackagerPackageHandlerServiceRoleED4A22F7",
     "Nodejs18CodeBuildx64Packager68499585",
     "Nodejs18CodeBuildx64PackagerRoleDefaultPolicyB8316BDF",
-    "Nodejs18CodeBuildx64PackagerRoleBDD19B0C"
+    "Nodejs18CodeBuildx64PackagerRoleBDD19B0C",
+    "Python39CodeBuildarm64PackagerinlineLayerPackagerB5CE670D",
+    "Python39CodeBuildarm64PackagerpipenvLayerPackager24ADF96B",
+    "Python39CodeBuildarm64PackagerpoetryLayerPackager12C68C85",
+    "Python39CodeBuildarm64PackagerreqtxtLayerPackagerAFB714F5",
+    "Python39CodeBuildx64PackagerinlineLayerPackagerA5CE79BF",
+    "Python39CodeBuildx64PackagerpipenvLayerPackagerBB9315FE",
+    "Python39CodeBuildx64PackagerpoetryLayerPackagerA81F3B6F",
+    "Python39CodeBuildx64PackagerreqtxtLayerPackager1D694C79"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -7826,7 +7858,15 @@
     "Nodejs18CodeBuildx64PackagerPackageHandlerServiceRoleED4A22F7",
     "Nodejs18CodeBuildx64Packager68499585",
     "Nodejs18CodeBuildx64PackagerRoleDefaultPolicyB8316BDF",
-    "Nodejs18CodeBuildx64PackagerRoleBDD19B0C"
+    "Nodejs18CodeBuildx64PackagerRoleBDD19B0C",
+    "Python39CodeBuildarm64PackagerinlineLayerPackagerB5CE670D",
+    "Python39CodeBuildarm64PackagerpipenvLayerPackager24ADF96B",
+    "Python39CodeBuildarm64PackagerpoetryLayerPackager12C68C85",
+    "Python39CodeBuildarm64PackagerreqtxtLayerPackagerAFB714F5",
+    "Python39CodeBuildx64PackagerinlineLayerPackagerA5CE79BF",
+    "Python39CodeBuildx64PackagerpipenvLayerPackagerBB9315FE",
+    "Python39CodeBuildx64PackagerpoetryLayerPackagerA81F3B6F",
+    "Python39CodeBuildx64PackagerreqtxtLayerPackager1D694C79"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -7884,7 +7924,15 @@
     "Nodejs18CodeBuildx64PackagerPackageHandlerServiceRoleED4A22F7",
     "Nodejs18CodeBuildx64Packager68499585",
     "Nodejs18CodeBuildx64PackagerRoleDefaultPolicyB8316BDF",
-    "Nodejs18CodeBuildx64PackagerRoleBDD19B0C"
+    "Nodejs18CodeBuildx64PackagerRoleBDD19B0C",
+    "Python39CodeBuildarm64PackagerinlineLayerPackagerB5CE670D",
+    "Python39CodeBuildarm64PackagerpipenvLayerPackager24ADF96B",
+    "Python39CodeBuildarm64PackagerpoetryLayerPackager12C68C85",
+    "Python39CodeBuildarm64PackagerreqtxtLayerPackagerAFB714F5",
+    "Python39CodeBuildx64PackagerinlineLayerPackagerA5CE79BF",
+    "Python39CodeBuildx64PackagerpipenvLayerPackagerBB9315FE",
+    "Python39CodeBuildx64PackagerpoetryLayerPackagerA81F3B6F",
+    "Python39CodeBuildx64PackagerreqtxtLayerPackager1D694C79"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -9548,7 +9596,15 @@
     "Nodejs16CodeBuildarm64PackagerPackageHandlerServiceRoleEED0B29E",
     "Nodejs16CodeBuildarm64PackagerB5ED6117",
     "Nodejs16CodeBuildarm64PackagerRoleDefaultPolicy6449EAFC",
-    "Nodejs16CodeBuildarm64PackagerRoleD019AEFD"
+    "Nodejs16CodeBuildarm64PackagerRoleD019AEFD",
+    "Python39CodeBuildarm64PackagerinlineLayerPackagerB5CE670D",
+    "Python39CodeBuildarm64PackagerpipenvLayerPackager24ADF96B",
+    "Python39CodeBuildarm64PackagerpoetryLayerPackager12C68C85",
+    "Python39CodeBuildarm64PackagerreqtxtLayerPackagerAFB714F5",
+    "Python39CodeBuildx64PackagerinlineLayerPackagerA5CE79BF",
+    "Python39CodeBuildx64PackagerpipenvLayerPackagerBB9315FE",
+    "Python39CodeBuildx64PackagerpoetryLayerPackagerA81F3B6F",
+    "Python39CodeBuildx64PackagerreqtxtLayerPackager1D694C79"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -9605,7 +9661,15 @@
     "Nodejs16CodeBuildarm64PackagerPackageHandlerServiceRoleEED0B29E",
     "Nodejs16CodeBuildarm64PackagerB5ED6117",
     "Nodejs16CodeBuildarm64PackagerRoleDefaultPolicy6449EAFC",
-    "Nodejs16CodeBuildarm64PackagerRoleD019AEFD"
+    "Nodejs16CodeBuildarm64PackagerRoleD019AEFD",
+    "Python39CodeBuildarm64PackagerinlineLayerPackagerB5CE670D",
+    "Python39CodeBuildarm64PackagerpipenvLayerPackager24ADF96B",
+    "Python39CodeBuildarm64PackagerpoetryLayerPackager12C68C85",
+    "Python39CodeBuildarm64PackagerreqtxtLayerPackagerAFB714F5",
+    "Python39CodeBuildx64PackagerinlineLayerPackagerA5CE79BF",
+    "Python39CodeBuildx64PackagerpipenvLayerPackagerBB9315FE",
+    "Python39CodeBuildx64PackagerpoetryLayerPackagerA81F3B6F",
+    "Python39CodeBuildx64PackagerreqtxtLayerPackager1D694C79"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -9657,13 +9721,21 @@
     "AssetKey": "48521f734f8d682c72f0a91cf94ae3031c21aa5c06f2b05888e7f98061118c64.zip"
    },
    "DependsOn": [
+    "Nodejs16CodeBuildarm64PackagernpminlineLayerPackagerCE1C72B6",
+    "Nodejs16CodeBuildarm64PackagernpmLayerPackagerCF48D67A",
     "Nodejs16CodeBuildarm64PackagerPackageHandlerLogRetention2FF7B3AF",
     "Nodejs16CodeBuildarm64PackagerPackageHandler2FFD70FD",
     "Nodejs16CodeBuildarm64PackagerPackageHandlerServiceRoleDefaultPolicyB5DDB9DA",
     "Nodejs16CodeBuildarm64PackagerPackageHandlerServiceRoleEED0B29E",
     "Nodejs16CodeBuildarm64PackagerB5ED6117",
     "Nodejs16CodeBuildarm64PackagerRoleDefaultPolicy6449EAFC",
-    "Nodejs16CodeBuildarm64PackagerRoleD019AEFD"
+    "Nodejs16CodeBuildarm64PackagerRoleD019AEFD",
+    "Nodejs16CodeBuildx64PackagernpminlineLayerPackager25D258D0",
+    "Nodejs16CodeBuildx64PackagernpmLayerPackager44D440F3",
+    "Nodejs16CodeBuildx64PackageryarnLayerPackager68AE3CFC",
+    "Nodejs18CodeBuildx64PackagernpminlineLayerPackager79881939",
+    "Nodejs18CodeBuildx64PackagernpmLayerPackagerE0D2463D",
+    "Nodejs18CodeBuildx64PackageryarnLayerPackager8743448C"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -11321,13 +11393,21 @@
     "AssetKey": "3bf5aad3a5db75c30ba530f89f7210a1eddb01c9a91cf0427515e6ef904bc869.zip"
    },
    "DependsOn": [
+    "Nodejs16CodeBuildarm64PackagernpminlineLayerPackagerCE1C72B6",
+    "Nodejs16CodeBuildarm64PackagernpmLayerPackagerCF48D67A",
+    "Nodejs16CodeBuildx64PackagernpminlineLayerPackager25D258D0",
+    "Nodejs16CodeBuildx64PackagernpmLayerPackager44D440F3",
+    "Nodejs16CodeBuildx64PackageryarnLayerPackager68AE3CFC",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerLogRetentionC40575EE",
     "Nodejs18CodeBuildarm64PackagerPackageHandler204DEB5E",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerServiceRoleDefaultPolicyBFEEE04F",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerServiceRole30AB6DE2",
     "Nodejs18CodeBuildarm64PackagerC1FA91E6",
     "Nodejs18CodeBuildarm64PackagerRoleDefaultPolicy648509ED",
-    "Nodejs18CodeBuildarm64PackagerRole1C107D42"
+    "Nodejs18CodeBuildarm64PackagerRole1C107D42",
+    "Nodejs18CodeBuildx64PackagernpminlineLayerPackager79881939",
+    "Nodejs18CodeBuildx64PackagernpmLayerPackagerE0D2463D",
+    "Nodejs18CodeBuildx64PackageryarnLayerPackager8743448C"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -11378,13 +11458,21 @@
     "AssetKey": "4a976e712b238000c04b209e96ba28d7567d8bbc7954fbbc97de024697cd4147.zip"
    },
    "DependsOn": [
+    "Nodejs16CodeBuildarm64PackagernpminlineLayerPackagerCE1C72B6",
+    "Nodejs16CodeBuildarm64PackagernpmLayerPackagerCF48D67A",
+    "Nodejs16CodeBuildx64PackagernpminlineLayerPackager25D258D0",
+    "Nodejs16CodeBuildx64PackagernpmLayerPackager44D440F3",
+    "Nodejs16CodeBuildx64PackageryarnLayerPackager68AE3CFC",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerLogRetentionC40575EE",
     "Nodejs18CodeBuildarm64PackagerPackageHandler204DEB5E",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerServiceRoleDefaultPolicyBFEEE04F",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerServiceRole30AB6DE2",
     "Nodejs18CodeBuildarm64PackagerC1FA91E6",
     "Nodejs18CodeBuildarm64PackagerRoleDefaultPolicy648509ED",
-    "Nodejs18CodeBuildarm64PackagerRole1C107D42"
+    "Nodejs18CodeBuildarm64PackagerRole1C107D42",
+    "Nodejs18CodeBuildx64PackagernpminlineLayerPackager79881939",
+    "Nodejs18CodeBuildx64PackagernpmLayerPackagerE0D2463D",
+    "Nodejs18CodeBuildx64PackageryarnLayerPackager8743448C"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -11436,13 +11524,21 @@
     "AssetKey": "48521f734f8d682c72f0a91cf94ae3031c21aa5c06f2b05888e7f98061118c64.zip"
    },
    "DependsOn": [
+    "Nodejs16CodeBuildarm64PackagernpminlineLayerPackagerCE1C72B6",
+    "Nodejs16CodeBuildarm64PackagernpmLayerPackagerCF48D67A",
+    "Nodejs16CodeBuildx64PackagernpminlineLayerPackager25D258D0",
+    "Nodejs16CodeBuildx64PackagernpmLayerPackager44D440F3",
+    "Nodejs16CodeBuildx64PackageryarnLayerPackager68AE3CFC",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerLogRetentionC40575EE",
     "Nodejs18CodeBuildarm64PackagerPackageHandler204DEB5E",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerServiceRoleDefaultPolicyBFEEE04F",
     "Nodejs18CodeBuildarm64PackagerPackageHandlerServiceRole30AB6DE2",
     "Nodejs18CodeBuildarm64PackagerC1FA91E6",
     "Nodejs18CodeBuildarm64PackagerRoleDefaultPolicy648509ED",
-    "Nodejs18CodeBuildarm64PackagerRole1C107D42"
+    "Nodejs18CodeBuildarm64PackagerRole1C107D42",
+    "Nodejs18CodeBuildx64PackagernpminlineLayerPackager79881939",
+    "Nodejs18CodeBuildx64PackagernpmLayerPackagerE0D2463D",
+    "Nodejs18CodeBuildx64PackageryarnLayerPackager8743448C"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -13106,6 +13202,14 @@
     "AssetKey": "6dc9869af4e1a4375706e7cebc576340facec2e9f959d4bbca7aef8ddaf68954.zip"
    },
    "DependsOn": [
+    "Nodejs16CodeBuildarm64PackagernpminlineLayerPackagerCE1C72B6",
+    "Nodejs16CodeBuildarm64PackagernpmLayerPackagerCF48D67A",
+    "Nodejs16CodeBuildx64PackagernpminlineLayerPackager25D258D0",
+    "Nodejs16CodeBuildx64PackagernpmLayerPackager44D440F3",
+    "Nodejs16CodeBuildx64PackageryarnLayerPackager68AE3CFC",
+    "Nodejs18CodeBuildx64PackagernpminlineLayerPackager79881939",
+    "Nodejs18CodeBuildx64PackagernpmLayerPackagerE0D2463D",
+    "Nodejs18CodeBuildx64PackageryarnLayerPackager8743448C",
     "Ruby27CodeBuildx64PackagerPackageHandlerLogRetentionA686C31E",
     "Ruby27CodeBuildx64PackagerPackageHandler164DD9E2",
     "Ruby27CodeBuildx64PackagerPackageHandlerServiceRoleDefaultPolicy824B1255",
@@ -14244,6 +14348,14 @@
     "AssetKey": "6dc9869af4e1a4375706e7cebc576340facec2e9f959d4bbca7aef8ddaf68954.zip"
    },
    "DependsOn": [
+    "Nodejs16CodeBuildarm64PackagernpminlineLayerPackagerCE1C72B6",
+    "Nodejs16CodeBuildarm64PackagernpmLayerPackagerCF48D67A",
+    "Nodejs16CodeBuildx64PackagernpminlineLayerPackager25D258D0",
+    "Nodejs16CodeBuildx64PackagernpmLayerPackager44D440F3",
+    "Nodejs16CodeBuildx64PackageryarnLayerPackager68AE3CFC",
+    "Nodejs18CodeBuildx64PackagernpminlineLayerPackager79881939",
+    "Nodejs18CodeBuildx64PackagernpmLayerPackagerE0D2463D",
+    "Nodejs18CodeBuildx64PackageryarnLayerPackager8743448C",
     "Ruby27CodeBuildarm64PackagerPackageHandlerLogRetention1EB1AA07",
     "Ruby27CodeBuildarm64PackagerPackageHandler3E1CE6FD",
     "Ruby27CodeBuildarm64PackagerPackageHandlerServiceRoleDefaultPolicy19105C56",
@@ -15382,7 +15494,15 @@
     "Java11CodeBuildx64PackagerPackageHandlerServiceRole645E2642",
     "Java11CodeBuildx64Packager2723997C",
     "Java11CodeBuildx64PackagerRoleDefaultPolicyEAFBD8F2",
-    "Java11CodeBuildx64PackagerRole1D8F61E4"
+    "Java11CodeBuildx64PackagerRole1D8F61E4",
+    "Nodejs16CodeBuildarm64PackagernpminlineLayerPackagerCE1C72B6",
+    "Nodejs16CodeBuildarm64PackagernpmLayerPackagerCF48D67A",
+    "Nodejs16CodeBuildx64PackagernpminlineLayerPackager25D258D0",
+    "Nodejs16CodeBuildx64PackagernpmLayerPackager44D440F3",
+    "Nodejs16CodeBuildx64PackageryarnLayerPackager68AE3CFC",
+    "Nodejs18CodeBuildx64PackagernpminlineLayerPackager79881939",
+    "Nodejs18CodeBuildx64PackagernpmLayerPackagerE0D2463D",
+    "Nodejs18CodeBuildx64PackageryarnLayerPackager8743448C"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -16068,7 +16188,15 @@
     "Java11CodeBuildarm64PackagerPackageHandlerServiceRoleD1513729",
     "Java11CodeBuildarm64Packager900418FB",
     "Java11CodeBuildarm64PackagerRoleDefaultPolicy82C653E1",
-    "Java11CodeBuildarm64PackagerRole76E2C688"
+    "Java11CodeBuildarm64PackagerRole76E2C688",
+    "Nodejs16CodeBuildarm64PackagernpminlineLayerPackagerCE1C72B6",
+    "Nodejs16CodeBuildarm64PackagernpmLayerPackagerCF48D67A",
+    "Nodejs16CodeBuildx64PackagernpminlineLayerPackager25D258D0",
+    "Nodejs16CodeBuildx64PackagernpmLayerPackager44D440F3",
+    "Nodejs16CodeBuildx64PackageryarnLayerPackager68AE3CFC",
+    "Nodejs18CodeBuildx64PackagernpminlineLayerPackager79881939",
+    "Nodejs18CodeBuildx64PackagernpmLayerPackagerE0D2463D",
+    "Nodejs18CodeBuildx64PackageryarnLayerPackager8743448C"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
