@@ -4,7 +4,6 @@ on:
   workflow_run:
     workflows: [build]
     types: [completed]
-    branches: [github-actions/upgrade-main]
 
 jobs:
   on-failure:
@@ -12,6 +11,8 @@ jobs:
     container:
       image: jsii/superchain:1-buster-slim-node16
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    env:
+      CI: "true"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -79,7 +80,7 @@ jobs:
             ------
 
             *Automatically created by projen via the "upgrade-snapshot" workflow*
-          branch: github-actions/upgrade-snapshot
+          branch: ${{ github.event.workflow_run.head_branch }}/upgrade-snapshot
           title: "chore(deps): update snapshot for dependencies upgrade"
           body: |-
             Update snapshot. See details in [workflow run].
