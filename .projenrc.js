@@ -1,6 +1,5 @@
 const { awscdk } = require('projen');
 const { Stability } = require('projen/lib/cdk/jsii-project');
-const { NodePackageManager } = require('projen/lib/javascript');
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amir Szekely',
@@ -101,13 +100,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   tsconfig: {
     include: ['benchmark/**/*.ts'],
   },
-  lambdaOptions: {
-    bundlingOptions: {
-      // we can't count on @aws-sdk to be there because the user might use nodejs 16 or 18
-      // this will cause @aws-sdk to be bundled in our lambda
-      externals: [],
-    },
-  },
 });
 
 // disable automatic releases, but keep workflow that can be triggered manually
@@ -120,6 +112,10 @@ project.gitattributes.addAttributes('*.json', 'eol=lf');
 project.gitattributes.addAttributes('*.sh', 'eol=lf');
 project.gitattributes.addAttributes('*.yml', 'eol=lf');
 project.gitattributes.addAttributes('Dockerfile', 'eol=lf');
+
+// we can't count on @aws-sdk to be there because the user might use nodejs 16 or 18
+const bundleNodejsStep = project.tasks.tryFind('bundle:package-nodejs.lambda').steps[0];
+bundleNodejsStep.exec = bundleNodejsStep.exec.replace('--external:@aws-sdk/*', '');
 
 // extra lambdas
 project.bundler.bundleTask.exec('rm -rf assets/package-ruby.lambda');
