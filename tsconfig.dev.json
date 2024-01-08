@@ -26,10 +26,10 @@
     "target": "ES2019"
   },
   "include": [
-    ".projenrc.js",
     "src/**/*.ts",
     "test/**/*.ts",
-    "benchmark/**/*.ts"
+    "benchmark/**/*.ts",
+    ".projenrc.js"
   ],
   "exclude": [
     "node_modules"
