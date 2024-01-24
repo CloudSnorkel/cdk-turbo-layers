@@ -19,6 +19,7 @@ import {
   Stack,
 } from 'aws-cdk-lib';
 import { RetentionDays } from 'aws-cdk-lib/aws-logs';
+import { BucketEncryption } from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 import { PackageCodebuildFunction } from './package-codebuild-function';
 import { PackageNodejsFunction } from './package-nodejs-function';
@@ -141,6 +142,9 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
 
     this.packagesBucket = new s3.Bucket(this, 'Bucket', {
       autoDeleteObjects: true,
+      enforceSSL: true,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      encryption: BucketEncryption.S3_MANAGED,
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
