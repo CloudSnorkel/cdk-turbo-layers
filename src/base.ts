@@ -130,14 +130,15 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
   private readonly provider: lambda.Function;
   private readonly targetDirectory: string;
   private readonly type: DependencyPackagerType;
+  private readonly runtime: lambda.Runtime;
   private readonly architecture: lambda.Architecture;
 
   constructor(scope: Construct, id: string, readonly internalProps: InternalBaseDependencyPackagerProps) {
     super(scope, id);
 
-    const runtime = internalProps.props?.runtime ?? internalProps.defaultRuntime;
-    if (runtime.family != internalProps.runtimeFamily) {
-      throw new Error(`PythonDependencyPackager requires python runtime, got ${runtime.family}`);
+    this.runtime = internalProps.props?.runtime ?? internalProps.defaultRuntime;
+    if (this.runtime.family != internalProps.runtimeFamily) {
+      throw new Error(`PythonDependencyPackager requires python runtime, got ${this.runtime.family}`);
     }
 
     this.packagesBucket = new s3.Bucket(this, 'Bucket', {
@@ -163,7 +164,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
       );
 
       this.project = new codebuild.Project(this, 'Packager', {
-        description: `Lambda dependency packager for ${runtime} in ${Stack.of(this).stackName}`,
+        description: `Lambda dependency packager for ${this.runtime} in ${Stack.of(this).stackName}`,
         vpc: internalProps.props?.vpc,
         subnetSelection: internalProps.props?.subnetSelection,
         environment: {
@@ -192,7 +193,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
       this.grantPrincipal = this.project.grantPrincipal;
 
       this.provider = new PackageCodebuildFunction(this, 'Package Handler', {
-        description: `Turbo layer packager for ${runtime} using CodeBuild`,
+        description: `Turbo layer packager for ${this.runtime} using CodeBuild`,
         initialPolicy: [
           new iam.PolicyStatement({
             actions: ['codebuild:StartBuild'],
@@ -206,8 +207,8 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
       this.packagesBucket.grantDelete(this.provider);
     } else if (this.type == DependencyPackagerType.LAMBDA) {
       const lambdaProps = {
-        description: `Turbo layer packager for ${runtime}`,
-        runtime: runtime,
+        description: `Turbo layer packager for ${this.runtime}`,
+        runtime: this.runtime,
         timeout: Duration.minutes(15),
         memorySize: 1024,
         ephemeralStorageSize: Size.gibibytes(10),
@@ -218,19 +219,19 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
         // TODO for CodeArtifact login -- layers: [new lambda_layer_awscli.AwsCliLayer(this, 'AWS CLI Layer')],
       };
 
-      if (runtime.family == lambda.RuntimeFamily.PYTHON) {
+      if (this.runtime.family == lambda.RuntimeFamily.PYTHON) {
         this.provider = new PackagePythonFunction(this, 'Packager', lambdaProps);
-      } else if (runtime.family == lambda.RuntimeFamily.NODEJS) {
+      } else if (this.runtime.family == lambda.RuntimeFamily.NODEJS) {
         this.provider = new PackageNodejsFunction(this, 'Packager', lambdaProps);
         // we can't set the runtime from here, so we have to manually override it.
         // projen puts `...props` before its own `runtime` setting and so its default `runtime` always wins.
         // https://github.com/projen/projen/blob/564341a55309e06939c86248bc76cabc590fd835/src/awscdk/lambda-function.ts#L253-L256
         const func = this.provider.node.defaultChild as lambda.CfnFunction;
-        func.runtime = runtime.name;
-      } else if (runtime.family == lambda.RuntimeFamily.RUBY) {
+        func.runtime = this.runtime.name;
+      } else if (this.runtime.family == lambda.RuntimeFamily.RUBY) {
         this.provider = new PackageRubyFunction(this, 'Packager', lambdaProps);
       } else {
-        throw new Error(`Runtime doesn't support Lambda packager: ${runtime}`);
+        throw new Error(`Runtime doesn't support Lambda packager: ${this.runtime}`);
       }
       this.connections = internalProps.props?.vpc ? this.provider.connections : new ec2.Connections();
       this.grantPrincipal = this.provider.grantPrincipal;
@@ -270,6 +271,8 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
       codeBuildRuntimeInstallCommands: this.internalProps.codeBuildRuntimeInstallCommands,
       commands: commands,
       targetDirectory: this.targetDirectory,
+      runtime: this.runtime,
+      architecture: this.architecture,
     }).layer;
   }
 
@@ -306,6 +309,8 @@ interface LambdaDependencyLayerProps {
   readonly preinstallCommands: string[];
   readonly commands: string[];
   readonly targetDirectory: string;
+  readonly runtime: lambda.Runtime;
+  readonly architecture: lambda.Architecture;
 }
 
 class LambdaDependencyLayer extends Construct {
@@ -353,6 +358,8 @@ class LambdaDependencyLayer extends Construct {
     this.layer = new lambda.LayerVersion(this, 'Layer', {
       description: `Automatically generated by turbo layers for ${asset}`,
       code: lambda.Code.fromBucket(props.packagesBucket, cr.ref),
+      compatibleRuntimes: [props.runtime],
+      compatibleArchitectures: [props.architecture],
     });
   }
 }
