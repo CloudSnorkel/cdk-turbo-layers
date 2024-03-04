@@ -51,9 +51,9 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/aws-lambda-python-alpha": "^2.130.0-alpha.0",
-    "@aws-sdk/client-codebuild": "^3.521.0",
-    "@aws-sdk/client-s3": "^3.521.0",
+    "@aws-cdk/aws-lambda-python-alpha": "^2.131.0-alpha.0",
+    "@aws-sdk/client-codebuild": "^3.525.0",
+    "@aws-sdk/client-s3": "^3.525.0",
     "@types/adm-zip": "^0.5.5",
     "@types/aws-lambda": "^8.10.134",
     "@types/jest": "^27",
@@ -76,7 +76,7 @@
     "jsii-docgen": "^7.2.9",
     "jsii-pacmak": "^1.94.0",
     "jsii-rosetta": "1.x",
-    "projen": "^0.80.1",
+    "projen": "^0.80.5",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.2",
