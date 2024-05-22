@@ -15,7 +15,7 @@ jobs:
       CI: "true"
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
@@ -28,7 +28,9 @@ jobs:
           npm run bundle
           npm run integ:default:snapshot
       - name: Switch to branch
-        run: git checkout ${{ github.event.workflow_run.head_branch }}
+        env:
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: git checkout "$BRANCH"
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Snapshot branch
@@ -49,13 +51,13 @@ jobs:
           git diff --staged -U0 | grep '"path":' | cut -d '"' -f 4 | xargs -rL 2 diff -ruN > /tmp/assets.diff
       - name: Upload assets.diff
         if: steps.create_patch.outputs.patch_created
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: assets.diff
           path: /tmp/assets.diff
       - name: Upload snapshot
         if: steps.create_patch.outputs.patch_created
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: snapshot
           path: test/default.integ.snapshot
@@ -67,7 +69,7 @@ jobs:
       # create a PR against the dependencies update PR for a proper snapshot
       - name: Create Pull Request
         if: steps.create_patch.outputs.patch_created
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
           commit-message: |-
@@ -81,7 +83,7 @@ jobs:
 
             *Automatically created by projen via the "upgrade-snapshot" workflow*
           branch: ${{ github.event.workflow_run.head_branch }}-upgrade-snapshot
-          title: "chore(deps): update snapshot for dependencies upgrade"
+          title: "chore(deps): update snapshot"
           body: |-
             Update snapshot. See details in [workflow run].
 
