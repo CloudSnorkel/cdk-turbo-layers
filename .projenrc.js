@@ -126,4 +126,7 @@ project.bundler.bundleTask.exec('gem install --no-document --version 2.3.2 --ins
 project.bundler.bundleTask.exec('mv assets/package-ruby.lambda/vendor/gems/rubyzip-2.3.2/lib assets/package-ruby.lambda/rubyzip');
 project.bundler.bundleTask.exec('rm -rf assets/package-ruby.lambda/vendor');
 
+// funding
+project.package.addField('funding', 'https://github.com/sponsors/CloudSnorkel');
+
 project.synth();
