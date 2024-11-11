@@ -100,6 +100,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   tsconfig: {
     include: ['benchmark/**/*.ts'],
   },
+  jsiiVersion: '5.5.x',
+  typescriptVersion: '5.5.x',
 });
 
 // disable automatic releases, but keep workflow that can be triggered manually

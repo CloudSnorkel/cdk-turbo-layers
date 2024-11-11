@@ -891,7 +891,7 @@ public readonly type: DependencyPackagerType;
 ```
 
 - *Type:* <a href="#@cloudsnorkel/cdk-turbo-layers.DependencyPackagerType">DependencyPackagerType</a>
-- *Default:* {@link DependencyPackagerType.LAMBDA}
+- *Default:* {@link DependencyPackagerType.LAMBDA }
 
 Type of dependency packager.
 
