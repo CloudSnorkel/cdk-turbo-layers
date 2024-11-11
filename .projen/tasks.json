@@ -202,6 +202,9 @@
     "eslint": {
       "name": "eslint",
       "description": "Runs eslint against the codebase",
+      "env": {
+        "ESLINT_USE_FLAT_CONFIG": "false"
+      },
       "steps": [
         {
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ benchmark test build-tools .projenrc.js",
@@ -481,7 +484,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @aws-cdk/aws-lambda-python-alpha @aws-sdk/client-codebuild @aws-sdk/client-s3 @types/adm-zip @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser adm-zip aws-cdk commit-and-tag-version esbuild eslint-import-resolver-typescript eslint-plugin-import eslint execa jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest ts-node typescript xterm-benchmark aws-cdk-lib constructs"
+          "exec": "yarn upgrade @aws-cdk/aws-lambda-python-alpha @aws-sdk/client-codebuild @aws-sdk/client-s3 @stylistic/eslint-plugin @types/adm-zip @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser adm-zip aws-cdk commit-and-tag-version esbuild eslint-import-resolver-typescript eslint-plugin-import eslint execa jest-junit jest jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest ts-node typescript xterm-benchmark aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"
