@@ -5,7 +5,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amir Szekely',
   authorAddress: 'amir@cloudsnorkel.com',
   stability: Stability.EXPERIMENTAL,
-  cdkVersion: '2.87.0', // 2.54.0 for https://github.com/aws/aws-cdk/pull/22124, 2.77.0 for removing node 14, 2.87.0 for node 18 on CodeBuild
+  cdkVersion: '2.123.0', // 2.54.0 for https://github.com/aws/aws-cdk/pull/22124, 2.77.0 for removing node 14, 2.87.0 for node 18 on CodeBuild, 2.123.0 for lambda logs
   defaultReleaseBranch: 'main',
   name: '@cloudsnorkel/cdk-turbo-layers',
   repositoryUrl: 'https://github.com/CloudSnorkel/cdk-turbo-layers.git',

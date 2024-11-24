@@ -819,7 +819,7 @@ public readonly logRemovalPolicy: RemovalPolicy;
 
 Removal policy for logs of image builds.
 
-If deployment fails on the custom resource, try setting this to `RemovalPolicy.RETAIN`. This way the CodeBuild logs can still be viewed, and you can see why the build failed.
+If deployment fails on the custom resource, try setting this to `RemovalPolicy.RETAIN`. This way logs can still be viewed, and you can see why the build failed.
 
 We try to not leave anything behind when removed. But sometimes a log staying behind is useful.
 
