@@ -17,6 +17,9 @@ const app = new cdk.App({
 });
 
 const layerStack = new cdk.Stack(app, 'Turbo-Layer-Test');
+const logGroup = new logs.LogGroup(layerStack, 'Logs', {
+  retention: logs.RetentionDays.ONE_DAY,
+});
 
 class PythonTest extends Construct {
   constructor(scope: Construct, id: string, runtime: lambda.Runtime, type: DependencyPackagerType, architecture: lambda.Architecture) {
@@ -34,7 +37,7 @@ class PythonTest extends Construct {
       runtime,
       architecture,
       timeout: cdk.Duration.minutes(1), // sometimes Lambda hates me
-      logRetention: logs.RetentionDays.ONE_DAY,
+      logGroup,
     };
 
     new triggers.TriggerFunction(this, 'Inline', {
@@ -76,7 +79,7 @@ class NodejsTest extends Construct {
       runtime,
       architecture,
       timeout: cdk.Duration.minutes(1), // sometimes Lambda hates me
-      logRetention: logs.RetentionDays.ONE_DAY,
+      logGroup,
     };
 
     new triggers.TriggerFunction(this, 'NPM Inline Test', {
@@ -113,7 +116,7 @@ class RubyTest extends Construct {
       runtime,
       architecture,
       timeout: cdk.Duration.minutes(5), // Ruby takes a while to start
-      logRetention: logs.RetentionDays.ONE_DAY,
+      logGroup,
     };
 
     new triggers.TriggerFunction(this, 'Bundler Test', {
@@ -162,7 +165,7 @@ class JavaTest extends Construct {
       architecture,
       timeout: cdk.Duration.minutes(1),
       memorySize: 512, // really java???
-      logRetention: logs.RetentionDays.ONE_DAY,
+      logGroup,
     };
 
     new triggers.TriggerFunction(this, 'Maven Test', {

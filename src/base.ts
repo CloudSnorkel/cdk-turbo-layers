@@ -90,7 +90,7 @@ export interface DependencyPackagerProps {
   readonly logRetention?: logs.RetentionDays;
 
   /**
-  * Removal policy for logs of image builds. If deployment fails on the custom resource, try setting this to `RemovalPolicy.RETAIN`. This way the CodeBuild logs can still be viewed, and you can see why the build failed.
+  * Removal policy for logs of image builds. If deployment fails on the custom resource, try setting this to `RemovalPolicy.RETAIN`. This way logs can still be viewed, and you can see why the build failed.
   *
   * We try to not leave anything behind when removed. But sometimes a log staying behind is useful.
   *
@@ -152,17 +152,17 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
     this.targetDirectory = internalProps.targetDirectory;
     this.architecture = internalProps.props?.architecture ?? lambda.Architecture.X86_64;
 
+    const logGroup = new logs.LogGroup(
+      this,
+      'Logs',
+      {
+        retention: internalProps.props?.logRetention ?? RetentionDays.ONE_MONTH,
+        removalPolicy: internalProps.props?.logRemovalPolicy ?? RemovalPolicy.DESTROY,
+      },
+    );
+
     this.type = this.internalProps.props?.type ?? DependencyPackagerType.LAMBDA;
     if (this.type == DependencyPackagerType.CODEBUILD) {
-      const logGroup = new logs.LogGroup(
-        this,
-        'Logs',
-        {
-          retention: internalProps.props?.logRetention ?? RetentionDays.ONE_MONTH,
-          removalPolicy: internalProps.props?.logRemovalPolicy ?? RemovalPolicy.DESTROY,
-        },
-      );
-
       this.project = new codebuild.Project(this, 'Packager', {
         description: `Lambda dependency packager for ${this.runtime} in ${Stack.of(this).stackName}`,
         vpc: internalProps.props?.vpc,
@@ -200,7 +200,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
             resources: [this.project.projectArn],
           }),
         ],
-        logRetention: RetentionDays.ONE_MONTH,
+        logGroup: logGroup,
       });
       this.provider.node.addDependency(this.packagesBucket); // wait for everything, including auto deleter
       this.provider.node.addDependency(this.project);
@@ -212,7 +212,7 @@ export class BaseDependencyPackager extends Construct implements iam.IGrantable,
         timeout: Duration.minutes(15),
         memorySize: 1024,
         ephemeralStorageSize: Size.gibibytes(10),
-        logRetention: RetentionDays.ONE_MONTH,
+        logGroup: logGroup,
         architecture: this.architecture,
         vpc: internalProps.props?.vpc,
         vpcSubnets: internalProps.props?.subnetSelection,
