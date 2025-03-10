@@ -51,7 +51,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/aws-lambda-python-alpha": "^2.181.1-alpha.0",
+    "@aws-cdk/aws-lambda-python-alpha": "^2.182.0-alpha.0",
     "@aws-sdk/client-codebuild": "^3.758.0",
     "@aws-sdk/client-s3": "^3.758.0",
     "@stylistic/eslint-plugin": "^2",
@@ -78,7 +78,7 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.108.0",
     "jsii-rosetta": "5.5.x",
-    "projen": "^0.91.13",
+    "projen": "^0.91.14",
     "ts-jest": "^27",
     "ts-node": "^10.9.2",
     "typescript": "5.5.x",
