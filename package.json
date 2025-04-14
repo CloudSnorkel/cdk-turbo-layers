@@ -51,12 +51,12 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/aws-lambda-python-alpha": "^2.188.0-alpha.0",
-    "@aws-sdk/client-codebuild": "^3.782.0",
-    "@aws-sdk/client-s3": "^3.782.0",
+    "@aws-cdk/aws-lambda-python-alpha": "^2.189.0-alpha.0",
+    "@aws-sdk/client-codebuild": "^3.787.0",
+    "@aws-sdk/client-s3": "^3.787.0",
     "@stylistic/eslint-plugin": "^2",
     "@types/adm-zip": "^0.5.7",
-    "@types/aws-lambda": "^8.10.148",
+    "@types/aws-lambda": "^8.10.149",
     "@types/jest": "^27",
     "@types/node": "ts5.5",
     "@typescript-eslint/eslint-plugin": "^8",
