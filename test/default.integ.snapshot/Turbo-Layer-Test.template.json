@@ -6612,7 +6612,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "78ebd3bdfd6c8c558cec686f58969766fbeea6b684596c3dc0c63e613a225c7f.zip"
+     "S3Key": "e022c3eb5b2fb1c89fa9f29dffa4185104fba163d80126f891877f428b973f22.zip"
     },
     "Description": "Turbo layer packager for nodejs16.x",
     "Environment": {
@@ -8407,7 +8407,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "78ebd3bdfd6c8c558cec686f58969766fbeea6b684596c3dc0c63e613a225c7f.zip"
+     "S3Key": "e022c3eb5b2fb1c89fa9f29dffa4185104fba163d80126f891877f428b973f22.zip"
     },
     "Description": "Turbo layer packager for nodejs18.x",
     "Environment": {
@@ -10202,7 +10202,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "78ebd3bdfd6c8c558cec686f58969766fbeea6b684596c3dc0c63e613a225c7f.zip"
+     "S3Key": "e022c3eb5b2fb1c89fa9f29dffa4185104fba163d80126f891877f428b973f22.zip"
     },
     "Description": "Turbo layer packager for nodejs16.x",
     "Environment": {
@@ -11997,7 +11997,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "78ebd3bdfd6c8c558cec686f58969766fbeea6b684596c3dc0c63e613a225c7f.zip"
+     "S3Key": "e022c3eb5b2fb1c89fa9f29dffa4185104fba163d80126f891877f428b973f22.zip"
     },
     "Description": "Turbo layer packager for nodejs18.x",
     "Environment": {
