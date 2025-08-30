@@ -25,9 +25,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
   deps: [
   ],
   releaseToNpm: true,
+  npmTrustedPublishing: true,
   publishToPypi: {
     distName: 'cloudsnorkel.cdk-turbo-layers',
     module: 'cloudsnorkel.cdk_turbo_layers',
+    trustedPublishing: true,
   },
   publishToGo: {
     moduleName: 'github.com/CloudSnorkel/cdk-turbo-layers-go',
