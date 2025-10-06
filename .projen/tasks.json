@@ -88,7 +88,7 @@
       "description": "Create a JavaScript bundle from src/package-codebuild.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/*"
+          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/*"
         }
       ]
     },
@@ -97,7 +97,7 @@
       "description": "Continuously update the JavaScript bundle from src/package-codebuild.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --watch"
+          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --watch"
         }
       ]
     },
@@ -106,7 +106,7 @@
       "description": "Create a JavaScript bundle from src/package-nodejs.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" "
+          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" "
         }
       ]
     },
@@ -115,7 +115,7 @@
       "description": "Continuously update the JavaScript bundle from src/package-nodejs.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --watch"
+          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --watch"
         }
       ]
     },
