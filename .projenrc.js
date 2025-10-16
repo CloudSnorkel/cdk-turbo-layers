@@ -43,6 +43,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   publishToNuget: {
     dotNetNamespace: 'CloudSnorkel',
     packageId: 'CloudSnorkel.Cdk.TurboLayers',
+    trustedPublishing: true,
   },
   keywords: [
     'aws',
