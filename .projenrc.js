@@ -38,7 +38,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     mavenGroupId: 'com.cloudsnorkel',
     mavenArtifactId: 'cdk.turbo-layers',
     javaPackage: 'com.cloudsnorkel.cdk.turbo_layers',
-    mavenEndpoint: 'https://s01.oss.sonatype.org',
+    mavenServerId: 'central-ossrh',
   },
   publishToNuget: {
     dotNetNamespace: 'CloudSnorkel',
