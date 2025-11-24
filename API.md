@@ -95,7 +95,7 @@ Create a layer for dependencies defined in pom.xml installed with Maven.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.isConstruct"></a>
 
 ```typescript
 import { JavaDependencyPackager } from '@cloudsnorkel/cdk-turbo-layers'
@@ -104,6 +104,20 @@ JavaDependencyPackager.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.isConstruct.parameter.x"></a>
 
@@ -305,7 +319,7 @@ Create a layer for dependencies defined in package.json and yarn.lock and instal
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.isConstruct"></a>
 
 ```typescript
 import { NodejsDependencyPackager } from '@cloudsnorkel/cdk-turbo-layers'
@@ -314,6 +328,20 @@ NodejsDependencyPackager.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.isConstruct.parameter.x"></a>
 
@@ -544,7 +572,7 @@ Create a layer for dependencies defined in requirements.txt and installed with p
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.isConstruct"></a>
 
 ```typescript
 import { PythonDependencyPackager } from '@cloudsnorkel/cdk-turbo-layers'
@@ -553,6 +581,20 @@ PythonDependencyPackager.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.isConstruct.parameter.x"></a>
 
@@ -702,7 +744,7 @@ Create a layer for dependencies defined in Gemfile and (optionally) Gemfile.lock
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.isConstruct"></a>
 
 ```typescript
 import { RubyDependencyPackager } from '@cloudsnorkel/cdk-turbo-layers'
@@ -711,6 +753,20 @@ RubyDependencyPackager.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.isConstruct.parameter.x"></a>
 
