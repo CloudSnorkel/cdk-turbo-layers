@@ -479,7 +479,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@aws-cdk/aws-lambda-python-alpha,@aws-sdk/client-codebuild,@aws-sdk/client-s3,@types/adm-zip,@types/aws-lambda,@types/jest,adm-zip,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,execa,jest,jsii-diff,jsii-pacmak,projen,ts-jest,ts-node,xterm-benchmark"
+          "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@aws-cdk/aws-lambda-python-alpha,@aws-sdk/client-codebuild,@aws-sdk/client-s3,@types/adm-zip,@types/aws-lambda,@types/jest,@types/node,adm-zip,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,execa,jest,jsii-diff,jsii-pacmak,projen,ts-jest,ts-node,typescript,xterm-benchmark"
         },
         {
           "exec": "yarn install --check-files"
