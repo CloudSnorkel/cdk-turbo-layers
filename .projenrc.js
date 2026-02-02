@@ -5,7 +5,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amir Szekely',
   authorAddress: 'amir@cloudsnorkel.com',
   stability: Stability.EXPERIMENTAL,
-  cdkVersion: '2.123.0', // 2.54.0 for https://github.com/aws/aws-cdk/pull/22124, 2.77.0 for removing node 14, 2.87.0 for node 18 on CodeBuild, 2.123.0 for lambda logs
+  cdkVersion: '2.146.0', // 2.54.0 for https://github.com/aws/aws-cdk/pull/22124, 2.77.0 for removing node 14, 2.87.0 for node 18 on CodeBuild, 2.123.0 for lambda logs, 2.146.0 for determineLatestNodeRuntime
   defaultReleaseBranch: 'main',
   name: '@cloudsnorkel/cdk-turbo-layers',
   repositoryUrl: 'https://github.com/CloudSnorkel/cdk-turbo-layers.git',
@@ -103,8 +103,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   tsconfig: {
     include: ['benchmark/**/*.ts'],
   },
-  jsiiVersion: '5.5.x',
-  typescriptVersion: '5.5.x',
 });
 
 // disable automatic releases, but keep workflow that can be triggered manually

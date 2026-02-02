@@ -535,7 +535,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Python39CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResource8EFFCDDF",
@@ -1200,7 +1208,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "b7f33614a69548d6bafe224d751a7ef238cde19097415e553fe8b63a4c8fd8a6.zip"
+     "S3Key": "2eb6a831b107939f63cfebf68e6316e1a40f79fc99cae0fee9b333bac8d29bc4.zip"
     },
     "Timeout": 900,
     "MemorySize": 128,
@@ -1211,7 +1219,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs18.x",
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    },
     "Description": {
      "Fn::Join": [
       "",
@@ -2280,7 +2296,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "ac4a1bd8c7c7879385a212db2c46b2cb8f9e23b91c993d826d478bff7dbc0af3.zip"
+     "S3Key": "9b642d28372ac0688d94d58f71770ceba997be43db88ea4b1cd0081a3ac5231e.zip"
     },
     "Timeout": 900,
     "MemorySize": 128,
@@ -2291,7 +2307,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs18.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "AWSCDKTriggerCustomResourceProviderCustomResourceProviderRoleE18FAF0A"
@@ -3741,7 +3765,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Python39CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResourceE82D1C19",
@@ -5821,7 +5853,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Nodejs16CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResourceECDBB686",
@@ -6612,7 +6652,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "6de0c7603a3c03b05214fad7e5eb8b9dc6639bfe5b58cc224886dde039e7bd58.zip"
+     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
     },
     "Description": "Turbo layer packager for nodejs16.x",
     "Environment": {
@@ -7616,7 +7656,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Nodejs18CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResourceB9FA1B1F",
@@ -8407,7 +8455,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "6de0c7603a3c03b05214fad7e5eb8b9dc6639bfe5b58cc224886dde039e7bd58.zip"
+     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
     },
     "Description": "Turbo layer packager for nodejs18.x",
     "Environment": {
@@ -9411,7 +9459,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Nodejs16CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResource3FB13188",
@@ -10202,7 +10258,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "6de0c7603a3c03b05214fad7e5eb8b9dc6639bfe5b58cc224886dde039e7bd58.zip"
+     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
     },
     "Description": "Turbo layer packager for nodejs16.x",
     "Environment": {
@@ -11206,7 +11262,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Nodejs18CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResourceD3FB8A54",
@@ -11997,7 +12061,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "6de0c7603a3c03b05214fad7e5eb8b9dc6639bfe5b58cc224886dde039e7bd58.zip"
+     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
     },
     "Description": "Turbo layer packager for nodejs18.x",
     "Environment": {
@@ -13001,7 +13065,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Ruby27CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResourceC3F6F6E8",
@@ -14187,7 +14259,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Ruby27CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResource63E0C116",
@@ -15373,7 +15453,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Java11CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResource75E0411C",
@@ -16079,7 +16167,15 @@
       "Arn"
      ]
     },
-    "Runtime": "nodejs22.x"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    }
    },
    "DependsOn": [
     "Java11CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResourceEC00A360",
@@ -16256,6 +16352,115 @@
     "FunctionName": {
      "Ref": "Java11CodeBuildarm64MavenTestD8CEFF09"
     }
+   }
+  }
+ },
+ "Mappings": {
+  "LatestNodeRuntimeMap": {
+   "af-south-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-east-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-3": {
+    "value": "nodejs20.x"
+   },
+   "ap-south-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-south-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-3": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-4": {
+    "value": "nodejs20.x"
+   },
+   "ca-central-1": {
+    "value": "nodejs20.x"
+   },
+   "cn-north-1": {
+    "value": "nodejs18.x"
+   },
+   "cn-northwest-1": {
+    "value": "nodejs18.x"
+   },
+   "eu-central-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-central-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-north-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-south-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-south-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-3": {
+    "value": "nodejs20.x"
+   },
+   "il-central-1": {
+    "value": "nodejs20.x"
+   },
+   "me-central-1": {
+    "value": "nodejs20.x"
+   },
+   "me-south-1": {
+    "value": "nodejs20.x"
+   },
+   "sa-east-1": {
+    "value": "nodejs20.x"
+   },
+   "us-east-1": {
+    "value": "nodejs20.x"
+   },
+   "us-east-2": {
+    "value": "nodejs20.x"
+   },
+   "us-gov-east-1": {
+    "value": "nodejs18.x"
+   },
+   "us-gov-west-1": {
+    "value": "nodejs18.x"
+   },
+   "us-iso-east-1": {
+    "value": "nodejs18.x"
+   },
+   "us-iso-west-1": {
+    "value": "nodejs18.x"
+   },
+   "us-isob-east-1": {
+    "value": "nodejs18.x"
+   },
+   "us-west-1": {
+    "value": "nodejs20.x"
+   },
+   "us-west-2": {
+    "value": "nodejs20.x"
    }
   }
  },
