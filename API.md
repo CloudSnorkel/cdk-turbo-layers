@@ -49,6 +49,7 @@ new JavaDependencyPackager(scope: Construct, id: string, props?: DependencyPacka
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.layerFromMaven">layerFromMaven</a></code> | Create a layer for dependencies defined in pom.xml installed with Maven. |
 
 ---
@@ -60,6 +61,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `layerFromMaven` <a name="layerFromMaven" id="@cloudsnorkel/cdk-turbo-layers.JavaDependencyPackager.layerFromMaven"></a>
 
@@ -219,6 +241,7 @@ new NodejsDependencyPackager(scope: Construct, id: string, props?: DependencyPac
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromInline">layerFromInline</a></code> | Create a layer for dependencies passed as an argument and installed with npm. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromPackageJson">layerFromPackageJson</a></code> | Create a layer for dependencies defined in package.json and (optionally) package-lock.json and installed with npm. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromYarn">layerFromYarn</a></code> | Create a layer for dependencies defined in package.json and yarn.lock and installed with yarn. |
@@ -232,6 +255,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `layerFromInline` <a name="layerFromInline" id="@cloudsnorkel/cdk-turbo-layers.NodejsDependencyPackager.layerFromInline"></a>
 
@@ -445,6 +489,7 @@ new PythonDependencyPackager(scope: Construct, id: string, props?: DependencyPac
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.layerFromInline">layerFromInline</a></code> | Create a layer for dependencies passed as an argument and installed with pip. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.layerFromPipenv">layerFromPipenv</a></code> | Create a layer for dependencies defined in Pipfile and (optionally) Pipfile.lock and installed with pipenv. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.layerFromPoetry">layerFromPoetry</a></code> | Create a layer for dependencies defined in pyproject.toml and (optionally) poetry.lock and installed with poetry. |
@@ -459,6 +504,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `layerFromInline` <a name="layerFromInline" id="@cloudsnorkel/cdk-turbo-layers.PythonDependencyPackager.layerFromInline"></a>
 
@@ -698,6 +764,7 @@ new RubyDependencyPackager(scope: Construct, id: string, props?: DependencyPacka
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.layerFromBundler">layerFromBundler</a></code> | Create a layer for dependencies defined in Gemfile and (optionally) Gemfile.lock and installed with Bundler. |
 
 ---
@@ -709,6 +776,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `layerFromBundler` <a name="layerFromBundler" id="@cloudsnorkel/cdk-turbo-layers.RubyDependencyPackager.layerFromBundler"></a>
 
