@@ -535,15 +535,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Python39CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResource8EFFCDDF",
@@ -901,6 +893,9 @@
     "FunctionName": {
      "Ref": "Python39CodeBuildx64Inline1D90D1D7"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39CodeBuildx64RequirementstxtServiceRole8D551F52": {
@@ -993,6 +988,9 @@
     "FunctionName": {
      "Ref": "Python39CodeBuildx64RequirementstxtA8DA269B"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39CodeBuildx64PipenvServiceRole0FCD4AFA": {
@@ -1085,6 +1083,9 @@
     "FunctionName": {
      "Ref": "Python39CodeBuildx64PipenvD4EDBBE7"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39CodeBuildx64PoetryServiceRole7A27AF35": {
@@ -1177,6 +1178,9 @@
     "FunctionName": {
      "Ref": "Python39CodeBuildx64Poetry7399833D"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
@@ -1208,7 +1212,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "2eb6a831b107939f63cfebf68e6316e1a40f79fc99cae0fee9b333bac8d29bc4.zip"
+     "S3Key": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip"
     },
     "Timeout": 900,
     "MemorySize": 128,
@@ -1219,15 +1223,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    },
+    "Runtime": "nodejs22.x",
     "Description": {
      "Fn::Join": [
       "",
@@ -2296,7 +2292,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "9b642d28372ac0688d94d58f71770ceba997be43db88ea4b1cd0081a3ac5231e.zip"
+     "S3Key": "b585179dc46d9100f31367c1eb03e063c4e1a396f99a6a188ac4a05a16ae4fa5.zip"
     },
     "Timeout": 900,
     "MemorySize": 128,
@@ -2307,15 +2303,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "AWSCDKTriggerCustomResourceProviderCustomResourceProviderRoleE18FAF0A"
@@ -2960,6 +2948,9 @@
     "FunctionName": {
      "Ref": "Python39Lambdax64Inline82879943"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39Lambdax64RequirementstxtServiceRole25647F7A": {
@@ -3052,6 +3043,9 @@
     "FunctionName": {
      "Ref": "Python39Lambdax64Requirementstxt246C71F4"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39Lambdax64PipenvServiceRoleB8B11CEF": {
@@ -3144,6 +3138,9 @@
     "FunctionName": {
      "Ref": "Python39Lambdax64Pipenv5025B912"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39Lambdax64PoetryServiceRole9CCEAB9A": {
@@ -3236,6 +3233,9 @@
     "FunctionName": {
      "Ref": "Python39Lambdax64Poetry281F462B"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39CodeBuildarm64PackagerBucketD4C397D6": {
@@ -3765,15 +3765,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Python39CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResourceE82D1C19",
@@ -4131,6 +4123,9 @@
     "FunctionName": {
      "Ref": "Python39CodeBuildarm64InlineD273E858"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39CodeBuildarm64RequirementstxtServiceRole5C793626": {
@@ -4223,6 +4218,9 @@
     "FunctionName": {
      "Ref": "Python39CodeBuildarm64Requirementstxt01A50204"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39CodeBuildarm64PipenvServiceRole728620A5": {
@@ -4315,6 +4313,9 @@
     "FunctionName": {
      "Ref": "Python39CodeBuildarm64PipenvCA49D3B5"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39CodeBuildarm64PoetryServiceRole828A067D": {
@@ -4407,6 +4408,9 @@
     "FunctionName": {
      "Ref": "Python39CodeBuildarm64PoetryDD7CAE36"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39Lambdaarm64PackagerBucket34D81964": {
@@ -5048,6 +5052,9 @@
     "FunctionName": {
      "Ref": "Python39Lambdaarm64InlineC221DC6D"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39Lambdaarm64RequirementstxtServiceRole5135652B": {
@@ -5140,6 +5147,9 @@
     "FunctionName": {
      "Ref": "Python39Lambdaarm64RequirementstxtB5F736D2"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39Lambdaarm64PipenvServiceRole364FA6FA": {
@@ -5232,6 +5242,9 @@
     "FunctionName": {
      "Ref": "Python39Lambdaarm64Pipenv65EA4744"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Python39Lambdaarm64PoetryServiceRoleCA38A63C": {
@@ -5324,6 +5337,9 @@
     "FunctionName": {
      "Ref": "Python39Lambdaarm64PoetryAB864681"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16CodeBuildx64PackagerBucket37D1B55F": {
@@ -5853,15 +5869,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Nodejs16CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResourceECDBB686",
@@ -6175,6 +6183,9 @@
     "FunctionName": {
      "Ref": "Nodejs16CodeBuildx64NPMInlineTestB05C77E3"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16CodeBuildx64NPMTestServiceRoleB709FE7F": {
@@ -6267,6 +6278,9 @@
     "FunctionName": {
      "Ref": "Nodejs16CodeBuildx64NPMTest69ABB533"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16CodeBuildx64YarnTestServiceRole9E8316D3": {
@@ -6359,6 +6373,9 @@
     "FunctionName": {
      "Ref": "Nodejs16CodeBuildx64YarnTestBDE4B1FF"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16Lambdax64PackagerBucket48E2EDC3": {
@@ -6652,7 +6669,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
+     "S3Key": "0656eae9833b7061541bc32519903e51c26b6127c3c347169bc255f88565eeac.zip"
     },
     "Description": "Turbo layer packager for nodejs16.x",
     "Environment": {
@@ -6943,6 +6960,9 @@
     "FunctionName": {
      "Ref": "Nodejs16Lambdax64NPMInlineTest62E6DB98"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16Lambdax64NPMTestServiceRoleF0B53D63": {
@@ -7035,6 +7055,9 @@
     "FunctionName": {
      "Ref": "Nodejs16Lambdax64NPMTest2FDF5E7E"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16Lambdax64YarnTestServiceRole448F38A4": {
@@ -7127,6 +7150,9 @@
     "FunctionName": {
      "Ref": "Nodejs16Lambdax64YarnTestCF551A3C"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18CodeBuildx64PackagerBucket10636D9C": {
@@ -7656,15 +7682,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Nodejs18CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResourceB9FA1B1F",
@@ -7978,6 +7996,9 @@
     "FunctionName": {
      "Ref": "Nodejs18CodeBuildx64NPMInlineTest6C5B897B"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18CodeBuildx64NPMTestServiceRole5197BEE5": {
@@ -8070,6 +8091,9 @@
     "FunctionName": {
      "Ref": "Nodejs18CodeBuildx64NPMTestD30A2B02"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18CodeBuildx64YarnTestServiceRole99EC4578": {
@@ -8162,6 +8186,9 @@
     "FunctionName": {
      "Ref": "Nodejs18CodeBuildx64YarnTestCBA047B2"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18Lambdax64PackagerBucket43758CE7": {
@@ -8455,7 +8482,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
+     "S3Key": "0656eae9833b7061541bc32519903e51c26b6127c3c347169bc255f88565eeac.zip"
     },
     "Description": "Turbo layer packager for nodejs18.x",
     "Environment": {
@@ -8746,6 +8773,9 @@
     "FunctionName": {
      "Ref": "Nodejs18Lambdax64NPMInlineTest5561FCEE"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18Lambdax64NPMTestServiceRole93C78EE3": {
@@ -8838,6 +8868,9 @@
     "FunctionName": {
      "Ref": "Nodejs18Lambdax64NPMTest686A2A86"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18Lambdax64YarnTestServiceRole429105E5": {
@@ -8930,6 +8963,9 @@
     "FunctionName": {
      "Ref": "Nodejs18Lambdax64YarnTestEBEAD6C7"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16CodeBuildarm64PackagerBucketE8B803B5": {
@@ -9459,15 +9495,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Nodejs16CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResource3FB13188",
@@ -9781,6 +9809,9 @@
     "FunctionName": {
      "Ref": "Nodejs16CodeBuildarm64NPMInlineTestC1DFCB3F"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16CodeBuildarm64NPMTestServiceRoleA4A8C317": {
@@ -9873,6 +9904,9 @@
     "FunctionName": {
      "Ref": "Nodejs16CodeBuildarm64NPMTest8F857A67"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16CodeBuildarm64YarnTestServiceRoleFCABD410": {
@@ -9965,6 +9999,9 @@
     "FunctionName": {
      "Ref": "Nodejs16CodeBuildarm64YarnTestF4123297"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16Lambdaarm64PackagerBucket6A5D0391": {
@@ -10258,7 +10295,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
+     "S3Key": "0656eae9833b7061541bc32519903e51c26b6127c3c347169bc255f88565eeac.zip"
     },
     "Description": "Turbo layer packager for nodejs16.x",
     "Environment": {
@@ -10549,6 +10586,9 @@
     "FunctionName": {
      "Ref": "Nodejs16Lambdaarm64NPMInlineTest470F9B31"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16Lambdaarm64NPMTestServiceRole8839B7B9": {
@@ -10641,6 +10681,9 @@
     "FunctionName": {
      "Ref": "Nodejs16Lambdaarm64NPMTest7CFEE809"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs16Lambdaarm64YarnTestServiceRoleA793BCFB": {
@@ -10733,6 +10776,9 @@
     "FunctionName": {
      "Ref": "Nodejs16Lambdaarm64YarnTestF9395BC2"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18CodeBuildarm64PackagerBucket86D29D14": {
@@ -11262,15 +11308,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Nodejs18CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResourceD3FB8A54",
@@ -11584,6 +11622,9 @@
     "FunctionName": {
      "Ref": "Nodejs18CodeBuildarm64NPMInlineTest52DFB691"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18CodeBuildarm64NPMTestServiceRoleD36B6E8B": {
@@ -11676,6 +11717,9 @@
     "FunctionName": {
      "Ref": "Nodejs18CodeBuildarm64NPMTest78FEEA12"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18CodeBuildarm64YarnTestServiceRoleBE7E6492": {
@@ -11768,6 +11812,9 @@
     "FunctionName": {
      "Ref": "Nodejs18CodeBuildarm64YarnTest57353654"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18Lambdaarm64PackagerBucket254D7AB3": {
@@ -12061,7 +12108,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
+     "S3Key": "0656eae9833b7061541bc32519903e51c26b6127c3c347169bc255f88565eeac.zip"
     },
     "Description": "Turbo layer packager for nodejs18.x",
     "Environment": {
@@ -12352,6 +12399,9 @@
     "FunctionName": {
      "Ref": "Nodejs18Lambdaarm64NPMInlineTest45EB4B77"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18Lambdaarm64NPMTestServiceRole9A0C95AB": {
@@ -12444,6 +12494,9 @@
     "FunctionName": {
      "Ref": "Nodejs18Lambdaarm64NPMTest76B81E64"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Nodejs18Lambdaarm64YarnTestServiceRoleAC2E02B6": {
@@ -12536,6 +12589,9 @@
     "FunctionName": {
      "Ref": "Nodejs18Lambdaarm64YarnTest3A988B5E"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Ruby27CodeBuildx64PackagerBucketC764EF01": {
@@ -13065,15 +13121,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Ruby27CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResourceC3F6F6E8",
@@ -13255,6 +13303,9 @@
     "FunctionName": {
      "Ref": "Ruby27CodeBuildx64BundlerTest1E15E966"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Ruby27Lambdax64PackagerBucketEA8431DF": {
@@ -13730,6 +13781,9 @@
     "FunctionName": {
      "Ref": "Ruby27Lambdax64BundlerTest77443957"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Ruby27CodeBuildarm64PackagerBucketF36349D3": {
@@ -14259,15 +14313,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Ruby27CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResource63E0C116",
@@ -14449,6 +14495,9 @@
     "FunctionName": {
      "Ref": "Ruby27CodeBuildarm64BundlerTest44CC6CDD"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Ruby27Lambdaarm64PackagerBucketB7849BE3": {
@@ -14924,6 +14973,9 @@
     "FunctionName": {
      "Ref": "Ruby27Lambdaarm64BundlerTestDBCA7EE7"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Java11CodeBuildx64PackagerBucket16005C98": {
@@ -15453,15 +15505,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Java11CodeBuildx64PackagerBucketAutoDeleteObjectsCustomResource75E0411C",
@@ -15638,6 +15682,9 @@
     "FunctionName": {
      "Ref": "Java11CodeBuildx64MavenTest707E66C2"
     }
+   },
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   },
   "Java11CodeBuildarm64PackagerBucket7F159EBC": {
@@ -16167,15 +16214,7 @@
       "Arn"
      ]
     },
-    "Runtime": {
-     "Fn::FindInMap": [
-      "LatestNodeRuntimeMap",
-      {
-       "Ref": "AWS::Region"
-      },
-      "value"
-     ]
-    }
+    "Runtime": "nodejs22.x"
    },
    "DependsOn": [
     "Java11CodeBuildarm64PackagerBucketAutoDeleteObjectsCustomResourceEC00A360",
@@ -16352,115 +16391,9 @@
     "FunctionName": {
      "Ref": "Java11CodeBuildarm64MavenTestD8CEFF09"
     }
-   }
-  }
- },
- "Mappings": {
-  "LatestNodeRuntimeMap": {
-   "af-south-1": {
-    "value": "nodejs20.x"
    },
-   "ap-east-1": {
-    "value": "nodejs20.x"
-   },
-   "ap-northeast-1": {
-    "value": "nodejs20.x"
-   },
-   "ap-northeast-2": {
-    "value": "nodejs20.x"
-   },
-   "ap-northeast-3": {
-    "value": "nodejs20.x"
-   },
-   "ap-south-1": {
-    "value": "nodejs20.x"
-   },
-   "ap-south-2": {
-    "value": "nodejs20.x"
-   },
-   "ap-southeast-1": {
-    "value": "nodejs20.x"
-   },
-   "ap-southeast-2": {
-    "value": "nodejs20.x"
-   },
-   "ap-southeast-3": {
-    "value": "nodejs20.x"
-   },
-   "ap-southeast-4": {
-    "value": "nodejs20.x"
-   },
-   "ca-central-1": {
-    "value": "nodejs20.x"
-   },
-   "cn-north-1": {
-    "value": "nodejs18.x"
-   },
-   "cn-northwest-1": {
-    "value": "nodejs18.x"
-   },
-   "eu-central-1": {
-    "value": "nodejs20.x"
-   },
-   "eu-central-2": {
-    "value": "nodejs20.x"
-   },
-   "eu-north-1": {
-    "value": "nodejs20.x"
-   },
-   "eu-south-1": {
-    "value": "nodejs20.x"
-   },
-   "eu-south-2": {
-    "value": "nodejs20.x"
-   },
-   "eu-west-1": {
-    "value": "nodejs20.x"
-   },
-   "eu-west-2": {
-    "value": "nodejs20.x"
-   },
-   "eu-west-3": {
-    "value": "nodejs20.x"
-   },
-   "il-central-1": {
-    "value": "nodejs20.x"
-   },
-   "me-central-1": {
-    "value": "nodejs20.x"
-   },
-   "me-south-1": {
-    "value": "nodejs20.x"
-   },
-   "sa-east-1": {
-    "value": "nodejs20.x"
-   },
-   "us-east-1": {
-    "value": "nodejs20.x"
-   },
-   "us-east-2": {
-    "value": "nodejs20.x"
-   },
-   "us-gov-east-1": {
-    "value": "nodejs18.x"
-   },
-   "us-gov-west-1": {
-    "value": "nodejs18.x"
-   },
-   "us-iso-east-1": {
-    "value": "nodejs18.x"
-   },
-   "us-iso-west-1": {
-    "value": "nodejs18.x"
-   },
-   "us-isob-east-1": {
-    "value": "nodejs18.x"
-   },
-   "us-west-1": {
-    "value": "nodejs20.x"
-   },
-   "us-west-2": {
-    "value": "nodejs20.x"
+   "Metadata": {
+    "aws:cdk:do-not-refactor": true
    }
   }
  },
