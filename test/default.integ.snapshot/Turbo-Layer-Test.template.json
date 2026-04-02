@@ -6669,7 +6669,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "0656eae9833b7061541bc32519903e51c26b6127c3c347169bc255f88565eeac.zip"
+     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
     },
     "Description": "Turbo layer packager for nodejs16.x",
     "Environment": {
@@ -8482,7 +8482,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "0656eae9833b7061541bc32519903e51c26b6127c3c347169bc255f88565eeac.zip"
+     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
     },
     "Description": "Turbo layer packager for nodejs18.x",
     "Environment": {
@@ -10295,7 +10295,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "0656eae9833b7061541bc32519903e51c26b6127c3c347169bc255f88565eeac.zip"
+     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
     },
     "Description": "Turbo layer packager for nodejs16.x",
     "Environment": {
@@ -12108,7 +12108,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "0656eae9833b7061541bc32519903e51c26b6127c3c347169bc255f88565eeac.zip"
+     "S3Key": "ae45c458af65a4a3395a7cdfcb418ab34396a5d476cf75694bd80455b3446963.zip"
     },
     "Description": "Turbo layer packager for nodejs18.x",
     "Environment": {
@@ -13599,7 +13599,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f477c7f293bd090acdff1a27566482b6271087ecfa3b1a406cfee832f546e580.zip"
+     "S3Key": "98f68bc7a7b75149d1b2cdb88f7d1d3ae9ab51f19776516924d59a5ac80cb929.zip"
     },
     "Description": "Turbo layer packager for ruby2.7",
     "EphemeralStorage": {
@@ -14791,7 +14791,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f477c7f293bd090acdff1a27566482b6271087ecfa3b1a406cfee832f546e580.zip"
+     "S3Key": "98f68bc7a7b75149d1b2cdb88f7d1d3ae9ab51f19776516924d59a5ac80cb929.zip"
     },
     "Description": "Turbo layer packager for ruby2.7",
     "EphemeralStorage": {

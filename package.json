@@ -88,6 +88,7 @@
     "aws-cdk-lib": "^2.239.0",
     "constructs": "^10.5.1"
   },
+  "pnpm": {},
   "keywords": [
     "aws",
     "aws-cdk",

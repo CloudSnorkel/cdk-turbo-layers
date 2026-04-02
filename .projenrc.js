@@ -11,6 +11,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/CloudSnorkel/cdk-turbo-layers.git',
   license: 'Apache-2.0',
   description: 'Speed-up Lambda function deployment with dependency layers built in AWS',
+  packageManager: 'pnpm', // for cooldown support
   devDeps: [
     'esbuild', // for faster NodejsFunction bundling
     '@aws-sdk/client-codebuild',
@@ -75,6 +76,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
         cron: ['0 0 1 * *'],
       },
     },
+    cooldown: 5, // don't include updates from the last five days to try and dodge supply chain attacks
   },
   githubOptions: {
     pullRequestLintOptions: {
@@ -88,6 +90,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   pullRequestTemplate: false,
+  workflowPackageCache: true,
   workflowBootstrapSteps: [
     {
       name: 'Setup Ruby',
