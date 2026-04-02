@@ -79,6 +79,7 @@
     "jsii-pacmak": "^1.127.0",
     "jsii-rosetta": "~5.9.0",
     "projen": "^0.99.17",
+    "shx": "^0.4.0",
     "ts-jest": "^27",
     "ts-node": "^10.9.2",
     "typescript": "5.5.x",
@@ -88,6 +89,7 @@
     "aws-cdk-lib": "^2.239.0",
     "constructs": "^10.5.1"
   },
+  "pnpm": {},
   "keywords": [
     "aws",
     "aws-cdk",

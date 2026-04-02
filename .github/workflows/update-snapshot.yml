@@ -15,14 +15,23 @@ jobs:
       CI: "true"
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
           fetch-depth: 0
       - name: Setup Ruby
         run: sudo apt-get update ; sudo apt-get install -y ruby
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          version: "10"
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: pnpm
       - name: Install dependencies
-        run: yarn install --check-files --frozen-lockfile
+        run: pnpm i --frozen-lockfile
       - name: Snapshot main
         run: |
           npm run bundle
@@ -32,7 +41,7 @@ jobs:
           BRANCH: ${{ github.event.workflow_run.head_branch }}
         run: git checkout "$BRANCH"
       - name: Install dependencies
-        run: yarn install --check-files --frozen-lockfile
+        run: pnpm i --frozen-lockfile
       - name: Snapshot branch
         run: |
           npm run bundle
