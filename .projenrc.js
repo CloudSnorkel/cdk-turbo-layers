@@ -22,6 +22,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'xterm-benchmark',
     'execa',
     '@aws-cdk/aws-lambda-python-alpha',
+    'shx', // pnpm layout stops projen from finding shx bin
   ],
   deps: [
   ],
@@ -111,6 +112,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
 // disable automatic releases, but keep workflow that can be triggered manually
 const releaseWorkflow = project.github.tryFindWorkflow('release');
 releaseWorkflow.file.addDeletionOverride('on.push');
+
+// more consistent snapshots across systems
+project.npmrc.addConfig('node-linker', 'hoisted');
 
 // set proper line endings
 project.gitattributes.addAttributes('*.js', 'eol=lf');

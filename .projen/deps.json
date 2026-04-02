@@ -115,6 +115,10 @@
       "type": "build"
     },
     {
+      "name": "shx",
+      "type": "build"
+    },
+    {
       "name": "ts-jest",
       "type": "build"
     },

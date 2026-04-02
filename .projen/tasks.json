@@ -479,13 +479,13 @@
       },
       "steps": [
         {
-          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --cooldown=5 --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@aws-cdk/aws-lambda-python-alpha,@aws-sdk/client-codebuild,@aws-sdk/client-s3,@types/adm-zip,@types/aws-lambda,@types/jest,@types/node,adm-zip,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,execa,jest,jsii-diff,jsii-pacmak,projen,ts-jest,ts-node,typescript,xterm-benchmark"
+          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --cooldown=5 --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@aws-cdk/aws-lambda-python-alpha,@aws-sdk/client-codebuild,@aws-sdk/client-s3,@types/adm-zip,@types/aws-lambda,@types/jest,@types/node,adm-zip,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,execa,jest,jsii-diff,jsii-pacmak,projen,shx,ts-jest,ts-node,typescript,xterm-benchmark"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @aws-cdk/aws-lambda-python-alpha @aws-sdk/client-codebuild @aws-sdk/client-s3 @stylistic/eslint-plugin @types/adm-zip @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser adm-zip aws-cdk commit-and-tag-version esbuild eslint-import-resolver-typescript eslint-plugin-import eslint execa jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-jest ts-node typescript xterm-benchmark aws-cdk-lib constructs --config.minimum-release-age=7200"
+          "exec": "pnpm update @aws-cdk/aws-lambda-python-alpha @aws-sdk/client-codebuild @aws-sdk/client-s3 @stylistic/eslint-plugin @types/adm-zip @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser adm-zip aws-cdk commit-and-tag-version esbuild eslint-import-resolver-typescript eslint-plugin-import eslint execa jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen shx ts-jest ts-node typescript xterm-benchmark aws-cdk-lib constructs --config.minimum-release-age=7200"
         },
         {
           "exec": "npx projen"
