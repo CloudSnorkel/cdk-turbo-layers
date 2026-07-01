@@ -1,13 +1,9 @@
 {
+  "manifestVersion": 2,
+  "env": {
+    "PATH": "$(pnpm -c exec \"node --print process.env.PATH\")"
+  },
   "tasks": {
-    "benchmark": {
-      "name": "benchmark",
-      "steps": [
-        {
-          "exec": "esbuild benchmark/deployment.ts --bundle --target=node14 --platform=node --outfile=benchmark/deployment.js --format=cjs --external:xterm-benchmark && xterm-benchmark benchmark/deployment.js"
-        }
-      ]
-    },
     "build": {
       "name": "build",
       "description": "Full release build",
@@ -88,7 +84,7 @@
       "description": "Create a JavaScript bundle from src/package-codebuild.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/*"
+          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"test/tsconfig.json\" --external:@aws-sdk/*"
         }
       ]
     },
@@ -97,7 +93,7 @@
       "description": "Continuously update the JavaScript bundle from src/package-codebuild.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --watch"
+          "exec": "esbuild --bundle src/package-codebuild.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-codebuild.lambda/index.js\" --tsconfig=\"test/tsconfig.json\" --external:@aws-sdk/* --watch"
         }
       ]
     },
@@ -106,7 +102,7 @@
       "description": "Create a JavaScript bundle from src/package-nodejs.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" "
+          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"test/tsconfig.json\" "
         }
       ]
     },
@@ -115,7 +111,7 @@
       "description": "Continuously update the JavaScript bundle from src/package-nodejs.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --watch"
+          "exec": "esbuild --bundle src/package-nodejs.lambda.ts --target=\"node22\" --platform=\"node\" --outfile=\"assets/package-nodejs.lambda/index.js\" --tsconfig=\"test/tsconfig.json\" --external:@aws-sdk/* --watch"
         }
       ]
     },
@@ -166,6 +162,9 @@
       "steps": [
         {
           "exec": "jsii --silence-warnings=reserved-word"
+        },
+        {
+          "spawn": "compat"
         }
       ]
     },
@@ -174,7 +173,10 @@
       "description": "Synthesize project files",
       "steps": [
         {
-          "exec": "node .projenrc.js"
+          "execArgs": [
+            "node",
+            ".projenrc.js"
+          ]
         }
       ]
     },
@@ -183,7 +185,11 @@
       "description": "Generate API.md from .jsii manifest",
       "steps": [
         {
-          "exec": "jsii-docgen -o API.md"
+          "execArgs": [
+            "jsii-docgen",
+            "-o",
+            "API.md"
+          ]
         }
       ]
     },
@@ -239,10 +245,23 @@
           "exec": "[ -d \"test/default.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'default'. Run 'projen integ:default:deploy' to capture.\" && exit 1)"
         },
         {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/.tmp/default.integ/assert.cdk.out > /dev/null"
+          "exec": "cdk synth --app \"ts-node -P test/tsconfig.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/.tmp/default.integ/assert.cdk.out > /dev/null"
         },
         {
-          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test/default.integ.snapshot/ test/.tmp/default.integ/assert.cdk.out/"
+          "execArgs": [
+            "diff",
+            "-r",
+            "-x",
+            "asset.*",
+            "-x",
+            "cdk.out",
+            "-x",
+            "manifest.json",
+            "-x",
+            "tree.json",
+            "test/default.integ.snapshot/",
+            "test/.tmp/default.integ/assert.cdk.out/"
+          ]
         }
       ]
     },
@@ -251,16 +270,28 @@
       "description": "deploy integration test 'default' and capture snapshot",
       "steps": [
         {
-          "exec": "rm -fr test/.tmp/default.integ/deploy.cdk.out"
+          "execArgs": [
+            "rm",
+            "-fr",
+            "test/.tmp/default.integ/deploy.cdk.out"
+          ]
         },
         {
-          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test/.tmp/default.integ/deploy.cdk.out"
+          "exec": "cdk deploy --app \"ts-node -P test/tsconfig.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test/.tmp/default.integ/deploy.cdk.out"
         },
         {
-          "exec": "rm -fr test/default.integ.snapshot"
+          "execArgs": [
+            "rm",
+            "-fr",
+            "test/default.integ.snapshot"
+          ]
         },
         {
-          "exec": "mv test/.tmp/default.integ/deploy.cdk.out test/default.integ.snapshot"
+          "execArgs": [
+            "mv",
+            "test/.tmp/default.integ/deploy.cdk.out",
+            "test/default.integ.snapshot"
+          ]
         },
         {
           "spawn": "integ:default:destroy"
@@ -281,7 +312,7 @@
       "description": "update snapshot for integration test \"default\"",
       "steps": [
         {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/default.integ.snapshot > /dev/null"
+          "exec": "cdk synth --app \"ts-node -P test/tsconfig.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/default.integ.snapshot > /dev/null"
         }
       ]
     },
@@ -290,7 +321,7 @@
       "description": "watch integration test 'default' (without updating snapshots)",
       "steps": [
         {
-          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test/.tmp/default.integ/deploy.cdk.out"
+          "exec": "cdk watch --app \"ts-node -P test/tsconfig.json test/default.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test/.tmp/default.integ/deploy.cdk.out"
         }
       ]
     },
@@ -343,7 +374,14 @@
       "description": "Create dotnet language bindings",
       "steps": [
         {
-          "exec": "jsii-pacmak -v --pack-command \"pnpm pack\" --target dotnet"
+          "execArgs": [
+            "jsii-pacmak",
+            "-v",
+            "--pack-command",
+            "pnpm pack",
+            "--target",
+            "dotnet"
+          ]
         }
       ]
     },
@@ -352,7 +390,14 @@
       "description": "Create go language bindings",
       "steps": [
         {
-          "exec": "jsii-pacmak -v --pack-command \"pnpm pack\" --target go"
+          "execArgs": [
+            "jsii-pacmak",
+            "-v",
+            "--pack-command",
+            "pnpm pack",
+            "--target",
+            "go"
+          ]
         }
       ]
     },
@@ -361,7 +406,14 @@
       "description": "Create java language bindings",
       "steps": [
         {
-          "exec": "jsii-pacmak -v --pack-command \"pnpm pack\" --target java"
+          "execArgs": [
+            "jsii-pacmak",
+            "-v",
+            "--pack-command",
+            "pnpm pack",
+            "--target",
+            "java"
+          ]
         }
       ]
     },
@@ -370,7 +422,14 @@
       "description": "Create js language bindings",
       "steps": [
         {
-          "exec": "jsii-pacmak -v --pack-command \"pnpm pack\" --target js"
+          "execArgs": [
+            "jsii-pacmak",
+            "-v",
+            "--pack-command",
+            "pnpm pack",
+            "--target",
+            "js"
+          ]
         }
       ]
     },
@@ -379,7 +438,14 @@
       "description": "Create python language bindings",
       "steps": [
         {
-          "exec": "jsii-pacmak -v --pack-command \"pnpm pack\" --target python"
+          "execArgs": [
+            "jsii-pacmak",
+            "-v",
+            "--pack-command",
+            "pnpm pack",
+            "--target",
+            "python"
+          ]
         }
       ]
     },
@@ -504,9 +570,6 @@
         }
       ]
     }
-  },
-  "env": {
-    "PATH": "$(pnpm -c exec \"node --print process.env.PATH\")"
   },
   "//": "~~ Generated by projen. To modify, edit .projenrc.js and run \"pnpm exec projen\"."
 }
