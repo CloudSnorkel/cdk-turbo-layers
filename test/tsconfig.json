@@ -7,7 +7,8 @@
     "stripInternal": true
   },
   "include": [
-    "**/*.ts"
+    "**/*.ts",
+    "benchmark/**/*.ts"
   ],
   "exclude": [
     "node_modules"
