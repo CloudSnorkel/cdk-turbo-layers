@@ -27,5 +27,6 @@
 /pnpm-lock.yaml linguist-generated
 /src/package-codebuild-function.ts linguist-generated
 /src/package-nodejs-function.ts linguist-generated
-/tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments
+/test/tsconfig.json linguist-generated linguist-language=JSON-with-Comments
+/tsconfig.json linguist-generated
 Dockerfile eol=lf

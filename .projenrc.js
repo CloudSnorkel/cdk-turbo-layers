@@ -104,7 +104,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   eslintOptions: {
     dirs: ['benchmark'],
   },
-  tsconfig: {
+  tsconfigDev: {
     include: ['benchmark/**/*.ts'],
   },
 });
@@ -135,6 +135,9 @@ project.bundler.bundleTask.exec('cp src/package-ruby.lambda.rb assets/package-ru
 project.bundler.bundleTask.exec('gem install --no-document --version 2.3.2 --install-dir assets/package-ruby.lambda/vendor rubyzip');
 project.bundler.bundleTask.exec('mv assets/package-ruby.lambda/vendor/gems/rubyzip-2.3.2/lib assets/package-ruby.lambda/rubyzip');
 project.bundler.bundleTask.exec('rm -rf assets/package-ruby.lambda/vendor');
+
+// not part of the project and can use defaults
+project.eslint.allowDefaultProjectFiles('.projenrc.js', 'benchmark/*.ts', 'benchmark/*/*.ts');
 
 // funding
 project.package.addField('funding', 'https://github.com/sponsors/CloudSnorkel');
