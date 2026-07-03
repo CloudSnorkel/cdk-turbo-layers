@@ -16,7 +16,9 @@
     "sourceType": "module",
     "projectService": {
       "allowDefaultProject": [
-        ".projenrc.js"
+        ".projenrc.js",
+        "benchmark/*.ts",
+        "benchmark/*/*.ts"
       ],
       "defaultProject": "./tsconfig.json"
     }
