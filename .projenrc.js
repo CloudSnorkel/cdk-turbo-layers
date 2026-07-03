@@ -137,7 +137,7 @@ project.bundler.bundleTask.exec('mv assets/package-ruby.lambda/vendor/gems/rubyz
 project.bundler.bundleTask.exec('rm -rf assets/package-ruby.lambda/vendor');
 
 // not part of the project and can use defaults
-project.eslint.allowDefaultProjectFiles('.projenrc.js');
+project.eslint.allowDefaultProjectFiles('.projenrc.js', 'benchmark/*.ts', 'benchmark/*/*.ts');
 
 // funding
 project.package.addField('funding', 'https://github.com/sponsors/CloudSnorkel');
