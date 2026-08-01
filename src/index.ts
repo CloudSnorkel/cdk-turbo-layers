@@ -1,4 +1,5 @@
-export type { LayerProps, DependencyPackagerProps, DependencyPackagerType } from './base';
+export type { LayerProps, DependencyPackagerProps } from './base';
+export { DependencyPackagerType } from './base';
 export * from './python';
 export * from './nodejs';
 export * from './ruby';
